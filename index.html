@@ -14,6 +14,8 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-center-simple.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
@@ -212,7 +214,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-01-15 00:37:08 / Modified: 00:41:16" itemprop="dateCreated datePublished" datetime="2022-01-15T00:37:08+08:00">2022-01-15</time>
+              <time title="Created: 2022-01-15 00:37:08 / Modified: 08:45:13" itemprop="dateCreated datePublished" datetime="2022-01-15T00:37:08+08:00">2022-01-15</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -249,260 +251,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="个贷违约预测"><a href="#个贷违约预测" class="headerlink" title="个贷违约预测"></a>个贷违约预测</h1><h2 id="一、赛题理解及结果"><a href="#一、赛题理解及结果" class="headerlink" title="一、赛题理解及结果"></a>一、赛题理解及结果</h2><h3 id="1-赛题理解与认识"><a href="#1-赛题理解与认识" class="headerlink" title="1.赛题理解与认识"></a>1.赛题理解与认识</h3><p>​        为进一步促进金融普惠的推广落地，金融机构需要服务许多新的客群。银行作为对风险控制要求很高的行业，因为缺乏对新客群的了解，对新的细分客群的风控处理往往成为金融普惠的重要阻碍。如何利用银行现有信贷行为数据来服务新场景、新客群成了一个很有价值的研究方向，迁移学习是其中一个重要手段。本赛题要求利用已有的与目标客群稍有差异的另一批信贷数据，辅助目标业务风控模型的创建，两者数据集之间存在大量相同的字段和极少的共同用户。由此，我们需要把“train_public.csv”与“train_internet_public.csv”的数据进行处理比对验证，选择重要的特征，去除冗余影响极小的特征，最后选择合适的模型加以预测，调参及优化。</p>
-<p>​        比如，在两个训练集中，我们可以发现“employer_type”，“industry””work_type”等值为汉字，”class“”sub_class””work_year”等信息值为字母，不利于模型的预测，需要对此进行编码。此外，在“work_year””f0-f4”匿名特征等特征中，有大量数据集缺失，需要采用适当方法对其进行填充。在训练集的日期特征中，均采用”xx/xx/xx“表示，需转换为datatime类型等，还有显然的逻辑错误等。（具体处理代码详见算法说明）</p>
-<p>​        最后打算采用LightGBM作为单模型预测，因为它支持高效率的并行训练，并且具有更快的训练速度、更低的内存消耗、更好的准确率、支持分布式可以快速处理海量数据。</p>
-<h3 id="2-A榜结果，排名"><a href="#2-A榜结果，排名" class="headerlink" title="2.A榜结果，排名"></a>2.A榜结果，排名</h3><p><img src="C:\Users\86130\AppData\Roaming\Typora\typora-user-images\image-20211217215258459.png" alt="image-20211217215258459"></p>
-<h3 id="3-B榜结果，排名"><a href="#3-B榜结果，排名" class="headerlink" title="3.B榜结果，排名"></a>3.B榜结果，排名</h3><p><img src="C:\Users\86130\AppData\Roaming\Typora\typora-user-images\image-20211217215430325.png" alt="image-20211217215430325"></p>
-<h3 id="4-全部提交历史记录"><a href="#4-全部提交历史记录" class="headerlink" title="4.全部提交历史记录"></a>4.全部提交历史记录</h3><p><img src="C:\Users\86130\AppData\Roaming\Typora\typora-user-images\image-20211217220550078.png" alt="image-20211217220550078"></p>
-<p><img src="C:\Users\86130\AppData\Roaming\Typora\typora-user-images\image-20211217220640025.png" alt="image-20211217220640025"></p>
-<p><img src="C:\Users\86130\AppData\Roaming\Typora\typora-user-images\image-20211217220710678.png" alt="image-20211217220710678"></p>
-<h2 id="二、组员分工"><a href="#二、组员分工" class="headerlink" title="二、组员分工"></a>二、组员分工</h2><table>
-<thead>
-<tr>
-<th>姓名</th>
-<th>学号</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>孙诗尧</td>
-<td>201930382376</td>
-</tr>
-<tr>
-<td>阮炜烨</td>
-<td>201930382291</td>
-</tr>
-<tr>
-<td>李立</td>
-<td>201930381171</td>
-</tr>
-</tbody></table>
-<p><strong>具体分工</strong></p>
-<table>
-<thead>
-<tr>
-<th>姓名</th>
-<th>分工</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>孙诗尧</td>
-<td>模型的构建以及优化</td>
-</tr>
-<tr>
-<td>阮炜烨</td>
-<td>特征工程，数据处理</td>
-</tr>
-<tr>
-<td>李立</td>
-<td>模型调参以及具体测试</td>
-</tr>
-</tbody></table>
-<h2 id="三、算法说明"><a href="#三、算法说明" class="headerlink" title="三、算法说明"></a>三、算法说明</h2><h3 id="1-LightGBM"><a href="#1-LightGBM" class="headerlink" title="1.LightGBM"></a>1.LightGBM</h3><p>​        梯度提升决策树（GBDT）是一种流行的机器学习算法，有不少有效的实现。虽然在这些实现中采用了很多工程优化，但在特征维数高、数据量大的情况下，效率和可扩展性仍然不尽如人意。一个主要原因是对于每个特征，他们需要扫描所有的数据实例来估计所有可能的分割点的信息增益，这是非常耗时的。 LightGBM 是一种 GBDT 开源工具，能够以低内存成本对大规模数据集进行高效训练。        LightGBM 采用了基于梯度的单侧采样 (GOSS) 和专有特征捆绑 (EFB) 两种新技术。使用 GOSS，LightGBM 可以只用完整数据集的一小部分来训练每棵树。使用 EFB，LightGBM 可以更有效地处理高维稀疏特征。 LightGBM 还支持分布式训练，通信成本低，在 GPU 上训练速度快。</p>
-<p>​        具有的优势：</p>
-<ul>
-<li>基于Histogram的决策树算法。</li>
-<li>单边梯度采样 Gradient-based One-Side Sampling(GOSS)：使用GOSS可以减少大量只具有小梯度的数据实例，这样在计算信息增益的时候只利用剩下的具有高梯度的数据就可以了，相比XGBoost遍历所有特征值节省了不少时间和空间上的开销。</li>
-<li>互斥特征捆绑 Exclusive Feature Bundling(EFB)：使用EFB可以将许多互斥的特征绑定为一个特征，这样达到了降维的目的。</li>
-<li>带深度限制的Leaf-wise的叶子生长策略：大多数GBDT工具使用低效的按层生长 (level-wise) 的决策树生长策略，因为它不加区分的对待同一层的叶子，带来了很多没必要的开销。实际上很多叶子的分裂增益较低，没必要进行搜索和分裂。LightGBM使用了带有深度限制的按叶子生长 (leaf-wise) 算法。</li>
-<li>直接支持类别特征(Categorical Feature)</li>
-<li>支持高效并行</li>
-<li>Cache命中率优化</li>
-</ul>
-<p>模型下各特征重要程度</p>
-<img src="C:\Users\86130\Desktop\lgbm_importances.png" alt="lgbm_importances" style="zoom:80%;" />
-
-<h3 id="2-数据处理"><a href="#2-数据处理" class="headerlink" title="2.数据处理"></a>2.数据处理</h3><h4 id="2-1-编码"><a href="#2-1-编码" class="headerlink" title="2.1 编码"></a>2.1 编码</h4><p>对“employer_type”,“industry”,”work_type”编码</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">cat_cols <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'employer_type'</span><span class="token punctuation">,</span> <span class="token string">'industry'</span><span class="token punctuation">]</span>
-<span class="token keyword">from</span> sklearn<span class="token punctuation">.</span>preprocessing <span class="token keyword">import</span> LabelEncoder
-<span class="token keyword">for</span> col <span class="token keyword">in</span> cat_cols<span class="token punctuation">:</span>
-    lbl <span class="token operator">=</span> LabelEncoder<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_data<span class="token punctuation">[</span>col<span class="token punctuation">]</span><span class="token punctuation">)</span>
-    train_data<span class="token punctuation">[</span>col<span class="token punctuation">]</span> <span class="token operator">=</span> lbl<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>train_data<span class="token punctuation">[</span>col<span class="token punctuation">]</span><span class="token punctuation">)</span>
-    test_public<span class="token punctuation">[</span>col<span class="token punctuation">]</span> <span class="token operator">=</span> lbl<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>test_public<span class="token punctuation">[</span>col<span class="token punctuation">]</span><span class="token punctuation">)</span>
-    <span class="token comment"># Internet处理</span>
-    train_inte<span class="token punctuation">[</span>col<span class="token punctuation">]</span> <span class="token operator">=</span> lbl<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>train_inte<span class="token punctuation">[</span>col<span class="token punctuation">]</span><span class="token punctuation">)</span>
-    
-lbl2 <span class="token operator">=</span> LabelEncoder<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>fit<span class="token punctuation">(</span>train_inte<span class="token punctuation">[</span><span class="token string">'work_type'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-train_inte<span class="token punctuation">[</span><span class="token string">'work_type'</span><span class="token punctuation">]</span> <span class="token operator">=</span> lbl2<span class="token punctuation">.</span>transform<span class="token punctuation">(</span>train_inte<span class="token punctuation">[</span><span class="token string">'work_type'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>对“class”，“sub_class”编码</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">class_dict <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
-    <span class="token string">'A'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-    <span class="token string">'B'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
-    <span class="token string">'C'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
-    <span class="token string">'D'</span><span class="token punctuation">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
-    <span class="token string">'E'</span><span class="token punctuation">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
-    <span class="token string">'F'</span><span class="token punctuation">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
-    <span class="token string">'G'</span><span class="token punctuation">:</span> <span class="token number">7</span><span class="token punctuation">,</span>
-<span class="token punctuation">&#125;</span>
-
-train_data<span class="token punctuation">[</span><span class="token string">'class'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train_data<span class="token punctuation">[</span><span class="token string">'class'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span>class_dict<span class="token punctuation">)</span>
-test_public<span class="token punctuation">[</span><span class="token string">'class'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test_public<span class="token punctuation">[</span><span class="token string">'class'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span>class_dict<span class="token punctuation">)</span>
-train_inte<span class="token punctuation">[</span><span class="token string">'class'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train_inte<span class="token punctuation">[</span><span class="token string">'class'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span>class_dict<span class="token punctuation">)</span>
-
-<span class="token keyword">def</span> <span class="token function">sub_class_tran</span><span class="token punctuation">(</span>string<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    val<span class="token operator">=</span><span class="token builtin">ord</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>string<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token builtin">ord</span><span class="token punctuation">(</span><span class="token string">'A'</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> <span class="token builtin">int</span><span class="token punctuation">(</span>val<span class="token operator">+</span><span class="token builtin">int</span><span class="token punctuation">(</span><span class="token builtin">str</span><span class="token punctuation">(</span>string<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-train_inte<span class="token punctuation">[</span><span class="token string">'sub_class'</span><span class="token punctuation">]</span><span class="token operator">=</span>train_inte<span class="token punctuation">[</span><span class="token string">'sub_class'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span>sub_class_tran<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="2-2-时间值处理"><a href="#2-2-时间值处理" class="headerlink" title="2.2 时间值处理"></a>2.2 时间值处理</h4><p>对”work_year”值处理</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">workYearDIc</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">if</span> <span class="token builtin">str</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token string">'nan'</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>
-    x <span class="token operator">=</span> x<span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">'&lt; 1'</span><span class="token punctuation">,</span> <span class="token string">'0'</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> <span class="token builtin">int</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'(\d+)'</span><span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-train_data<span class="token punctuation">[</span><span class="token string">'work_year'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train_data<span class="token punctuation">[</span><span class="token string">'work_year'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span>workYearDIc<span class="token punctuation">)</span>
-test_public<span class="token punctuation">[</span><span class="token string">'work_year'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test_public<span class="token punctuation">[</span><span class="token string">'work_year'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span>workYearDIc<span class="token punctuation">)</span>
-train_inte<span class="token punctuation">[</span><span class="token string">'work_year'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train_inte<span class="token punctuation">[</span><span class="token string">'work_year'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span>workYearDIc<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>对“issue_date”“earlies_credit_mon”转化为datatime类型 并创建年月日新特征</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">findDig</span><span class="token punctuation">(</span>val<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    fd <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">'(\d+-)'</span><span class="token punctuation">,</span> val<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> fd <span class="token keyword">is</span> <span class="token boolean">None</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token string">'1-'</span> <span class="token operator">+</span> val
-    <span class="token keyword">return</span> val <span class="token operator">+</span> <span class="token string">'-01'</span>
-
-timeMax <span class="token operator">=</span> pd<span class="token punctuation">.</span>to_datetime<span class="token punctuation">(</span><span class="token string">'1-Dec-21'</span><span class="token punctuation">)</span>
-train_data<span class="token punctuation">[</span><span class="token string">'earlies_credit_mon'</span><span class="token punctuation">]</span> <span class="token operator">=</span> pd<span class="token punctuation">.</span>to_datetime<span class="token punctuation">(</span>train_data<span class="token punctuation">[</span><span class="token string">'earlies_credit_mon'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span>findDig<span class="token punctuation">)</span><span class="token punctuation">)</span>
-test_public<span class="token punctuation">[</span><span class="token string">'earlies_credit_mon'</span><span class="token punctuation">]</span> <span class="token operator">=</span> pd<span class="token punctuation">.</span>to_datetime<span class="token punctuation">(</span>test_public<span class="token punctuation">[</span><span class="token string">'earlies_credit_mon'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token builtin">map</span><span class="token punctuation">(</span>findDig<span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-train_data<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>train_data<span class="token punctuation">[</span><span class="token string">'earlies_credit_mon'</span><span class="token punctuation">]</span> <span class="token operator">></span> timeMax<span class="token punctuation">,</span> <span class="token string">'earlies_credit_mon'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train_data<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>train_data<span class="token punctuation">[</span><span class="token string">'earlies_credit_mon'</span><span class="token punctuation">]</span> <span class="token operator">></span> timeMax<span class="token punctuation">,</span> <span class="token string">'earlies_credit_mon'</span><span class="token punctuation">]</span> <span class="token operator">+</span> pd<span class="token punctuation">.</span>offsets<span class="token punctuation">.</span>DateOffset<span class="token punctuation">(</span>years<span class="token operator">=</span><span class="token operator">-</span><span class="token number">100</span><span class="token punctuation">)</span>
-
-test_public<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>test_public<span class="token punctuation">[</span><span class="token string">'earlies_credit_mon'</span><span class="token punctuation">]</span> <span class="token operator">></span> timeMax<span class="token punctuation">,</span> <span class="token string">'earlies_credit_mon'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test_public<span class="token punctuation">.</span>loc<span class="token punctuation">[</span>test_public<span class="token punctuation">[</span><span class="token string">'earlies_credit_mon'</span><span class="token punctuation">]</span> <span class="token operator">></span> timeMax<span class="token punctuation">,</span> <span class="token string">'earlies_credit_mon'</span><span class="token punctuation">]</span> <span class="token operator">+</span> pd<span class="token punctuation">.</span>offsets<span class="token punctuation">.</span>DateOffset<span class="token punctuation">(</span>years<span class="token operator">=</span><span class="token operator">-</span><span class="token number">100</span><span class="token punctuation">)</span>
-
-train_data<span class="token punctuation">[</span><span class="token string">'issue_date'</span><span class="token punctuation">]</span> <span class="token operator">=</span> pd<span class="token punctuation">.</span>to_datetime<span class="token punctuation">(</span>train_data<span class="token punctuation">[</span><span class="token string">'issue_date'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-test_public<span class="token punctuation">[</span><span class="token string">'issue_date'</span><span class="token punctuation">]</span> <span class="token operator">=</span> pd<span class="token punctuation">.</span>to_datetime<span class="token punctuation">(</span>test_public<span class="token punctuation">[</span><span class="token string">'issue_date'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-train_inte<span class="token punctuation">[</span><span class="token string">'earlies_credit_mon'</span><span class="token punctuation">]</span> <span class="token operator">=</span> pd<span class="token punctuation">.</span>to_datetime<span class="token punctuation">(</span>train_inte<span class="token punctuation">[</span><span class="token string">'earlies_credit_mon'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-train_inte<span class="token punctuation">[</span><span class="token string">'issue_date'</span><span class="token punctuation">]</span> <span class="token operator">=</span> pd<span class="token punctuation">.</span>to_datetime<span class="token punctuation">(</span>train_inte<span class="token punctuation">[</span><span class="token string">'issue_date'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-
-train_data<span class="token punctuation">[</span><span class="token string">'issue_date_month'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train_data<span class="token punctuation">[</span><span class="token string">'issue_date'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>dt<span class="token punctuation">.</span>month
-test_public<span class="token punctuation">[</span><span class="token string">'issue_date_month'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test_public<span class="token punctuation">[</span><span class="token string">'issue_date'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>dt<span class="token punctuation">.</span>month
-train_data<span class="token punctuation">[</span><span class="token string">'issue_date_dayofweek'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train_data<span class="token punctuation">[</span><span class="token string">'issue_date'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>dt<span class="token punctuation">.</span>dayofweek
-test_public<span class="token punctuation">[</span><span class="token string">'issue_date_dayofweek'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test_public<span class="token punctuation">[</span><span class="token string">'issue_date'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>dt<span class="token punctuation">.</span>dayofweek
-
-train_data<span class="token punctuation">[</span><span class="token string">'earliesCreditMon'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train_data<span class="token punctuation">[</span><span class="token string">'earlies_credit_mon'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>dt<span class="token punctuation">.</span>month
-test_public<span class="token punctuation">[</span><span class="token string">'earliesCreditMon'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test_public<span class="token punctuation">[</span><span class="token string">'earlies_credit_mon'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>dt<span class="token punctuation">.</span>month
-train_data<span class="token punctuation">[</span><span class="token string">'earliesCreditYear'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train_data<span class="token punctuation">[</span><span class="token string">'earlies_credit_mon'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>dt<span class="token punctuation">.</span>year
-test_public<span class="token punctuation">[</span><span class="token string">'earliesCreditYear'</span><span class="token punctuation">]</span> <span class="token operator">=</span> test_public<span class="token punctuation">[</span><span class="token string">'earlies_credit_mon'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>dt<span class="token punctuation">.</span>year
-train_inte<span class="token punctuation">[</span><span class="token string">'issue_date_month'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train_inte<span class="token punctuation">[</span><span class="token string">'issue_date'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>dt<span class="token punctuation">.</span>month
-train_inte<span class="token punctuation">[</span><span class="token string">'issue_date_dayofweek'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train_inte<span class="token punctuation">[</span><span class="token string">'issue_date'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>dt<span class="token punctuation">.</span>dayofweek
-train_inte<span class="token punctuation">[</span><span class="token string">'earliesCreditMon'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train_inte<span class="token punctuation">[</span><span class="token string">'earlies_credit_mon'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>dt<span class="token punctuation">.</span>month
-train_inte<span class="token punctuation">[</span><span class="token string">'earliesCreditYear'</span><span class="token punctuation">]</span> <span class="token operator">=</span> train_inte<span class="token punctuation">[</span><span class="token string">'earlies_credit_mon'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>dt<span class="token punctuation">.</span>year
-
-col_to_drop <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'issue_date'</span><span class="token punctuation">,</span> <span class="token string">'earlies_credit_mon'</span><span class="token punctuation">,</span><span class="token string">'policy_code'</span><span class="token punctuation">]</span>
-train_data <span class="token operator">=</span> train_data<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>col_to_drop<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
-test_public <span class="token operator">=</span> test_public<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>col_to_drop<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
-<span class="token comment">##internet处理</span>
-train_inte <span class="token operator">=</span> train_inte<span class="token punctuation">.</span>drop<span class="token punctuation">(</span>col_to_drop<span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="2-3缺失值填充"><a href="#2-3缺失值填充" class="headerlink" title="2.3缺失值填充"></a>2.3缺失值填充</h4><p>利用0填充“pub_dero_bankrup”</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">train_data<span class="token punctuation">[</span><span class="token string">"pub_dero_bankrup"</span><span class="token punctuation">]</span> <span class="token operator">=</span> train_data<span class="token punctuation">[</span><span class="token string">"pub_dero_bankrup"</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
-train_inte<span class="token punctuation">[</span><span class="token string">"pub_dero_bankrup"</span><span class="token punctuation">]</span> <span class="token operator">=</span> train_inte<span class="token punctuation">[</span><span class="token string">"pub_dero_bankrup"</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
-test_public<span class="token punctuation">[</span><span class="token string">"pub_dero_bankrup"</span><span class="token punctuation">]</span> <span class="token operator">=</span> test_public<span class="token punctuation">[</span><span class="token string">"pub_dero_bankrup"</span><span class="token punctuation">]</span><span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>利用knn填充f0-f4系列匿名特征</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">f<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'f0'</span><span class="token punctuation">,</span><span class="token string">'f1'</span><span class="token punctuation">,</span><span class="token string">'f3'</span><span class="token punctuation">,</span><span class="token string">'f4'</span><span class="token punctuation">,</span><span class="token string">'f2'</span><span class="token punctuation">]</span>
-a<span class="token operator">=</span>KNNImputer<span class="token punctuation">(</span>n_neighbors<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
-train_data<span class="token punctuation">[</span>f<span class="token punctuation">]</span><span class="token operator">=</span>a<span class="token punctuation">.</span>fit_transform<span class="token punctuation">(</span>train_data<span class="token punctuation">[</span>f<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="2-4增加新的相关特征"><a href="#2-4增加新的相关特征" class="headerlink" title="2.4增加新的相关特征"></a>2.4增加新的相关特征</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python">train_data<span class="token punctuation">[</span><span class="token string">'pro'</span><span class="token punctuation">]</span><span class="token operator">=</span>train_data<span class="token punctuation">[</span><span class="token string">'interest'</span><span class="token punctuation">]</span><span class="token operator">*</span>train_data<span class="token punctuation">[</span><span class="token string">'year_of_loan'</span><span class="token punctuation">]</span>
-test_public<span class="token punctuation">[</span><span class="token string">'pro'</span><span class="token punctuation">]</span><span class="token operator">=</span>test_public<span class="token punctuation">[</span><span class="token string">'interest'</span><span class="token punctuation">]</span><span class="token operator">*</span>test_public<span class="token punctuation">[</span><span class="token string">'year_of_loan'</span><span class="token punctuation">]</span>
-train_inte<span class="token punctuation">[</span><span class="token string">'pro'</span><span class="token punctuation">]</span><span class="token operator">=</span>train_inte<span class="token punctuation">[</span><span class="token string">'interest'</span><span class="token punctuation">]</span><span class="token operator">*</span>train_inte<span class="token punctuation">[</span><span class="token string">'year_of_loan'</span><span class="token punctuation">]</span>
-train_data<span class="token punctuation">[</span><span class="token string">'loan_year'</span><span class="token punctuation">]</span><span class="token operator">=</span>train_data<span class="token punctuation">[</span><span class="token string">'total_loan'</span><span class="token punctuation">]</span><span class="token operator">/</span>train_data<span class="token punctuation">[</span><span class="token string">'year_of_loan'</span><span class="token punctuation">]</span>
-test_public<span class="token punctuation">[</span><span class="token string">'loan_year'</span><span class="token punctuation">]</span><span class="token operator">=</span>test_public<span class="token punctuation">[</span><span class="token string">'total_loan'</span><span class="token punctuation">]</span><span class="token operator">/</span>test_public<span class="token punctuation">[</span><span class="token string">'year_of_loan'</span><span class="token punctuation">]</span>
-train_inte<span class="token punctuation">[</span><span class="token string">'loan_year'</span><span class="token punctuation">]</span><span class="token operator">=</span>train_inte<span class="token punctuation">[</span><span class="token string">'total_loan'</span><span class="token punctuation">]</span><span class="token operator">/</span>train_inte<span class="token punctuation">[</span><span class="token string">'year_of_loan'</span><span class="token punctuation">]</span>
-train_data<span class="token punctuation">[</span><span class="token string">'early_ratio'</span><span class="token punctuation">]</span><span class="token operator">=</span>train_data<span class="token punctuation">[</span><span class="token string">'early_return_amount'</span><span class="token punctuation">]</span><span class="token operator">/</span>train_data<span class="token punctuation">[</span><span class="token string">'total_loan'</span><span class="token punctuation">]</span>
-test_public<span class="token punctuation">[</span><span class="token string">'early_ratio'</span><span class="token punctuation">]</span><span class="token operator">=</span>test_public<span class="token punctuation">[</span><span class="token string">'early_return_amount'</span><span class="token punctuation">]</span><span class="token operator">/</span>test_public<span class="token punctuation">[</span><span class="token string">'total_loan'</span><span class="token punctuation">]</span>
-train_inte<span class="token punctuation">[</span><span class="token string">'early_ratio'</span><span class="token punctuation">]</span><span class="token operator">=</span>train_inte<span class="token punctuation">[</span><span class="token string">'early_return_amount'</span><span class="token punctuation">]</span><span class="token operator">/</span>train_inte<span class="token punctuation">[</span><span class="token string">'total_loan'</span><span class="token punctuation">]</span>
-train_data<span class="token punctuation">[</span><span class="token string">'early_times_ratio'</span><span class="token punctuation">]</span><span class="token operator">=</span>train_data<span class="token punctuation">[</span><span class="token string">'early_return'</span><span class="token punctuation">]</span><span class="token operator">/</span>train_data<span class="token punctuation">[</span><span class="token string">'year_of_loan'</span><span class="token punctuation">]</span>
-test_public<span class="token punctuation">[</span><span class="token string">'early_times_ratio'</span><span class="token punctuation">]</span><span class="token operator">=</span>test_public<span class="token punctuation">[</span><span class="token string">'early_return'</span><span class="token punctuation">]</span><span class="token operator">/</span>test_public<span class="token punctuation">[</span><span class="token string">'year_of_loan'</span><span class="token punctuation">]</span>
-train_inte<span class="token punctuation">[</span><span class="token string">'early_times_ratio'</span><span class="token punctuation">]</span><span class="token operator">=</span>train_inte<span class="token punctuation">[</span><span class="token string">'early_return'</span><span class="token punctuation">]</span><span class="token operator">/</span>train_inte<span class="token punctuation">[</span><span class="token string">'year_of_loan'</span><span class="token punctuation">]</span>
-train_data<span class="token punctuation">[</span><span class="token string">'recircle_ratio'</span><span class="token punctuation">]</span><span class="token operator">=</span>train_data<span class="token punctuation">[</span><span class="token string">'recircle_b'</span><span class="token punctuation">]</span><span class="token operator">/</span>train_data<span class="token punctuation">[</span><span class="token string">'total_loan'</span><span class="token punctuation">]</span>
-test_public<span class="token punctuation">[</span><span class="token string">'recircle_ratio'</span><span class="token punctuation">]</span><span class="token operator">=</span>test_public<span class="token punctuation">[</span><span class="token string">'recircle_b'</span><span class="token punctuation">]</span><span class="token operator">/</span>test_public<span class="token punctuation">[</span><span class="token string">'total_loan'</span><span class="token punctuation">]</span>
-train_inte<span class="token punctuation">[</span><span class="token string">'recircle_ratio'</span><span class="token punctuation">]</span><span class="token operator">=</span>train_inte<span class="token punctuation">[</span><span class="token string">'recircle_b'</span><span class="token punctuation">]</span><span class="token operator">/</span>train_inte<span class="token punctuation">[</span><span class="token string">'total_loan'</span><span class="token punctuation">]</span>
-train_data<span class="token punctuation">[</span><span class="token string">'recircle_amt'</span><span class="token punctuation">]</span><span class="token operator">=</span>train_data<span class="token punctuation">[</span><span class="token string">'recircle_u'</span><span class="token punctuation">]</span><span class="token operator">*</span>train_data<span class="token punctuation">[</span><span class="token string">'total_loan'</span><span class="token punctuation">]</span>
-test_public<span class="token punctuation">[</span><span class="token string">'recircle_amt'</span><span class="token punctuation">]</span><span class="token operator">=</span>test_public<span class="token punctuation">[</span><span class="token string">'recircle_u'</span><span class="token punctuation">]</span><span class="token operator">*</span>test_public<span class="token punctuation">[</span><span class="token string">'total_loan'</span><span class="token punctuation">]</span>
-train_inte<span class="token punctuation">[</span><span class="token string">'recircle_amt'</span><span class="token punctuation">]</span><span class="token operator">=</span>train_inte<span class="token punctuation">[</span><span class="token string">'recircle_u'</span><span class="token punctuation">]</span><span class="token operator">*</span>train_inte<span class="token punctuation">[</span><span class="token string">'total_loan'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="2-5处理数据中的逻辑错误"><a href="#2-5处理数据中的逻辑错误" class="headerlink" title="2.5处理数据中的逻辑错误"></a>2.5处理数据中的逻辑错误</h4><p>对于特征“early_return”为0，但还款金额”early_return_amount“/”early_return_amount_3mon“不为0的数据值进行修改</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token number">44444444</span><span class="token punctuation">)</span>
-<span class="token keyword">def</span> <span class="token function">clear_early_return</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> index <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> temp<span class="token punctuation">.</span>early_return<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword">and</span> temp<span class="token punctuation">.</span>early_return_amount<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
-            temp<span class="token punctuation">.</span>early_return<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>
-        <span class="token keyword">if</span> temp<span class="token punctuation">.</span>early_return<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword">and</span> temp<span class="token punctuation">.</span>early_return_amount_3mon<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
-            temp<span class="token punctuation">.</span>early_return<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">=</span> random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span>
-
-clear_early_return<span class="token punctuation">(</span>train_data<span class="token punctuation">)</span>
-clear_early_return<span class="token punctuation">(</span>test_public<span class="token punctuation">)</span>
-clear_early_return<span class="token punctuation">(</span>train_inte<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>对于还款金额”early_return_amount“/”early_return_amount_3mon“不为0，但还款次数“early_return”为0的数据进行修改（此处错误仅在train_inte中产生）</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">clean_test</span><span class="token punctuation">(</span>tmp<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> index <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>tmp<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> tmp<span class="token punctuation">.</span>early_return<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span> <span class="token keyword">and</span> tmp<span class="token punctuation">.</span>early_return_amount<span class="token punctuation">[</span>index<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
-            tmp<span class="token punctuation">.</span>early_return_amount<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token operator">=</span>random<span class="token punctuation">.</span>uniform<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span>tmp<span class="token punctuation">.</span>total_loan<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span>
-clean_test<span class="token punctuation">(</span>test_public<span class="token punctuation">)</span>、<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h2 id="四、核心代码"><a href="#四、核心代码" class="headerlink" title="四、核心代码"></a>四、核心代码</h2><p><strong>LightGBM +交叉验证</strong></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">train_model</span><span class="token punctuation">(</span>data_<span class="token punctuation">,</span> test_<span class="token punctuation">,</span> y_<span class="token punctuation">,</span> folds_<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    oof_preds <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span>data_<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-    sub_preds <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span>test_<span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-    feature_importance_df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    feats <span class="token operator">=</span> <span class="token punctuation">[</span>f <span class="token keyword">for</span> f <span class="token keyword">in</span> data_<span class="token punctuation">.</span>columns <span class="token keyword">if</span> f <span class="token keyword">not</span> <span class="token keyword">in</span> <span class="token punctuation">[</span><span class="token string">'loan_id'</span><span class="token punctuation">,</span> <span class="token string">'user_id'</span><span class="token punctuation">,</span> <span class="token string">'isDefault'</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-    <span class="token keyword">for</span> n_fold<span class="token punctuation">,</span> <span class="token punctuation">(</span>trn_idx<span class="token punctuation">,</span> val_idx<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>folds_<span class="token punctuation">.</span>split<span class="token punctuation">(</span>data_<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        trn_x<span class="token punctuation">,</span> trn_y <span class="token operator">=</span> data_<span class="token punctuation">[</span>feats<span class="token punctuation">]</span><span class="token punctuation">.</span>iloc<span class="token punctuation">[</span>trn_idx<span class="token punctuation">]</span><span class="token punctuation">,</span> y_<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span>trn_idx<span class="token punctuation">]</span>
-        val_x<span class="token punctuation">,</span> val_y <span class="token operator">=</span>   data_<span class="token punctuation">[</span>feats<span class="token punctuation">]</span><span class="token punctuation">.</span>iloc<span class="token punctuation">[</span>val_idx<span class="token punctuation">]</span><span class="token punctuation">,</span> y_<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span>val_idx<span class="token punctuation">]</span>
-        clf <span class="token operator">=</span> LGBMClassifier<span class="token punctuation">(</span>
-            objective<span class="token operator">=</span><span class="token string">'binary'</span><span class="token punctuation">,</span>
-            boosting_type<span class="token operator">=</span><span class="token string">'gbdt'</span><span class="token punctuation">,</span>
-            tree_learner<span class="token operator">=</span><span class="token string">'serial'</span><span class="token punctuation">,</span>
-            num_leaves<span class="token operator">=</span><span class="token number">16</span><span class="token punctuation">,</span>
-            max_depth<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span>
-            learning_rate<span class="token operator">=</span><span class="token number">0.01</span><span class="token punctuation">,</span>
-            n_estimators<span class="token operator">=</span><span class="token number">10000</span><span class="token punctuation">,</span>
-            subsample<span class="token operator">=</span><span class="token number">0.45</span><span class="token punctuation">,</span>
-            feature_fraction<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">,</span>
-            reg_alpha<span class="token operator">=</span><span class="token number">0.1</span><span class="token punctuation">,</span>
-            reg_lambda<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">,</span>
-            random_state<span class="token operator">=</span><span class="token number">2021</span><span class="token punctuation">,</span>
-            is_unbalance<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span>
-            num_thread<span class="token operator">=</span><span class="token number">40</span><span class="token punctuation">,</span>
-            metric<span class="token operator">=</span><span class="token string">'auc'</span><span class="token punctuation">,</span>
-        <span class="token punctuation">)</span>
-
-        clf<span class="token punctuation">.</span>fit<span class="token punctuation">(</span>trn_x<span class="token punctuation">,</span> trn_y<span class="token punctuation">,</span>
-                eval_set<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">(</span>trn_x<span class="token punctuation">,</span> trn_y<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>val_x<span class="token punctuation">,</span> val_y<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-                eval_metric<span class="token operator">=</span><span class="token string">'auc'</span><span class="token punctuation">,</span> early_stopping_rounds<span class="token operator">=</span><span class="token number">40</span>
-                <span class="token punctuation">)</span>
-
-        oof_preds<span class="token punctuation">[</span>val_idx<span class="token punctuation">]</span> <span class="token operator">=</span> clf<span class="token punctuation">.</span>predict_proba<span class="token punctuation">(</span>val_x<span class="token punctuation">,</span> num_iteration<span class="token operator">=</span>clf<span class="token punctuation">.</span>best_iteration_<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span>
-        sub_preds <span class="token operator">+=</span> clf<span class="token punctuation">.</span>predict_proba<span class="token punctuation">(</span>test_<span class="token punctuation">[</span>feats<span class="token punctuation">]</span><span class="token punctuation">,</span> num_iteration<span class="token operator">=</span>clf<span class="token punctuation">.</span>best_iteration_<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">/</span> folds_<span class="token punctuation">.</span>n_splits
-
-        fold_importance_df <span class="token operator">=</span> pd<span class="token punctuation">.</span>DataFrame<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        fold_importance_df<span class="token punctuation">[</span><span class="token string">"feature"</span><span class="token punctuation">]</span> <span class="token operator">=</span> feats
-        fold_importance_df<span class="token punctuation">[</span><span class="token string">"importance"</span><span class="token punctuation">]</span> <span class="token operator">=</span> clf<span class="token punctuation">.</span>feature_importances_
-        fold_importance_df<span class="token punctuation">[</span><span class="token string">"fold"</span><span class="token punctuation">]</span> <span class="token operator">=</span> n_fold <span class="token operator">+</span> <span class="token number">1</span>
-        feature_importance_df <span class="token operator">=</span> pd<span class="token punctuation">.</span>concat<span class="token punctuation">(</span><span class="token punctuation">[</span>feature_importance_df<span class="token punctuation">,</span> fold_importance_df<span class="token punctuation">]</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
-
-
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Fold %2d AUC : %.6f'</span> <span class="token operator">%</span> <span class="token punctuation">(</span>n_fold <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> roc_auc_score<span class="token punctuation">(</span>val_y<span class="token punctuation">,</span> oof_preds<span class="token punctuation">[</span>val_idx<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-        <span class="token keyword">del</span> clf<span class="token punctuation">,</span> trn_x<span class="token punctuation">,</span> trn_y<span class="token punctuation">,</span> val_x<span class="token punctuation">,</span> val_y
-        gc<span class="token punctuation">.</span>collect<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'Full AUC score %.6f'</span> <span class="token operator">%</span> roc_auc_score<span class="token punctuation">(</span>y_<span class="token punctuation">,</span> oof_preds<span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-    test_<span class="token punctuation">[</span><span class="token string">'isDefault'</span><span class="token punctuation">]</span> <span class="token operator">=</span> sub_preds
-
-    <span class="token keyword">return</span> oof_preds<span class="token punctuation">,</span> test_<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'loan_id'</span><span class="token punctuation">,</span> <span class="token string">'isDefault'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span> feature_importance_df
-
-y <span class="token operator">=</span> train<span class="token punctuation">[</span><span class="token string">'isDefault'</span><span class="token punctuation">]</span>
-folds <span class="token operator">=</span> KFold<span class="token punctuation">(</span>n_splits<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> shuffle<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> random_state<span class="token operator">=</span><span class="token number">546789</span><span class="token punctuation">)</span>
-oof_preds<span class="token punctuation">,</span> test_preds<span class="token punctuation">,</span> importances <span class="token operator">=</span> train_model<span class="token punctuation">(</span>train<span class="token punctuation">,</span> test<span class="token punctuation">,</span> y<span class="token punctuation">,</span> folds<span class="token punctuation">)</span>
-test_preds<span class="token punctuation">.</span>rename<span class="token punctuation">(</span><span class="token punctuation">&#123;</span><span class="token string">'loan_id'</span><span class="token punctuation">:</span> <span class="token string">'id'</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'id'</span><span class="token punctuation">,</span> <span class="token string">'isDefault'</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">.</span>to_csv<span class="token punctuation">(</span><span class="token string">'baseline891.csv'</span><span class="token punctuation">,</span> index<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
+          <p>为进一步促进金融普惠的推广落地，金融机构需要服务许多新的客群。银行作为对风险控制要求很高的行业，因为缺乏对新客群的了解，对新的细分客群的风控处理往往成为金融普惠的重要阻碍。如何利用银行现有信贷行为数据来服务新场景、新客群成了一个很有价值的研究方向，迁移学习是其中一个重要手段。本赛题要求利用已有的与目标客群稍有差异的另一批信贷数据，辅助目标业务风控模型的创建，两者数据集之间存在大量相同的字段和极少的共同用户。由此，我们需要把“train_public.csv”与“train_internet_public.csv”的数据进行处理比对验证，选择重要的特征，去除冗余影响极小的特征，最后选择合适的模型加以预测，调参及优化。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/01/15/%E4%B8%AA%E8%B4%B7%E8%BF%9D%E7%BA%A6%E9%A2%84%E6%B5%8B/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -544,10 +301,16 @@ test_preds<span class="token punctuation">.</span>rename<span class="token punct
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-01-14 20:37:04 / Modified: 21:17:03" itemprop="dateCreated datePublished" datetime="2022-01-14T20:37:04+08:00">2022-01-14</time>
+              <time title="Created: 2022-01-14 20:37:04" itemprop="dateCreated datePublished" datetime="2022-01-14T20:37:04+08:00">2022-01-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-01-15 08:47:43" itemprop="dateModified" datetime="2022-01-15T08:47:43+08:00">2022-01-15</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -583,208 +346,15 @@ test_preds<span class="token punctuation">.</span>rename<span class="token punct
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="PyTorch"><a href="#PyTorch" class="headerlink" title="PyTorch"></a>PyTorch</h1><h4 id="加载数据集-amp-amp-Dataset类实战"><a href="#加载数据集-amp-amp-Dataset类实战" class="headerlink" title="加载数据集&amp;&amp;Dataset类实战"></a>加载数据集&amp;&amp;Dataset类实战</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>data <span class="token keyword">import</span> Dataset<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>torch工具区的dataset区引入抽象类Dataset</p>
-<p>所有子类继承他 并需要重写_<em>getitem</em>_ _<em>len_</em>,</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">MyData</span><span class="token punctuation">(</span>Dataset<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment">#继承</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>root_dir<span class="token punctuation">,</span>label_dir<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment">#初始化</span>
-        self<span class="token punctuation">.</span>root_dir <span class="token operator">=</span> root_dir
-        self<span class="token punctuation">.</span>label_dir <span class="token operator">=</span> label_dir
-        self<span class="token punctuation">.</span>path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>self<span class="token punctuation">.</span>root_dir<span class="token punctuation">,</span>self<span class="token punctuation">.</span>label_dir<span class="token punctuation">)</span>
-        self<span class="token punctuation">.</span>img_path <span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>self<span class="token punctuation">.</span>path<span class="token punctuation">)</span>
-
-    <span class="token keyword">def</span> <span class="token function">__getitem__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> idx<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment">#重写 获取每个图片</span>
-        img_name <span class="token operator">=</span> self<span class="token punctuation">.</span>img_path<span class="token punctuation">[</span>idx<span class="token punctuation">]</span>
-        img_item_path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>self<span class="token punctuation">.</span>root_dir<span class="token punctuation">,</span>self<span class="token punctuation">.</span>label_dir<span class="token punctuation">,</span>img_name<span class="token punctuation">)</span>
-        img <span class="token operator">=</span> Image<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span>img_item_path<span class="token punctuation">)</span>
-        label <span class="token operator">=</span> self<span class="token punctuation">.</span>label_dir
-        <span class="token keyword">return</span> img<span class="token punctuation">,</span>label
-
-    <span class="token keyword">def</span> <span class="token function">__len__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment">#重写 图片数量</span>
-        <span class="token keyword">return</span> <span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>img_path<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>引入os的包</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">self<span class="token punctuation">.</span>path <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>self<span class="token punctuation">.</span>root_dir<span class="token punctuation">,</span>self<span class="token punctuation">.</span>label_dir<span class="token punctuation">)</span>
-self<span class="token punctuation">.</span>img_path <span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>self<span class="token punctuation">.</span>path<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>os.path.join合并目录</p>
-<p>os.listdir读取目录 返回一个列表</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142116354.png" alt="image-20220107160037203"></p>
-<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142029328.png" alt="image-20220107160013774" style="zoom:80%;" />
-
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> PIL <span class="token keyword">import</span> Image<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>读取图片的包&amp;&amp;展示图片</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142029142.png" alt="image-20220107160138571"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142029425.png" alt="image-20220107160152086"></p>
-<p>类实例化后的数据集可以合并</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">ants_dataset <span class="token operator">=</span> MyData<span class="token punctuation">(</span>root_dir<span class="token punctuation">,</span>ants_label_dir<span class="token punctuation">)</span>
-bees_dataset <span class="token operator">=</span> MyData<span class="token punctuation">(</span>root_dir<span class="token punctuation">,</span>bees_label_dir<span class="token punctuation">)</span>
-train_dataset<span class="token operator">=</span> ants_dataset <span class="token operator">+</span> bees_dataset
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>train_dataset<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h4 id="tensorboard使用"><a href="#tensorboard使用" class="headerlink" title="tensorboard使用"></a>tensorboard使用</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>tensorboard <span class="token keyword">import</span> SummaryWriter<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">writer <span class="token operator">=</span> SummaryWriter<span class="token punctuation">(</span><span class="token string">"logs"</span><span class="token punctuation">)</span><span class="token comment">#实例化这个类 参数代表文件夹名字 文件夹里面是生成的事件</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#简单例子 描绘y=5x </span>
-<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    writer<span class="token punctuation">.</span>add_scalar<span class="token punctuation">(</span><span class="token string">"y=5x"</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token operator">*</span>i<span class="token punctuation">,</span>i<span class="token punctuation">)</span><span class="token comment">#参数： 题目 纵轴值 横轴值</span>
-writer<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142030197.png" alt="image-20220109192046512"></p>
-<p><strong>图片可查看很多东西</strong></p>
-<p>**<a target="_blank" rel="noopener" href="http://localhost:6006/**%E4%B8%BA%E9%BB%98%E8%AE%A4tensorboard%E7%BD%91%E5%9D%80">http://localhost:6006/**为默认tensorboard网址</a></p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142030992.png" alt="image-20220109192756643"></p>
-<p>后面加 –port=xxxx改端口号（保证与其他服务器不同）</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
-<span class="token keyword">from</span> PIL <span class="token keyword">import</span> Image
-image_path <span class="token operator">=</span> <span class="token string">"datasets/train/ants_image/5650366_e22b7e1065.jpg"</span>
-image_path2<span class="token operator">=</span><span class="token string">"datasets/train/bees_image/16838648_415acd9e3f.jpg"</span>
-img <span class="token operator">=</span> Image<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span>image_path<span class="token punctuation">)</span>
-img2 <span class="token operator">=</span> Image<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span>image_path2<span class="token punctuation">)</span>
-img_array <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>img<span class="token punctuation">)</span>
-img_array2 <span class="token operator">=</span> np<span class="token punctuation">.</span>array<span class="token punctuation">(</span>img2<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>img_array<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>img_array<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
-writer <span class="token operator">=</span> SummaryWriter<span class="token punctuation">(</span><span class="token string">"logs"</span><span class="token punctuation">)</span>
-writer<span class="token punctuation">.</span>add_image<span class="token punctuation">(</span><span class="token string">"bees"</span><span class="token punctuation">,</span>img_array2<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span>dataformats<span class="token operator">=</span><span class="token string">'HWC'</span><span class="token punctuation">)</span><span class="token comment">#add_image支持的图片类型有要求  dataformats保证图片格式与读取相同（高、宽、频道数）</span>
-writer<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142030238.png" alt="image-20220109193411068"></p>
-<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142030525.png" alt="image-20220109193552629" style="zoom:75%;" />
-
-<p><em>使用同一标题 不同迭代次数的图片显示可滑动查看</em></p>
-<h4 id="常见transforms的使用"><a href="#常见transforms的使用" class="headerlink" title="常见transforms的使用"></a>常见transforms的使用</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>tensorboard <span class="token keyword">import</span> SummaryWriter
-<span class="token keyword">from</span> torchvision <span class="token keyword">import</span> transforms
-<span class="token keyword">from</span> PIL <span class="token keyword">import</span> Image
-<span class="token keyword">import</span> cv2<span class="token comment">#opencv的包 可以直接以array的形式读取图片</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h5 id="ToTensor"><a href="#ToTensor" class="headerlink" title="ToTensor"></a>ToTensor</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">##totensor</span>
-img_path <span class="token operator">=</span> <span class="token string">"datasets/train/bees_image/29494643_e3410f0d37.jpg"</span>
-img <span class="token operator">=</span> Image<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span>img_path<span class="token punctuation">)</span>
-tensor <span class="token operator">=</span> transforms<span class="token punctuation">.</span>ToTensor<span class="token punctuation">(</span><span class="token punctuation">)</span>
-tensor_img <span class="token operator">=</span> tensor<span class="token punctuation">(</span>img<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>tensor_img<span class="token punctuation">)</span>
-
-cv_img <span class="token operator">=</span> cv2<span class="token punctuation">.</span>imread<span class="token punctuation">(</span>img_path<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">type</span><span class="token punctuation">(</span>cv_img<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">#opencv方式读入 转换同上</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142030910.png" alt="image-20220110121741841" style="zoom:67%;" />
-
-<h5 id="Normalize"><a href="#Normalize" class="headerlink" title="Normalize"></a>Normalize</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#normalize</span>
-trans_norm <span class="token operator">=</span> transforms<span class="token punctuation">.</span>Normalize<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0.5</span><span class="token punctuation">,</span><span class="token number">0.5</span><span class="token punctuation">,</span><span class="token number">0.5</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">0.5</span><span class="token punctuation">,</span><span class="token number">0.5</span><span class="token punctuation">,</span><span class="token number">0.5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-img_norm <span class="token operator">=</span> trans_norm<span class="token punctuation">(</span>tensor_img<span class="token punctuation">)</span>
-writer <span class="token operator">=</span> SummaryWriter<span class="token punctuation">(</span><span class="token string">"logs"</span><span class="token punctuation">)</span>
-writer<span class="token punctuation">.</span>add_image<span class="token punctuation">(</span><span class="token string">"tensor_img"</span><span class="token punctuation">,</span>tensor_img<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>
-writer<span class="token punctuation">.</span>add_image<span class="token punctuation">(</span><span class="token string">"norm_img"</span><span class="token punctuation">,</span>img_norm<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142030757.png" alt="image-20220110122002199" style="zoom:67%;" />
-
-<p>初始化带上平均值和标准差（以列表形式） 列表的长度取决于图片的频道数</p>
-<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142030916.png" alt="image-20220110122123325" style="zoom:67%;" />
-
-<p>效果如上 会改变色调</p>
-<h5 id="Resize"><a href="#Resize" class="headerlink" title="Resize"></a>Resize</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#resize</span>
-trans_resize <span class="token operator">=</span> transforms<span class="token punctuation">.</span>Resize<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">512</span><span class="token punctuation">,</span><span class="token number">512</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-img_resize <span class="token operator">=</span> trans_resize<span class="token punctuation">(</span>img<span class="token punctuation">)</span>
-img_resize <span class="token operator">=</span> tensor<span class="token punctuation">(</span>img_resize<span class="token punctuation">)</span>
-writer<span class="token punctuation">.</span>add_image<span class="token punctuation">(</span><span class="token string">"resize"</span><span class="token punctuation">,</span>img_resize<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span>
-img_resize2 <span class="token operator">=</span> trans_resize<span class="token punctuation">(</span>tensor_img<span class="token punctuation">)</span>
-writer<span class="token punctuation">.</span>add_image<span class="token punctuation">(</span><span class="token string">"resize2"</span><span class="token punctuation">,</span>img_resize2<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142030610.png" alt="image-20220110122327732"></p>
-<p>改变图片尺寸 输入可以是PIL类型或直接输入tensor类型</p>
-<p>初始化时可以是一个元组（即图片大小） 若只输入int星 可理解为等比缩放</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142031734.png" alt="image-20220110122603553"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142031503.png" alt="image-20220110122619246"></p>
-<p>原图-》改变后的</p>
-<h5 id="Compose"><a href="#Compose" class="headerlink" title="Compose"></a>Compose</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#resize2  compose</span>
-trans_resize2 <span class="token operator">=</span> transforms<span class="token punctuation">.</span>Resize<span class="token punctuation">(</span><span class="token number">512</span><span class="token punctuation">)</span>
-trans_compose <span class="token operator">=</span> transforms<span class="token punctuation">.</span>Compose<span class="token punctuation">(</span><span class="token punctuation">[</span>trans_resize2<span class="token punctuation">,</span>tensor<span class="token punctuation">]</span><span class="token punctuation">)</span>
-img_resize3 <span class="token operator">=</span> trans_compose<span class="token punctuation">(</span>img<span class="token punctuation">)</span>
-writer<span class="token punctuation">.</span>add_image<span class="token punctuation">(</span><span class="token string">"compose_resize"</span><span class="token punctuation">,</span>img_resize3<span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142031732.png" alt="image-20220110122747177"></p>
-<p>初始化以列表形式 列表里元素是transforms类型 （要按照执行顺序输入）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142031598.png" alt="image-20220110122851471"></p>
-<p>为等比例缩放后的图片 按顺序执行compose里的transform</p>
-<h5 id="RandomCrop"><a href="#RandomCrop" class="headerlink" title="RandomCrop"></a>RandomCrop</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#randomcrop随即裁剪</span>
-trans_randomcrop <span class="token operator">=</span> transforms<span class="token punctuation">.</span>RandomCrop<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
-trans_compose2 <span class="token operator">=</span> transforms<span class="token punctuation">.</span>Compose<span class="token punctuation">(</span><span class="token punctuation">[</span>trans_randomcrop<span class="token punctuation">,</span>tensor<span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    img_crop <span class="token operator">=</span> trans_compose2<span class="token punctuation">(</span>img<span class="token punctuation">)</span>
-    writer<span class="token punctuation">.</span>add_image<span class="token punctuation">(</span><span class="token string">"randomcrop"</span><span class="token punctuation">,</span>img_crop<span class="token punctuation">,</span>i<span class="token punctuation">)</span>
-writer<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142031790.png" alt="image-20220110123155582"></p>
-<p>随机裁剪 初始化的参数可以指定裁剪大小 或 int类型默认裁剪大小为（int * int）</p>
-<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142031380.png" alt="image-20220110123326809" style="zoom:150%;" />
-
-<p>一部分 可以拖拽查看十个部分</p>
-<p><strong>其余方法 可查看官方文档 获取输入输出信息及格式 按住CTRL进入即可</strong></p>
-<h4 id="torchvision中数据集使用"><a href="#torchvision中数据集使用" class="headerlink" title="torchvision中数据集使用"></a>torchvision中数据集使用</h4><p>官网找torchvision.datasets</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142031014.png" alt="image-20220113143155193"></p>
-<p>以CIFAR数据集为例</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">dataset_transform <span class="token operator">=</span> torchvision<span class="token punctuation">.</span>transforms<span class="token punctuation">.</span>Compose<span class="token punctuation">(</span><span class="token punctuation">[</span>
-    torchvision<span class="token punctuation">.</span>transforms<span class="token punctuation">.</span>ToTensor<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token punctuation">]</span>
-<span class="token punctuation">)</span>
-train_set <span class="token operator">=</span> torchvision<span class="token punctuation">.</span>datasets<span class="token punctuation">.</span>CIFAR10<span class="token punctuation">(</span>root<span class="token operator">=</span><span class="token string">"./datasets_CIFAR10"</span><span class="token punctuation">,</span> train<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> transform<span class="token operator">=</span>dataset_transform<span class="token punctuation">,</span> download<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-test_set <span class="token operator">=</span> torchvision<span class="token punctuation">.</span>datasets<span class="token punctuation">.</span>CIFAR10<span class="token punctuation">(</span>root<span class="token operator">=</span><span class="token string">"./datasets_CIFAR10"</span><span class="token punctuation">,</span> train<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> transform<span class="token operator">=</span>dataset_transform<span class="token punctuation">,</span> download<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>参数：</p>
-<ul>
-<li>root设定数据集路径</li>
-<li>train 设置是否为训练集（反之则为测试集）</li>
-<li>tranform 采取的一系列transform操作</li>
-<li>download 是否下载</li>
-</ul>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>test_set<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment">#返回图片和 tag</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>test_set<span class="token punctuation">.</span>classes<span class="token punctuation">)</span><span class="token comment">#每一个测试集图片的标签集合</span>
-
-writer <span class="token operator">=</span> SummaryWriter<span class="token punctuation">(</span><span class="token string">"datasets_transform"</span><span class="token punctuation">)</span>
-
-<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    img<span class="token punctuation">,</span> tag <span class="token operator">=</span> test_set<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
-    writer<span class="token punctuation">.</span>add_image<span class="token punctuation">(</span><span class="token string">"test_img_resize2"</span><span class="token punctuation">,</span> img<span class="token punctuation">,</span> i<span class="token punctuation">)</span>
-
-writer<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142031800.png" alt="image-20220113143933803"></p>
-<h4 id="dataloader使用"><a href="#dataloader使用" class="headerlink" title="dataloader使用"></a>dataloader使用</h4><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142031798.png" alt="image-20220113144104917" style="zoom:80%;" />
-
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torchvision
-<span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>data <span class="token keyword">import</span> DataLoader
-<span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>tensorboard <span class="token keyword">import</span> SummaryWriter
-
-test_set <span class="token operator">=</span> torchvision<span class="token punctuation">.</span>datasets<span class="token punctuation">.</span>CIFAR10<span class="token punctuation">(</span>root<span class="token operator">=</span><span class="token string">"./datasets_CIFAR10"</span><span class="token punctuation">,</span>train<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>transform<span class="token operator">=</span>torchvision<span class="token punctuation">.</span>transforms<span class="token punctuation">.</span>ToTensor<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-test_loader <span class="token operator">=</span> DataLoader<span class="token punctuation">(</span>dataset<span class="token operator">=</span>test_set<span class="token punctuation">,</span> batch_size<span class="token operator">=</span><span class="token number">4</span><span class="token punctuation">,</span> shuffle<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> num_workers<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> drop_last<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-
-writer <span class="token operator">=</span> SummaryWriter<span class="token punctuation">(</span><span class="token string">"dataloader"</span><span class="token punctuation">)</span>
-
-<span class="token keyword">for</span> epoch <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    step <span class="token operator">=</span> <span class="token number">0</span>
-    <span class="token keyword">for</span> data <span class="token keyword">in</span> test_loader<span class="token punctuation">:</span>
-        imgs<span class="token punctuation">,</span> tags <span class="token operator">=</span> data
-        writer<span class="token punctuation">.</span>add_images<span class="token punctuation">(</span><span class="token string">"eopch:&#123;&#125;"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>epoch<span class="token punctuation">)</span><span class="token punctuation">,</span>imgs<span class="token punctuation">,</span> step<span class="token punctuation">)</span>
-        step<span class="token operator">=</span>step<span class="token operator">+</span><span class="token number">1</span>
-writer<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>dataloader参数</p>
-<ul>
-<li>dataset 选择的数据集</li>
-<li>batch_size一批选择的数量</li>
-<li>shuffle 多次选择是否洗牌（打乱顺序）</li>
-<li>num_workers一般为0 表示线程工作数</li>
-<li>drop_last 最后一页数量不够时是否取余或全部删除</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142031007.png" alt="image-20220113144506417"></p>
-<p>​                                                                                                       说明shuffle</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142031597.png" alt="image-20220113144744801"></p>
-<p>​                                                                                                       drop_last对比</p>
-
+          <p>浅学一下PyTorch⑧</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/01/14/PyTorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -936,14 +506,12 @@ writer<span class="token punctuation">.</span>close<span class="token punctuatio
 </div>
 
 
-    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
 
 
         
 <div class="busuanzi-count">
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: ;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
       </span>
@@ -952,7 +520,7 @@ writer<span class="token punctuation">.</span>close<span class="token punctuatio
       </span>
     </span>
     <span class="post-meta-divider">|</span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: ;">
       <span class="post-meta-item-icon">
         <i class="fa fa-eye"></i>
       </span>
@@ -974,7 +542,7 @@ writer<span class="token punctuation">.</span>close<span class="token punctuatio
   </div>
 
   
-  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>

@@ -14,18 +14,20 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-center-simple.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="个贷违约预测一、赛题理解及结果1.赛题理解与认识​        为进一步促进金融普惠的推广落地，金融机构需要服务许多新的客群。银行作为对风险控制要求很高的行业，因为缺乏对新客群的了解，对新的细分客群的风控处理往往成为金融普惠的重要阻碍。如何利用银行现有信贷行为数据来服务新场景、新客群成了一个很有价值的研究方向，迁移学习是其中一个重要手段。本赛题要求利用已有的与目标客群稍有差异的另一批信贷数据，辅">
+  <meta name="description" content="为进一步促进金融普惠的推广落地，金融机构需要服务许多新的客群。银行作为对风险控制要求很高的行业，因为缺乏对新客群的了解，对新的细分客群的风控处理往往成为金融普惠的重要阻碍。如何利用银行现有信贷行为数据来服务新场景、新客群成了一个很有价值的研究方向，迁移学习是其中一个重要手段。本赛题要求利用已有的与目标客群稍有差异的另一批信贷数据，辅助目标业务风控模型的创建，两者数据集之间存在大量相同的字段和极少的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2021CCF_个贷违约">
 <meta property="og:url" content="http://example.com/2022/01/15/%E4%B8%AA%E8%B4%B7%E8%BF%9D%E7%BA%A6%E9%A2%84%E6%B5%8B/index.html">
 <meta property="og:site_name" content="双十一的一些记录">
-<meta property="og:description" content="个贷违约预测一、赛题理解及结果1.赛题理解与认识​        为进一步促进金融普惠的推广落地，金融机构需要服务许多新的客群。银行作为对风险控制要求很高的行业，因为缺乏对新客群的了解，对新的细分客群的风控处理往往成为金融普惠的重要阻碍。如何利用银行现有信贷行为数据来服务新场景、新客群成了一个很有价值的研究方向，迁移学习是其中一个重要手段。本赛题要求利用已有的与目标客群稍有差异的另一批信贷数据，辅">
+<meta property="og:description" content="为进一步促进金融普惠的推广落地，金融机构需要服务许多新的客群。银行作为对风险控制要求很高的行业，因为缺乏对新客群的了解，对新的细分客群的风控处理往往成为金融普惠的重要阻碍。如何利用银行现有信贷行为数据来服务新场景、新客群成了一个很有价值的研究方向，迁移学习是其中一个重要手段。本赛题要求利用已有的与目标客群稍有差异的另一批信贷数据，辅助目标业务风控模型的创建，两者数据集之间存在大量相同的字段和极少的">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="c:/Users/86130/AppData/Roaming/Typora/typora-user-images/image-20211217215258459.png">
 <meta property="og:image" content="c:/Users/86130/AppData/Roaming/Typora/typora-user-images/image-20211217215430325.png">
@@ -34,7 +36,7 @@
 <meta property="og:image" content="c:/Users/86130/AppData/Roaming/Typora/typora-user-images/image-20211217220710678.png">
 <meta property="og:image" content="c:/Users/86130/Desktop/lgbm_importances.png">
 <meta property="article:published_time" content="2022-01-14T16:37:08.000Z">
-<meta property="article:modified_time" content="2022-01-14T16:41:16.412Z">
+<meta property="article:modified_time" content="2022-01-15T00:45:13.361Z">
 <meta property="article:author" content="SSY">
 <meta property="article:tag" content="SCUT">
 <meta property="article:tag" content="CCF">
@@ -223,7 +225,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2022-01-15 00:37:08 / Modified: 00:41:16" itemprop="dateCreated datePublished" datetime="2022-01-15T00:37:08+08:00">2022-01-15</time>
+              <time title="Created: 2022-01-15 00:37:08 / Modified: 08:45:13" itemprop="dateCreated datePublished" datetime="2022-01-15T00:37:08+08:00">2022-01-15</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -257,6 +259,7 @@
                 <span class="post-meta-item-text">Reading time &asymp;</span>
               <span>8 mins.</span>
             </span>
+            <div class="post-description">为进一步促进金融普惠的推广落地，金融机构需要服务许多新的客群。银行作为对风险控制要求很高的行业，因为缺乏对新客群的了解，对新的细分客群的风控处理往往成为金融普惠的重要阻碍。如何利用银行现有信贷行为数据来服务新场景、新客群成了一个很有价值的研究方向，迁移学习是其中一个重要手段。本赛题要求利用已有的与目标客群稍有差异的另一批信贷数据，辅助目标业务风控模型的创建，两者数据集之间存在大量相同的字段和极少的共同用户。由此，我们需要把“train_public.csv”与“train_internet_public.csv”的数据进行处理比对验证，选择重要的特征，去除冗余影响极小的特征，最后选择合适的模型加以预测，调参及优化。</div>
 
         </div>
       </header>
@@ -546,8 +549,8 @@ test_preds<span class="token punctuation">.</span>rename<span class="token punct
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/SCUT/" rel="tag"># SCUT</a>
-              <a href="/tags/CCF/" rel="tag"># CCF</a>
+              <a href="/tags/SCUT/" rel="tag"> <i class="fa fa-tag"></i> SCUT</a>
+              <a href="/tags/CCF/" rel="tag"> <i class="fa fa-tag"></i> CCF</a>
           </div>
 
         
@@ -703,14 +706,12 @@ test_preds<span class="token punctuation">.</span>rename<span class="token punct
 </div>
 
 
-    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
 
 
         
 <div class="busuanzi-count">
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: ;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
       </span>
@@ -719,7 +720,7 @@ test_preds<span class="token punctuation">.</span>rename<span class="token punct
       </span>
     </span>
     <span class="post-meta-divider">|</span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: ;">
       <span class="post-meta-item-icon">
         <i class="fa fa-eye"></i>
       </span>
@@ -741,7 +742,7 @@ test_preds<span class="token punctuation">.</span>rename<span class="token punct
   </div>
 
   
-  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest-nomobile.min.js"></script>
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
