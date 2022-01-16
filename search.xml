@@ -3,7 +3,7 @@
   <entry>
     <title>PyTorch自学笔记</title>
     <url>/2022/01/14/PyTorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="PyTorch"><a href="#PyTorch" class="headerlink" title="PyTorch"></a>PyTorch</h1><h4 id="加载数据集-amp-amp-Dataset类实战"><a href="#加载数据集-amp-amp-Dataset类实战" class="headerlink" title="加载数据集&amp;&amp;Dataset类实战"></a>加载数据集&amp;&amp;Dataset类实战</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>data <span class="token keyword">import</span> Dataset<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+    <content><![CDATA[<h1 id="PyTorch"><a href="#PyTorch" class="headerlink" title="PyTorch"></a>PyTorch</h1><h2 id="加载数据集-amp-amp-Dataset类实战"><a href="#加载数据集-amp-amp-Dataset类实战" class="headerlink" title="加载数据集&amp;&amp;Dataset类实战"></a>加载数据集&amp;&amp;Dataset类实战</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>data <span class="token keyword">import</span> Dataset<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>torch工具区的dataset区引入抽象类Dataset</p>
 <p>所有子类继承他 并需要重写_<em>getitem</em>_ _<em>len_</em>,</p>
@@ -44,7 +44,7 @@ bees_dataset <span class="token operator">=</span> MyData<span class="token punc
 train_dataset<span class="token operator">=</span> ants_dataset <span class="token operator">+</span> bees_dataset
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>train_dataset<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="tensorboard使用"><a href="#tensorboard使用" class="headerlink" title="tensorboard使用"></a>tensorboard使用</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>tensorboard <span class="token keyword">import</span> SummaryWriter<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h2 id="tensorboard使用"><a href="#tensorboard使用" class="headerlink" title="tensorboard使用"></a>tensorboard使用</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>tensorboard <span class="token keyword">import</span> SummaryWriter<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">writer <span class="token operator">=</span> SummaryWriter<span class="token punctuation">(</span><span class="token string">"logs"</span><span class="token punctuation">)</span><span class="token comment">#实例化这个类 参数代表文件夹名字 文件夹里面是生成的事件</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -76,12 +76,12 @@ writer<span class="token punctuation">.</span>close<span class="token punctuatio
 <img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142030525.png" alt="image-20220109193552629" style="zoom:75%;" />
 
 <p><em>使用同一标题 不同迭代次数的图片显示可滑动查看</em></p>
-<h4 id="常见transforms的使用"><a href="#常见transforms的使用" class="headerlink" title="常见transforms的使用"></a>常见transforms的使用</h4><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>tensorboard <span class="token keyword">import</span> SummaryWriter
+<h2 id="常见transforms的使用"><a href="#常见transforms的使用" class="headerlink" title="常见transforms的使用"></a>常见transforms的使用</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>tensorboard <span class="token keyword">import</span> SummaryWriter
 <span class="token keyword">from</span> torchvision <span class="token keyword">import</span> transforms
 <span class="token keyword">from</span> PIL <span class="token keyword">import</span> Image
 <span class="token keyword">import</span> cv2<span class="token comment">#opencv的包 可以直接以array的形式读取图片</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h5 id="ToTensor"><a href="#ToTensor" class="headerlink" title="ToTensor"></a>ToTensor</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">##totensor</span>
+<h3 id="ToTensor"><a href="#ToTensor" class="headerlink" title="ToTensor"></a>ToTensor</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">##totensor</span>
 img_path <span class="token operator">=</span> <span class="token string">"datasets/train/bees_image/29494643_e3410f0d37.jpg"</span>
 img <span class="token operator">=</span> Image<span class="token punctuation">.</span><span class="token builtin">open</span><span class="token punctuation">(</span>img_path<span class="token punctuation">)</span>
 tensor <span class="token operator">=</span> transforms<span class="token punctuation">.</span>ToTensor<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -93,7 +93,7 @@ cv_img <span class="token operator">=</span> cv2<span class="token punctuation">
 
 <img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142030910.png" alt="image-20220110121741841" style="zoom:67%;" />
 
-<h5 id="Normalize"><a href="#Normalize" class="headerlink" title="Normalize"></a>Normalize</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#normalize</span>
+<h3 id="Normalize"><a href="#Normalize" class="headerlink" title="Normalize"></a>Normalize</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#normalize</span>
 trans_norm <span class="token operator">=</span> transforms<span class="token punctuation">.</span>Normalize<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0.5</span><span class="token punctuation">,</span><span class="token number">0.5</span><span class="token punctuation">,</span><span class="token number">0.5</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token number">0.5</span><span class="token punctuation">,</span><span class="token number">0.5</span><span class="token punctuation">,</span><span class="token number">0.5</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 img_norm <span class="token operator">=</span> trans_norm<span class="token punctuation">(</span>tensor_img<span class="token punctuation">)</span>
 writer <span class="token operator">=</span> SummaryWriter<span class="token punctuation">(</span><span class="token string">"logs"</span><span class="token punctuation">)</span>
@@ -106,7 +106,7 @@ writer<span class="token punctuation">.</span>add_image<span class="token punctu
 <img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142030916.png" alt="image-20220110122123325" style="zoom:67%;" />
 
 <p>效果如上 会改变色调</p>
-<h5 id="Resize"><a href="#Resize" class="headerlink" title="Resize"></a>Resize</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#resize</span>
+<h3 id="Resize"><a href="#Resize" class="headerlink" title="Resize"></a>Resize</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#resize</span>
 trans_resize <span class="token operator">=</span> transforms<span class="token punctuation">.</span>Resize<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">512</span><span class="token punctuation">,</span><span class="token number">512</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 img_resize <span class="token operator">=</span> trans_resize<span class="token punctuation">(</span>img<span class="token punctuation">)</span>
 img_resize <span class="token operator">=</span> tensor<span class="token punctuation">(</span>img_resize<span class="token punctuation">)</span>
@@ -120,7 +120,7 @@ writer<span class="token punctuation">.</span>add_image<span class="token punctu
 <p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142031734.png" alt="image-20220110122603553"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142031503.png" alt="image-20220110122619246"></p>
 <p>原图-》改变后的</p>
-<h5 id="Compose"><a href="#Compose" class="headerlink" title="Compose"></a>Compose</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#resize2  compose</span>
+<h3 id="Compose"><a href="#Compose" class="headerlink" title="Compose"></a>Compose</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#resize2  compose</span>
 trans_resize2 <span class="token operator">=</span> transforms<span class="token punctuation">.</span>Resize<span class="token punctuation">(</span><span class="token number">512</span><span class="token punctuation">)</span>
 trans_compose <span class="token operator">=</span> transforms<span class="token punctuation">.</span>Compose<span class="token punctuation">(</span><span class="token punctuation">[</span>trans_resize2<span class="token punctuation">,</span>tensor<span class="token punctuation">]</span><span class="token punctuation">)</span>
 img_resize3 <span class="token operator">=</span> trans_compose<span class="token punctuation">(</span>img<span class="token punctuation">)</span>
@@ -130,7 +130,7 @@ writer<span class="token punctuation">.</span>add_image<span class="token punctu
 <p>初始化以列表形式 列表里元素是transforms类型 （要按照执行顺序输入）</p>
 <p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142031598.png" alt="image-20220110122851471"></p>
 <p>为等比例缩放后的图片 按顺序执行compose里的transform</p>
-<h5 id="RandomCrop"><a href="#RandomCrop" class="headerlink" title="RandomCrop"></a>RandomCrop</h5><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#randomcrop随即裁剪</span>
+<h3 id="RandomCrop"><a href="#RandomCrop" class="headerlink" title="RandomCrop"></a>RandomCrop</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#randomcrop随即裁剪</span>
 trans_randomcrop <span class="token operator">=</span> transforms<span class="token punctuation">.</span>RandomCrop<span class="token punctuation">(</span><span class="token number">50</span><span class="token punctuation">)</span>
 trans_compose2 <span class="token operator">=</span> transforms<span class="token punctuation">.</span>Compose<span class="token punctuation">(</span><span class="token punctuation">[</span>trans_randomcrop<span class="token punctuation">,</span>tensor<span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -144,7 +144,7 @@ writer<span class="token punctuation">.</span>close<span class="token punctuatio
 
 <p>一部分 可以拖拽查看十个部分</p>
 <p><strong>其余方法 可查看官方文档 获取输入输出信息及格式 按住CTRL进入即可</strong></p>
-<h4 id="torchvision中数据集使用"><a href="#torchvision中数据集使用" class="headerlink" title="torchvision中数据集使用"></a>torchvision中数据集使用</h4><p>官网找torchvision.datasets</p>
+<h2 id="torchvision中数据集使用"><a href="#torchvision中数据集使用" class="headerlink" title="torchvision中数据集使用"></a>torchvision中数据集使用</h2><p>官网找torchvision.datasets</p>
 <p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142031014.png" alt="image-20220113143155193"></p>
 <p>以CIFAR数据集为例</p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python">dataset_transform <span class="token operator">=</span> torchvision<span class="token punctuation">.</span>transforms<span class="token punctuation">.</span>Compose<span class="token punctuation">(</span><span class="token punctuation">[</span>
@@ -173,7 +173,7 @@ writer <span class="token operator">=</span> SummaryWriter<span class="token pun
 writer<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142031800.png" alt="image-20220113143933803"></p>
-<h4 id="dataloader使用"><a href="#dataloader使用" class="headerlink" title="dataloader使用"></a>dataloader使用</h4><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142031798.png" alt="image-20220113144104917" style="zoom:80%;" />
+<h2 id="dataloader使用"><a href="#dataloader使用" class="headerlink" title="dataloader使用"></a>dataloader使用</h2><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142031798.png" alt="image-20220113144104917" style="zoom:80%;" />
 
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torchvision
 <span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>data <span class="token keyword">import</span> DataLoader
@@ -204,6 +204,79 @@ writer<span class="token punctuation">.</span>close<span class="token punctuatio
 <p>​                                                                                                       说明shuffle</p>
 <p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201142031597.png" alt="image-20220113144744801"></p>
 <p>​                                                                                                       drop_last对比</p>
+<h2 id="神经网络基本骨架nn-moudle"><a href="#神经网络基本骨架nn-moudle" class="headerlink" title="神经网络基本骨架nn.moudle"></a>神经网络基本骨架nn.moudle</h2><p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201161655823.png" alt="image-20220116165510672"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
+<span class="token keyword">from</span> torch <span class="token keyword">import</span> nn
+
+<span class="token keyword">class</span> <span class="token class-name">Ssy</span><span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span>Ssy<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">forward</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        output <span class="token operator">=</span> <span class="token builtin">input</span> <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">+</span><span class="token number">1</span>
+        <span class="token keyword">return</span> output
+
+ssy <span class="token operator">=</span> Ssy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+x <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token number">341</span><span class="token punctuation">)</span>
+output <span class="token operator">=</span> ssy<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>output<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>此处即把输入的tenso类型341 转换为341*2+1输出</p>
+<p>即网络内部是（*2+1）的工作</p>
+<h2 id="卷积层"><a href="#卷积层" class="headerlink" title="卷积层"></a>卷积层</h2><p><strong>卷积层具体原理见机器学习</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201161701841.png" alt="image-20220116170151741"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201161703820.png" alt="image-20220116170311739"></p>
+<p>参数：</p>
+<ul>
+<li>输入频道数：一般为3（RGB三通道）</li>
+<li>输出频道数</li>
+<li>内核大小</li>
+<li>步长：一次走几步</li>
+<li>填充：默认为0 </li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
+<span class="token keyword">import</span> torchvision
+<span class="token keyword">from</span> torch <span class="token keyword">import</span> nn
+<span class="token keyword">from</span> torch<span class="token punctuation">.</span>nn <span class="token keyword">import</span> Conv2d
+<span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>data <span class="token keyword">import</span> DataLoader
+<span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>tensorboard <span class="token keyword">import</span> SummaryWriter
+
+<span class="token comment">#下载数据集</span>
+test_set <span class="token operator">=</span> torchvision<span class="token punctuation">.</span>datasets<span class="token punctuation">.</span>CIFAR10<span class="token punctuation">(</span>root<span class="token operator">=</span><span class="token string">"./datasets_CIFAR10"</span><span class="token punctuation">,</span>train<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>transform<span class="token operator">=</span>torchvision<span class="token punctuation">.</span>transforms<span class="token punctuation">.</span>ToTensor<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">#调用dataloader</span>
+test_loader <span class="token operator">=</span> DataLoader<span class="token punctuation">(</span>dataset<span class="token operator">=</span>test_set<span class="token punctuation">,</span> batch_size<span class="token operator">=</span><span class="token number">64</span><span class="token punctuation">,</span> shuffle<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> num_workers<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> drop_last<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+
+writer <span class="token operator">=</span> SummaryWriter<span class="token punctuation">(</span><span class="token string">"conv2d"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Ssy</span><span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span>Ssy<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment">#卷积操作 变为6通道 内核大小为3（具体矩阵会自动变化调整）</span>
+        self<span class="token punctuation">.</span>conv1 <span class="token operator">=</span> Conv2d<span class="token punctuation">(</span>in_channels<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> out_channels<span class="token operator">=</span><span class="token number">6</span><span class="token punctuation">,</span> kernel_size<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">,</span> stride<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">forward</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">:</span><span class="token comment">#神经网络中实现卷积层</span>
+        x <span class="token operator">=</span> self<span class="token punctuation">.</span>conv1<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> x
+
+ssy <span class="token operator">=</span> Ssy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+step<span class="token operator">=</span><span class="token number">0</span>
+<span class="token keyword">for</span> data <span class="token keyword">in</span> test_loader<span class="token punctuation">:</span>
+    imgs<span class="token punctuation">,</span> target <span class="token operator">=</span> data
+    output <span class="token operator">=</span> ssy<span class="token punctuation">(</span>imgs<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>imgs<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>output<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+
+    writer<span class="token punctuation">.</span>add_images<span class="token punctuation">(</span><span class="token string">"imgs"</span><span class="token punctuation">,</span>imgs<span class="token punctuation">,</span>step<span class="token punctuation">)</span>
+<span class="token comment">#需要把卷积后的图像重新变为3通道 否则不能显示</span>
+    output <span class="token operator">=</span> torch<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span>output<span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    writer<span class="token punctuation">.</span>add_images<span class="token punctuation">(</span><span class="token string">"imgs_conv2d"</span><span class="token punctuation">,</span>output<span class="token punctuation">,</span>step<span class="token punctuation">)</span>
+    step<span class="token operator">=</span>step<span class="token operator">+</span><span class="token number">1</span>
+
+writer<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201161707223.png" alt="image-20220116170755123"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201161708067.png" alt="image-20220116170814942"></p>
+<p><em>由于3通道变为6通道 一页显示了128个图片</em></p>
 ]]></content>
       <categories>
         <category>PyTorch</category>
