@@ -65,8 +65,15 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201172158356.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201172202156.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201172202173.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201192019307.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201192020126.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201192022910.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201192023261.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201192024904.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201192032330.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201192033618.png">
 <meta property="article:published_time" content="2022-01-14T12:37:04.000Z">
-<meta property="article:modified_time" content="2022-01-17T14:04:06.907Z">
+<meta property="article:modified_time" content="2022-01-19T12:33:27.649Z">
 <meta property="article:author" content="Y">
 <meta property="article:tag" content="PyTorch基础">
 <meta property="article:tag" content="Python">
@@ -259,7 +266,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-17 22:04:06" itemprop="dateModified" datetime="2022-01-17T22:04:06+08:00">2022-01-17</time>
+                <time title="Modified: 2022-01-19 20:33:27" itemprop="dateModified" datetime="2022-01-19T20:33:27+08:00">2022-01-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -284,14 +291,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>6.7k</span>
+              <span>7.9k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>6 mins.</span>
+              <span>7 mins.</span>
             </span>
             <div class="post-description">浅学一下PyTorch⑧</div>
 
@@ -647,6 +654,77 @@ writer<span class="token punctuation">.</span>close<span class="token punctuatio
 <p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201172202156.png" alt="image-20220117220221068"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201172202173.png" alt="image-20220117220238106"></p>
 <p>显而易见，池化后图片变模糊了，神经网络中常用池化层减少输入数据量，保留必要纹理信息，加快训练速度。</p>
+<h2 id="非线性激活"><a href="#非线性激活" class="headerlink" title="非线性激活"></a>非线性激活</h2><h3 id="ReLU"><a href="#ReLU" class="headerlink" title="ReLU"></a>ReLU</h3><p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201192019307.png" alt="image-20220119201946145"></p>
+<p>inplace为true即输出直接替换输入</p>
+<p>置为false生成一个新的变量输出</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201192020126.png" alt="image-20220119202053032"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span>  torch
+<span class="token keyword">import</span> torchvision
+<span class="token keyword">from</span> torch <span class="token keyword">import</span> nn
+<span class="token keyword">from</span> torch<span class="token punctuation">.</span>nn <span class="token keyword">import</span> ReLU<span class="token punctuation">,</span> Sigmoid
+<span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>data <span class="token keyword">import</span> DataLoader
+
+<span class="token builtin">input</span> <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                     <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token number">100.2</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">,</span>dtype<span class="token operator">=</span>torch<span class="token punctuation">.</span><span class="token builtin">float</span><span class="token punctuation">)</span>
+
+<span class="token builtin">input</span><span class="token operator">=</span> torch<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Ssy</span><span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span>Ssy<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>relu1 <span class="token operator">=</span> ReLU<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment">#self.sigmoid = Sigmoid()</span>
+
+    <span class="token keyword">def</span> <span class="token function">forward</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span><span class="token builtin">input</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        output <span class="token operator">=</span> self<span class="token punctuation">.</span>relu1<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> output
+
+ssy <span class="token operator">=</span> Ssy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+output <span class="token operator">=</span> ssy<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>output<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201192022910.png" alt="image-20220119202233849"></p>
+<p>很明显结果与截断函数一致</p>
+<h3 id="Sigmoid"><a href="#Sigmoid" class="headerlink" title="Sigmoid"></a>Sigmoid</h3><p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201192023261.png" alt="image-20220119202320156"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201192024904.png" alt="image-20220119202401836"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span>  torch
+<span class="token keyword">import</span> torchvision
+<span class="token keyword">from</span> torch <span class="token keyword">import</span> nn
+<span class="token keyword">from</span> torch<span class="token punctuation">.</span>nn <span class="token keyword">import</span> ReLU<span class="token punctuation">,</span> Sigmoid
+<span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>data <span class="token keyword">import</span> DataLoader
+<span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>tensorboard <span class="token keyword">import</span> SummaryWriter
+
+data <span class="token operator">=</span> torchvision<span class="token punctuation">.</span>datasets<span class="token punctuation">.</span>CIFAR10<span class="token punctuation">(</span><span class="token string">"./datasets_CIFAR10"</span><span class="token punctuation">,</span> train<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> transform<span class="token operator">=</span>torchvision<span class="token punctuation">.</span>transforms<span class="token punctuation">.</span>ToTensor<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+dataloader <span class="token operator">=</span> DataLoader<span class="token punctuation">(</span>data<span class="token punctuation">,</span> batch_size<span class="token operator">=</span><span class="token number">64</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Ssy</span><span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span>Ssy<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>relu1 <span class="token operator">=</span> ReLU<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>sigmoid <span class="token operator">=</span> Sigmoid<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">forward</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span><span class="token builtin">input</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        output <span class="token operator">=</span> self<span class="token punctuation">.</span>sigmoid<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> output
+
+ssy <span class="token operator">=</span> Ssy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+writer <span class="token operator">=</span> SummaryWriter<span class="token punctuation">(</span><span class="token string">"sigmoid"</span><span class="token punctuation">)</span>
+
+step <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span> data <span class="token keyword">in</span> dataloader<span class="token punctuation">:</span>
+    imgs<span class="token punctuation">,</span> tags <span class="token operator">=</span> data
+    writer<span class="token punctuation">.</span>add_images<span class="token punctuation">(</span><span class="token string">"imgs"</span><span class="token punctuation">,</span>imgs<span class="token punctuation">,</span>step<span class="token punctuation">)</span>
+    imgs_sigmoid <span class="token operator">=</span> ssy<span class="token punctuation">(</span>imgs<span class="token punctuation">)</span>
+    writer<span class="token punctuation">.</span>add_images<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">"imgs_sigmoid"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> imgs_sigmoid<span class="token punctuation">,</span>step<span class="token punctuation">)</span>
+    step <span class="token operator">=</span>step <span class="token operator">+</span><span class="token number">1</span>
+
+writer<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201192032330.png" alt="image-20220119203244227"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201192033618.png" alt="image-20220119203302536"></p>
+<p>目的是增加一些非线性特征便于训练</p>
 
     </div>
 
@@ -745,7 +823,7 @@ writer<span class="token punctuation">.</span>close<span class="token punctuatio
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PyTorch"><span class="nav-number">1.</span> <span class="nav-text">PyTorch</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E6%95%B0%E6%8D%AE%E9%9B%86-amp-amp-Dataset%E7%B1%BB%E5%AE%9E%E6%88%98"><span class="nav-number">1.1.</span> <span class="nav-text">加载数据集&amp;&amp;Dataset类实战</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tensorboard%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">tensorboard使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81transforms%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.3.</span> <span class="nav-text">常见transforms的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ToTensor"><span class="nav-number">1.3.1.</span> <span class="nav-text">ToTensor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Normalize"><span class="nav-number">1.3.2.</span> <span class="nav-text">Normalize</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Resize"><span class="nav-number">1.3.3.</span> <span class="nav-text">Resize</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Compose"><span class="nav-number">1.3.4.</span> <span class="nav-text">Compose</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RandomCrop"><span class="nav-number">1.3.5.</span> <span class="nav-text">RandomCrop</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#torchvision%E4%B8%AD%E6%95%B0%E6%8D%AE%E9%9B%86%E4%BD%BF%E7%94%A8"><span class="nav-number">1.4.</span> <span class="nav-text">torchvision中数据集使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dataloader%E4%BD%BF%E7%94%A8"><span class="nav-number">1.5.</span> <span class="nav-text">dataloader使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E6%9C%AC%E9%AA%A8%E6%9E%B6nn-moudle"><span class="nav-number">1.6.</span> <span class="nav-text">神经网络基本骨架nn.moudle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B7%E7%A7%AF%E5%B1%82"><span class="nav-number">1.7.</span> <span class="nav-text">卷积层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%A0%E5%8C%96%E5%B1%82"><span class="nav-number">1.8.</span> <span class="nav-text">池化层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%A0%E5%8C%96%E5%8E%9F%E7%90%86"><span class="nav-number">1.8.1.</span> <span class="nav-text">池化原理</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PyTorch"><span class="nav-number">1.</span> <span class="nav-text">PyTorch</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD%E6%95%B0%E6%8D%AE%E9%9B%86-amp-amp-Dataset%E7%B1%BB%E5%AE%9E%E6%88%98"><span class="nav-number">1.1.</span> <span class="nav-text">加载数据集&amp;&amp;Dataset类实战</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tensorboard%E4%BD%BF%E7%94%A8"><span class="nav-number">1.2.</span> <span class="nav-text">tensorboard使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81transforms%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.3.</span> <span class="nav-text">常见transforms的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ToTensor"><span class="nav-number">1.3.1.</span> <span class="nav-text">ToTensor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Normalize"><span class="nav-number">1.3.2.</span> <span class="nav-text">Normalize</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Resize"><span class="nav-number">1.3.3.</span> <span class="nav-text">Resize</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Compose"><span class="nav-number">1.3.4.</span> <span class="nav-text">Compose</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RandomCrop"><span class="nav-number">1.3.5.</span> <span class="nav-text">RandomCrop</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#torchvision%E4%B8%AD%E6%95%B0%E6%8D%AE%E9%9B%86%E4%BD%BF%E7%94%A8"><span class="nav-number">1.4.</span> <span class="nav-text">torchvision中数据集使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dataloader%E4%BD%BF%E7%94%A8"><span class="nav-number">1.5.</span> <span class="nav-text">dataloader使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E5%9F%BA%E6%9C%AC%E9%AA%A8%E6%9E%B6nn-moudle"><span class="nav-number">1.6.</span> <span class="nav-text">神经网络基本骨架nn.moudle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B7%E7%A7%AF%E5%B1%82"><span class="nav-number">1.7.</span> <span class="nav-text">卷积层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%A0%E5%8C%96%E5%B1%82"><span class="nav-number">1.8.</span> <span class="nav-text">池化层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%A0%E5%8C%96%E5%8E%9F%E7%90%86"><span class="nav-number">1.8.1.</span> <span class="nav-text">池化原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%BF%80%E6%B4%BB"><span class="nav-number">1.9.</span> <span class="nav-text">非线性激活</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ReLU"><span class="nav-number">1.9.1.</span> <span class="nav-text">ReLU</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sigmoid"><span class="nav-number">1.9.2.</span> <span class="nav-text">Sigmoid</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -825,12 +903,12 @@ writer<span class="token punctuation">.</span>close<span class="token punctuatio
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">17k</span>
+    <span title="Symbols count total">18k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">15 mins.</span>
+    <span title="Reading time total">17 mins.</span>
 </div>
 
 
