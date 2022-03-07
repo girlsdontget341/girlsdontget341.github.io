@@ -533,6 +533,79 @@ writer<span class="token punctuation">.</span>close<span class="token punctuatio
 <img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202203071651380.png" alt="image-20220307165137299" style="zoom:67%;" />
 
 <p><em>使用tensorboard可以查看网络搭建具体情况，路线上会显示传输数据的大小</em></p>
+<h2 id="Loss-Function"><a href="#Loss-Function" class="headerlink" title="Loss Function"></a>Loss Function</h2><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202203072301059.png" alt="image-20220307230114908" style="zoom:80%;" />
+
+<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202203072302019.png" alt="image-20220307230232939" style="zoom:80%;" />
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
+<span class="token keyword">from</span> torch <span class="token keyword">import</span> nn
+
+<span class="token builtin">input</span> <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>torch<span class="token punctuation">.</span>float32<span class="token punctuation">)</span>
+targets <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">4.5</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">,</span> dtype <span class="token operator">=</span> torch<span class="token punctuation">.</span>float32<span class="token punctuation">)</span>
+
+<span class="token comment"># input = torch.reshape(input,(1,1,1,3))</span>
+<span class="token comment"># targets = torch.reshape(targets,(1,1,1,3))</span>
+
+loss <span class="token operator">=</span> nn<span class="token punctuation">.</span>L1Loss<span class="token punctuation">(</span><span class="token punctuation">)</span>
+result <span class="token operator">=</span> loss<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">,</span> targets<span class="token punctuation">)</span>
+
+loss_mse <span class="token operator">=</span> nn<span class="token punctuation">.</span>MSELoss<span class="token punctuation">(</span><span class="token punctuation">)</span>
+resu_mse <span class="token operator">=</span> loss_mse<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">,</span> targets<span class="token punctuation">)</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token comment">##6.5/3</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>resu_mse<span class="token punctuation">)</span><span class="token comment">#19.25/3</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="交叉熵"><a href="#交叉熵" class="headerlink" title="交叉熵"></a>交叉熵</h3><p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202203072315769.png" alt="image-20220307231532686"></p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token builtin">input</span> <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">,</span> dtype<span class="token operator">=</span>torch<span class="token punctuation">.</span>float32<span class="token punctuation">)</span>
+loss_cro <span class="token operator">=</span> nn<span class="token punctuation">.</span>CrossEntropyLoss<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+input2 <span class="token operator">=</span> torch<span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment">##直接使用input会报错，input的shape为[3]需要转变为[1,3]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>input2<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+y <span class="token operator">=</span> torch<span class="token punctuation">.</span>tensor<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+res_cro <span class="token operator">=</span> loss_cro<span class="token punctuation">(</span>input2<span class="token punctuation">,</span> y<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torchvision
+<span class="token keyword">from</span> torch <span class="token keyword">import</span> nn
+<span class="token keyword">from</span> torch<span class="token punctuation">.</span>nn <span class="token keyword">import</span> Conv2d<span class="token punctuation">,</span> MaxPool2d<span class="token punctuation">,</span> Flatten<span class="token punctuation">,</span> Linear
+<span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>data <span class="token keyword">import</span> DataLoader
+
+dataset <span class="token operator">=</span> torchvision<span class="token punctuation">.</span>datasets<span class="token punctuation">.</span>CIFAR10<span class="token punctuation">(</span><span class="token string">"../dataset_/datasets_CIFAR10"</span><span class="token punctuation">,</span>train<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span>transform<span class="token operator">=</span>torchvision<span class="token punctuation">.</span>transforms<span class="token punctuation">.</span>ToTensor<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>download<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+
+dataloader <span class="token operator">=</span> DataLoader<span class="token punctuation">(</span>dataset<span class="token punctuation">,</span>batch_size<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">SSY</span><span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span>SSY<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>model1 <span class="token operator">=</span> nn<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span>
+            Conv2d<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            MaxPool2d<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            Conv2d<span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            MaxPool2d<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            Conv2d<span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            MaxPool2d<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            Flatten<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            Linear<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            Linear<span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">forward</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        x <span class="token operator">=</span> self<span class="token punctuation">.</span>model1<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> x
+
+ssy <span class="token operator">=</span> SSY<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+loss_ <span class="token operator">=</span> nn<span class="token punctuation">.</span>CrossEntropyLoss<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> data <span class="token keyword">in</span> dataloader<span class="token punctuation">:</span>
+    imgs<span class="token punctuation">,</span> tag <span class="token operator">=</span> data
+    output <span class="token operator">=</span> ssy<span class="token punctuation">(</span>imgs<span class="token punctuation">)</span>
+    res <span class="token operator">=</span> loss_<span class="token punctuation">(</span>output<span class="token punctuation">,</span>tag<span class="token punctuation">)</span>
+    <span class="token comment"># print(res)</span>
+    res<span class="token punctuation">.</span>backward<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#利用反向传播确定梯度权重 如下图</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202203072320387.png" alt="image-20220307232004242"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202203072320525.png" alt="image-20220307232025394"></p>
 ]]></content>
       <categories>
         <category>PyTorch</category>
