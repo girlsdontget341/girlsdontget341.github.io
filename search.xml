@@ -451,11 +451,88 @@ ssy <span class="token operator">=</span> SSY<span class="token punctuation">(</
     imgs<span class="token punctuation">,</span> tag <span class="token operator">=</span> data
     <span class="token keyword">print</span><span class="token punctuation">(</span>imgs<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
     <span class="token comment"># imgs = torch.reshape(imgs, (1, 1, 1, -1))</span>
-    imgs <span class="token operator">=</span> torch<span class="token punctuation">.</span>flatten<span class="token punctuation">(</span>imgs<span class="token punctuation">)</span><span class="token comment">#faltten即展平 作用与上相同</span>
+    imgs <span class="token operator">=</span> torch<span class="token punctuation">.</span>flatten<span class="token punctuation">(</span>imgs<span class="token punctuation">)</span><span class="token comment">#flatten即展平 作用与上相同</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>imgs<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
     output <span class="token operator">=</span> ssy<span class="token punctuation">(</span>imgs<span class="token punctuation">)</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span>output<span class="token punctuation">.</span>shape<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202203041121963.png" alt="image-20220304112103630"></p>
+<h2 id="Sequential"><a href="#Sequential" class="headerlink" title="Sequential"></a>Sequential</h2><p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202203071636179.png" alt="image-20220307163649019"></p>
+<p><em>有点类似于transforms中的Compose。。</em></p>
+<p>实例</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202203071639450.png" alt="Structure-of-CIFAR10-quick-model.png"></p>
+<p>网络搭建根据图片顺序（卷积-池化-卷积-池化-卷积-池化-展平-线性层-线性层）</p>
+<p><strong>计算卷积层stride与padding大小</strong></p>
+<ul>
+<li><p>根据公式</p>
+<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202203071643624.png" alt="image-20220307164323532" style="zoom:67%;" /></li>
+<li><p>经验</p>
+<p>==为了保持卷积后大小不会发生变化==</p>
+<p>一般来说，在stride为1的情况下，padding等于奇数内核大小 <strong>一半的向下取整</strong>即（x-1）/2</p>
+</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> torch
+<span class="token keyword">from</span> torch <span class="token keyword">import</span> nn
+<span class="token keyword">from</span> torch<span class="token punctuation">.</span>nn <span class="token keyword">import</span> Conv2d<span class="token punctuation">,</span> MaxPool2d<span class="token punctuation">,</span> Flatten<span class="token punctuation">,</span> Linear
+<span class="token keyword">from</span> torch<span class="token punctuation">.</span>utils<span class="token punctuation">.</span>tensorboard <span class="token keyword">import</span> SummaryWriter
+
+<span class="token comment">#网络中注释和非注释内容执行效果一致</span>
+<span class="token keyword">class</span> <span class="token class-name">SSY</span><span class="token punctuation">(</span>nn<span class="token punctuation">.</span>Module<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token builtin">super</span><span class="token punctuation">(</span>SSY<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment"># self.conv1 = Conv2d(3,32,5,padding=2)</span>
+        <span class="token comment"># self.maxpool1 = MaxPool2d(2)</span>
+        <span class="token comment"># self.conv2 = Conv2d(32,32,5,padding=2)</span>
+        <span class="token comment"># self.maxpool2 = MaxPool2d(2)</span>
+        <span class="token comment"># self.conv3 = Conv2d(32,64,5,padding=2)</span>
+        <span class="token comment"># self.maxpool3 = MaxPool2d(2)</span>
+        <span class="token comment"># self.flatten = Flatten()</span>
+        <span class="token comment"># self.linear1 = Linear(1024,64)</span>
+        <span class="token comment"># self.linear2 = Linear(64,10)</span>
+        self<span class="token punctuation">.</span>model1 <span class="token operator">=</span> nn<span class="token punctuation">.</span>Sequential<span class="token punctuation">(</span>
+            Conv2d<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            MaxPool2d<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            Conv2d<span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            MaxPool2d<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            Conv2d<span class="token punctuation">(</span><span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> padding<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            MaxPool2d<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            Flatten<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            Linear<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">,</span> <span class="token number">64</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            Linear<span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+        <span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">forward</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>x<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># x = self.conv1(x)</span>
+        <span class="token comment"># x = self.maxpool1(x)</span>
+        <span class="token comment"># x = self.conv2(x)</span>
+        <span class="token comment"># x = self.maxpool2(x)</span>
+        <span class="token comment"># x = self.conv3(x)</span>
+        <span class="token comment"># x = self.maxpool3(x)</span>
+        <span class="token comment"># x = self.flatten(x)</span>
+        <span class="token comment"># x = self.linear1(x)</span>
+        <span class="token comment"># x = self.linear2(x)</span>
+        x <span class="token operator">=</span> self<span class="token punctuation">.</span>model1<span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> x
+
+ssy <span class="token operator">=</span> SSY<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ssy<span class="token punctuation">)</span>
+
+<span class="token comment">#一般为了检查网络构建参数是否正确</span>
+<span class="token builtin">input</span> <span class="token operator">=</span> torch<span class="token punctuation">.</span>ones<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">64</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+output <span class="token operator">=</span> ssy<span class="token punctuation">(</span><span class="token builtin">input</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>output<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+
+writer <span class="token operator">=</span> SummaryWriter<span class="token punctuation">(</span><span class="token string">"../tensorboard_dirs/logs_seq"</span><span class="token punctuation">)</span>
+writer<span class="token punctuation">.</span>add_graph<span class="token punctuation">(</span>ssy<span class="token punctuation">,</span> <span class="token builtin">input</span><span class="token punctuation">)</span>
+writer<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202203071649112.png" alt="image-20220307164933023" style="zoom:67%;" />
+
+<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202203071650582.png" alt="image-20220307165027508" style="zoom:50%;" />
+
+<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202203071651380.png" alt="image-20220307165137299" style="zoom:67%;" />
+
+<p><em>使用tensorboard可以查看网络搭建具体情况，路线上会显示传输数据的大小</em></p>
 ]]></content>
       <categories>
         <category>PyTorch</category>
