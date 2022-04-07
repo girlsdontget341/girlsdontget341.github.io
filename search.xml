@@ -370,6 +370,31 @@
       </tags>
   </entry>
   <entry>
+    <title>张宇1000题错题</title>
+    <url>/2022/04/06/%E5%BC%A0%E5%AE%871000%E9%A2%98%E9%94%99%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="第一讲"><a href="#第一讲" class="headerlink" title="第一讲"></a>第一讲</h1> <div class="pdfobject-container" data-target="/pdf/张宇1000题第1讲错题.pdf" data-height="500px"></div>
+
+<h1 id="第二讲-amp-amp-第三讲"><a href="#第二讲-amp-amp-第三讲" class="headerlink" title="第二讲&amp;&amp;第三讲"></a>第二讲&amp;&amp;第三讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第2、3讲错题.pdf" data-height="500px"></div>
+
+<h1 id="第四讲"><a href="#第四讲" class="headerlink" title="第四讲"></a>第四讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第4讲错题.pdf" data-height="500px"></div>
+
+<h1 id="第五讲"><a href="#第五讲" class="headerlink" title="第五讲"></a>第五讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第5讲错题.pdf" data-height="500px"></div>
+
+<h1 id="第六讲"><a href="#第六讲" class="headerlink" title="第六讲"></a>第六讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第6讲错题.pdf" data-height="500px"></div>
+
+<h1 id="第八讲"><a href="#第八讲" class="headerlink" title="第八讲"></a>第八讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第8讲错题.pdf" data-height="500px"></div>
+
+<h1 id="第九讲"><a href="#第九讲" class="headerlink" title="第九讲"></a>第九讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第9讲错题.pdf" data-height="500px"></div>
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>考研</tag>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PyTorch自学笔记</title>
     <url>/2022/01/14/PyTorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="PyTorch"><a href="#PyTorch" class="headerlink" title="PyTorch"></a>PyTorch</h1><h2 id="加载数据集-amp-amp-Dataset类实战"><a href="#加载数据集-amp-amp-Dataset类实战" class="headerlink" title="加载数据集&amp;&amp;Dataset类实战"></a>加载数据集&amp;&amp;Dataset类实战</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> torch.utils.data <span class="keyword">import</span> Dataset</span><br></pre></td></tr></table></figure>
@@ -601,27 +626,6 @@
       <tags>
         <tag>PyTorch基础</tag>
         <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>张宇1000题错题</title>
-    <url>/2022/04/06/%E5%BC%A0%E5%AE%871000%E9%A2%98%E9%94%99%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="第一讲"><a href="#第一讲" class="headerlink" title="第一讲"></a>第一讲</h1> <div class="pdfobject-container" data-target="/pdf/1000_01.pdf" data-height="500px"></div>
-
-<h1 id="第二讲-amp-amp-第三讲"><a href="#第二讲-amp-amp-第三讲" class="headerlink" title="第二讲&amp;&amp;第三讲"></a>第二讲&amp;&amp;第三讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题错题第二章第三章.pdf" data-height="500px"></div>
-
-<h1 id="第四讲"><a href="#第四讲" class="headerlink" title="第四讲"></a>第四讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第四讲.pdf" data-height="500px"></div>
-
-<h1 id="第五讲"><a href="#第五讲" class="headerlink" title="第五讲"></a>第五讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题错题第五讲.pdf" data-height="500px"></div>
-
-<h1 id="第六讲"><a href="#第六讲" class="headerlink" title="第六讲"></a>第六讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第六讲错题.pdf" data-height="500px"></div>
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>考研</tag>
-        <tag>数学</tag>
       </tags>
   </entry>
 </search>
