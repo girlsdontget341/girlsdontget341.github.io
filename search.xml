@@ -1,197 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>408一轮计网复习笔记</title>
-    <url>/2022/05/19/408%E8%AE%A1%E7%BD%91%E4%B8%80%E8%BD%AE%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="1-计算机网络体系结构"><a href="#1-计算机网络体系结构" class="headerlink" title="1.计算机网络体系结构"></a>1.计算机网络体系结构</h1><h2 id="计算机网络概述"><a href="#计算机网络概述" class="headerlink" title="计算机网络概述"></a>计算机网络概述</h2><p>计算机网络︰是一个将分散的、具有独立功能的<strong>计算机系统</strong>，通过<strong>通信设备</strong>与<strong>线路</strong>连接起来，由功能完善的<strong>软件</strong>实现<strong>资源共享</strong>和<strong>信息传递</strong>的系统。</p>
-<p>计算机网络是互连的、自治的计算机集合。（互连：通过通信链路互联互通，自治：无主从关系）</p>
-<h3 id="计算机网络的功能"><a href="#计算机网络的功能" class="headerlink" title="计算机网络的功能"></a><strong>计算机网络的功能</strong></h3><ul>
-<li>==数据通信==：最基本和最重要的功能。用来实现联网计算机之间各种信息的传输，并将分散在不同地理位置的计算机联系起来，进行统一的调配、控制和管理。例如，文件传输、电子邮件等应用，离开了计算机网络将无法实现。</li>
-<li>资源共享：资源共享可以是软件共享、数据共享，也可以是硬件共享。它使计算机网络中的资源互通有无、分工协作，从而极大地提高硬件资源、软件资源和数据资源的利用率。</li>
-<li>分布式处理：当计算机网络中的某个计算机系统负荷过重时，可以将其处理的某个复杂任务分配给网络中的其他计算机系统，从而利用空闲计算机资源以提高整个系统的利用率。</li>
-<li>提高可靠性：计算机网络中的各台计算机可以通过网络互为替代机。</li>
-<li>负载均衡：将工作任务均衡地分配给计算机网络中的各台计算机。</li>
-</ul>
-<h3 id="计算机网络的发展"><a href="#计算机网络的发展" class="headerlink" title="计算机网络的发展"></a><strong>计算机网络的发展</strong></h3><p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205191934763.png" alt="image-20220519193405543"></p>
-<p>网络把许多计算机连接在一起,而互联网则把许多网络连接在一起因特网是世界上最大的互联网。</p>
-<p>1985年起，美国国家科学基金会NSF围绕6个大型计算机中心建设计算机网络,即国家科学基金网NSFNET。</p>
-<p>ISP:因特网服务提供者/因特网服务提供商,是—个向广大用户综合提供互联网接入业务、信息业务、和增值业务的公司，如中国电信、中国联动、中国移动等。分为主干ISP、地区ISP和本地ISP。</p>
-<h3 id="计算机网络的组成"><a href="#计算机网络的组成" class="headerlink" title="计算机网络的组成"></a><strong>计算机网络的组成</strong></h3><ul>
-<li><p>从组成部分上，分为<strong>软件、硬件、协议</strong></p>
-<p>硬件主要由主机（也称端系统)、通信链路（如双绞线、光纤)、交换设备（如路由器、交换机等）和通信处理机（如网卡）等组成。软件主要包括各种实现资源共享的软件和方便用户使用的各种工具软件（如网络操作系统、邮件收发程序、FTP程序、聊天程序等)。<strong>软件部分多属于应用层。协议是计算机网络的核心</strong>，如同交通规则制约汽车驾驶一样，协议规定了网络传输数据时所遵循的规范。</p>
-</li>
-<li><p>从工作方式上，分为<strong>边缘部分（用户直接使用）和核心部分（为边缘部分服务）</strong><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205191942642.png" alt="image-20220519194256573"></p>
-</li>
-<li><p>从功能组成上，分为<strong>通信子网（数据通信）和资源子网（资源共享/数据处理）</strong></p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205191939612.png" alt="image-20220519193933555"></p>
-<h3 id="计算机网络分类"><a href="#计算机网络分类" class="headerlink" title="计算机网络分类"></a>计算机网络分类</h3><ul>
-<li><p>分布范围分</p>
-<ul>
-<li><p>广域网（WAN）：交换技术 长距离通信</p>
-</li>
-<li><p>城域网（MAN）</p>
-</li>
-<li><p>局域网（LAN）：广播技术 </p>
-</li>
-<li><p>个人区域网（RAN）</p>
-<p>==注意:若中央处理器之间的距离非常近(如仅1m的数量级或甚至更小)，则一般称为多处理器系统，而不称为计算机网络==。</p>
-</li>
-</ul>
-</li>
-<li><p>按使用者分</p>
-<ul>
-<li>公用网</li>
-<li>专用网</li>
-</ul>
-</li>
-<li><p>按交换技术分类</p>
-<ul>
-<li><p>电路交换</p>
-<p>在源结点和目的结点之间建立一条专用的通路用于传送数据，包括建立连接、传输数据和断开连接三个阶段。<strong>最典型的电路交换网是传统电话网络。</strong><br>该类网络的主要特点是整个报文的比特流连续地从源点直达终点，好像是在一条管道中传送。<strong>优点是数据直接传送、时延小。缺点是线路利用率低、不能充分利用线路容量、不便于进行差错控制。</strong></p>
-</li>
-<li><p>报文交换</p>
-<p>用户数据加上源地址、目的地址、校验码等辅助信息，然后封装成报文。整个报文传送到相邻结点，全部存储后，再转发给下一个结点，重复这一过程直到到达目的结点。每个报文可以单独选择到达目的结点的路径。<br>报文交换网络也称<strong>存储-转发</strong>网络，主要特点是整个报文先传送到相邻结点，全部存储后查找转发表，转发到下一个结点。<strong>优点是可以较为充分地利用线路容量，可以实现不同链路之间不同数据传输速率的转换，可以实现格式转换，可以实现一对多、多对一的访问，可以实现差错控制。缺点是增大了资源开销(如辅助信息导致处理时间和存储资源的开销)，增加了缓冲时延，需要额外的控制机制来保证多个报文的顺序不乱序，缓冲区难以管理（因为报文的大小不确定，接收方在接收到报文之前不能预知报文的大小)。</strong></p>
-</li>
-<li><p>分组交换</p>
-<p>也称包交换网络。其原理是，将数据分成较短的面定长度的数据块，在每个数据块中加上目的地址、源地址等辅助信息组成分组(包)，以<strong>存储-转发</strong>方式传输。其主要特点是单个分组（它只是整个报文的一部分）传送到相邻结点，存储后查找转发表，转发到下一个结点。<strong>除具备报文交换网络的优点外，分组交换网络还具有自身的优点:缓冲易于管理;包的平均时延更小，网络占用的平均缓冲区更少﹔更易于标准化;更适合应用。现在的主流网络基本上都可视为分组交换网络。</strong></p>
-</li>
-</ul>
-</li>
-<li><p>按拓扑结构分类</p>
-<p>网络拓扑结构是指由<strong>网中结点（路由器、主机等）与通信线路（网线)之间</strong>的几何关系（如总线形、环形）表示的网络结构，<strong>主要指通信子网的拓扑结构</strong>。</p>
-<p>按网络的拓扑结构，主要分为总线形、星形、环形和网状网络等，<strong>星形、总线形和环形网络多用于局域网,网状网络多用于广域网。</strong></p>
-<ul>
-<li>总线型  优点：建网容易、增减结点容易、节省线路。缺点：重负载时通信效率不高，任意一处对故障敏感</li>
-<li>星型  便于集中控制和管理，端用户之间的通信必经过中央设备 成本高，中央对故障敏感</li>
-<li>环型 eg：令牌环局域网</li>
-<li>网状 可靠性高 控制复杂 线路成本高</li>
-</ul>
-</li>
-<li><p>按传输技术分</p>
-<ul>
-<li><p>广播式网络：共享公共通信信道</p>
-</li>
-<li><p>点对点网络：<strong>使用分组存储转发和路由选择机制</strong></p>
-<p>广域网基本都属于点对点</p>
-</li>
-</ul>
-</li>
-<li><p>按传输介质分</p>
-<ul>
-<li>有线网络</li>
-<li>无线网络</li>
-</ul>
-</li>
-</ul>
-<h3 id="计算机网络性能指标"><a href="#计算机网络性能指标" class="headerlink" title="计算机网络性能指标"></a>计算机网络性能指标</h3><ul>
-<li><p>速率：数据率/数据传输率/比特率</p>
-<p>​            单位b/s，kb/s，Mb/s，Gb/s，Tb/s</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192000587.png" alt="image-20220519200024520"></p>
-</li>
-<li><p>带宽：表示网络的通信线路传送数据的能力，指单位时间内从网络中某一点到另一点所能通过的<strong>“最高数据率”</strong>，单位同速率</p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192002101.png" alt="image-20220519200229039"></p>
-<ul>
-<li><p>吞吐量：单位时间欸通过某个网络（信道/接口）的数据量。单位同上。受网络带宽和网络额定速率所影响。</p>
-</li>
-<li><p>时延：指数据(报文/分组/比特流）从网络(或链路）的一端传送到另一端所需的时间。也叫延迟或迟延。单位是s。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192005278.png" alt="image-20220519200544187"></p>
-</li>
-</ul>
-<p>​        注意:做题时，排队时延和处理时延一般可忽略不计（除非题目另有说明)。<strong>另外，对于高速链路，提高的仅是数据发送速率而非比特在链路上的传播速率。提高数据的发送速率只是为了减少数据的发送时延。</strong></p>
-<ul>
-<li>时延带宽积：称为以比特为单位的链路长度</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192008164.png" alt="image-20220519200827094"></p>
-<ul>
-<li><p>往返时延：指从发送端发出一个短分组，到发送端收到来自接收端的确认(接收端收到数据后立即发送确认)，总共经历的时延。在互联网中，往返时延还包括各中间结点的处理时延、排队时延及转发数据时的发送时延。</p>
-<p>其中max为传播时延*2</p>
-</li>
-<li><p>信道利用率：指出某一信道有百分之多少的时间是有数据通过的，即<strong>信道利用率=有数据通过时间/(有+无)数据通过时间。</strong></p>
-</li>
-</ul>
-<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192011506.png" alt="image-20220519201121428" style="zoom:200%;" />
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
-        <tag>考研</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>张宇1000题错题</title>
-    <url>/2022/04/06/%E5%BC%A0%E5%AE%871000%E9%A2%98%E9%94%99%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="第一讲"><a href="#第一讲" class="headerlink" title="第一讲"></a>第一讲</h1> <div class="pdfobject-container" data-target="/pdf/张宇1000题第1讲错题.pdf" data-height="500px"></div>
-
-<h1 id="第二讲-amp-amp-第三讲"><a href="#第二讲-amp-amp-第三讲" class="headerlink" title="第二讲&amp;&amp;第三讲"></a>第二讲&amp;&amp;第三讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第2、3讲错题.pdf" data-height="500px"></div>
-
-<h1 id="第四讲"><a href="#第四讲" class="headerlink" title="第四讲"></a>第四讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第4讲错题.pdf" data-height="500px"></div>
-
-<h1 id="第五讲"><a href="#第五讲" class="headerlink" title="第五讲"></a>第五讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第5讲错题.pdf" data-height="500px"></div>
-
-<h1 id="第六讲"><a href="#第六讲" class="headerlink" title="第六讲"></a>第六讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第6讲错题.pdf" data-height="500px"></div>
-
-<h1 id="第八讲"><a href="#第八讲" class="headerlink" title="第八讲"></a>第八讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第8讲错题.pdf" data-height="500px"></div>
-
-<h1 id="第九讲"><a href="#第九讲" class="headerlink" title="第九讲"></a>第九讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第9讲错题.pdf" data-height="500px"></div>
-
-<h1 id="第十讲"><a href="#第十讲" class="headerlink" title="第十讲"></a>第十讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第10讲错题.pdf" data-height="500px"></div>
-
-<h1 id="第十一讲"><a href="#第十一讲" class="headerlink" title="第十一讲"></a>第十一讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第11讲错题.pdf" data-height="500px"></div>
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>考研</tag>
-        <tag>数学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>三年a班有感</title>
-    <url>/2022/01/17/%E4%B8%89%E5%B9%B4a%E7%8F%AD%E6%9C%89%E6%84%9F/</url>
-    <content><![CDATA[<p>​        怎么说呢，我几乎不看日剧，看过为数不多印象很深的也只有十元的《非自然死亡》。看这部剧的契机主要就是当时期末刚考完+游戏一直输不想玩+无聊刷B站刷到 看这封面男主很帅就打开看看，看着看着就上头了。从结果上帝视角来说，我觉得这是一部<strong>揭示道理深刻</strong>，情节离谱却跌宕的好剧。</p>
-<p>​        简单说，主要讲的是，某高中三年a班即将毕业的29名学生（30-1），在临毕业的最后十天，被美术老师柊一颯“绑架”作为人质，目的找出班上自杀女生景山澪奈的真正原因。（<em>我的观感是看这个剧每集都像大结局。。。</em>）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171009964.png" alt="image-20220117100945621"></p>
-<p>​      ==下面就是一些小小的体会==</p>
-<p>​        我觉得这个日剧好的地方就在于从很多方面揭示了不止是日本乃至中国全世界人类出现的问题，而且用这种极端的方式，弘扬了一位教师应做的，很难不让人印象深刻。</p>
-<ul>
-<li><strong>欺软怕硬</strong> 剧中男主柊一颯作为一名老师，在班级上没有得到丝毫的尊重，班级上任意一名同学都随意耻笑、捣乱甚至人身攻击，而在使用炸弹威慑之后，没有一个人对老师的要求说漏，观感就像大老虎变成了小猫咪？（bushi），反差令人发笑</li>
-<li><strong>为了保全自己失去理智</strong> 很简单，柊一颯要求找出景山死亡真相，否则杀了一个人，与景山关系最好的小樱被要求代表回答，结果是小樱为了保全大家说是因为自己，显然回答错误，得知要杀一个人的同学们惊慌失措，一致让柊老师杀了小樱，真是气抖冷。。。</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171025140.jpg" alt="src=http___b-ssl.duitang.com_uploads_item_201902_07_20190207213047_escmd.thumb.700_0.jpg&amp;refer=http___b-ssl.duitang"></p>
-<ul>
-<li><p><strong>利己</strong> 剧中景山之前的“朋友”宇佐美接近景山 成为朋友只是为了自己在MINDVOICE上获得更多的粉丝 毕竟景山是全国游泳大赛冠军 天才美少女 而在景山发现了宇佐美的真实意图后 故意疏远她 选择了真心与自己作为朋友的小樱 宇佐美为此不惜陷害景山（就是一系列低俗的恶作剧） 最终酿成大祸</p>
-<p><em>为了减少剧透，先就列举这几个</em></p>
-</li>
-</ul>
-<p>​       其实还有很多这些方面的<strong>劣根</strong>性问题存在，但这部剧主要揭示的问题毫无疑问是 <strong>校园暴力</strong>和 <strong>网络暴力</strong> 。景山作为全国游泳大赛冠军，美好的未来，因为身边同学某些奇奇怪怪的原因，被做假视频陷害，被全班孤立，最好的朋友甚至也渐行渐远，网络上的舆论由赞美变成了辱骂，就在这种每天精神折磨下，景山好像见到路人也会对她指指点点羞辱她，终于受不了了选择死亡。</p>
-<p>​        在这个网络愈发发达的社会，信息碎片化传播的时代，所见的每一则新闻都可能反转反转再反转，而身为吃瓜群众的我们选择的却是随大流，舆论方向在哪我们就说什么，失去了思考的能力，可以说是被牵着鼻子走，确实，这和无良媒体的报道脱不了干系，但在网络上发表言论前，最好的选择是思考。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171043781.png" alt="image-20220117104346561"></p>
-<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171040233.png" alt="image-20220117104052506" style="zoom:80%;" />
-
-
-
-<p><strong>共情</strong> 如果角色互换 你会怎么样？既然如此，为什么不能怀揣善意对别人呢？</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171042974.png" alt="image-20220117104235605"></p>
-<p><strong>所谓网络言论自由这层美丽的糖衣包裹着数不清的言语利刃，你的一句话，或许就是别人崩溃的导火索，言论自由不是不负责任没脑子言论，是网络社会的多样、包容，所以，说一句话前，务必三思。</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171049842.png" alt="image-20220117104934191"></p>
-<p>最后再次强推苏打主演的这部剧，剧好看是一方面，苏打是真帅啊……不会有人不喜欢帅哥吧）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171051880.png" alt="image-20220117105140793"></p>
-]]></content>
-      <categories>
-        <category>Life</category>
-      </categories>
-      <tags>
-        <tag>日剧</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>408数据结构一轮笔记</title>
     <url>/2022/03/22/408%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%80%E8%BD%AE%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="1-绪论"><a href="#1-绪论" class="headerlink" title="1.绪论"></a>1.绪论</h1><h2 id="数据结构基本概念"><a href="#数据结构基本概念" class="headerlink" title="数据结构基本概念"></a>数据结构基本概念</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
@@ -1279,6 +1088,326 @@
       <tags>
         <tag>PyTorch基础</tag>
         <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>408一轮计网复习笔记</title>
+    <url>/2022/05/19/408%E8%AE%A1%E7%BD%91%E4%B8%80%E8%BD%AE%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="1-计算机网络体系结构"><a href="#1-计算机网络体系结构" class="headerlink" title="1.计算机网络体系结构"></a>1.计算机网络体系结构</h1><h2 id="计算机网络概述"><a href="#计算机网络概述" class="headerlink" title="计算机网络概述"></a>计算机网络概述</h2><p>计算机网络︰是一个将分散的、具有独立功能的<strong>计算机系统</strong>，通过<strong>通信设备</strong>与<strong>线路</strong>连接起来，由功能完善的<strong>软件</strong>实现<strong>资源共享</strong>和<strong>信息传递</strong>的系统。</p>
+<p>计算机网络是互连的、自治的计算机集合。（互连：通过通信链路互联互通，自治：无主从关系）</p>
+<h3 id="计算机网络的功能"><a href="#计算机网络的功能" class="headerlink" title="计算机网络的功能"></a><strong>计算机网络的功能</strong></h3><ul>
+<li>==数据通信==：最基本和最重要的功能。用来实现联网计算机之间各种信息的传输，并将分散在不同地理位置的计算机联系起来，进行统一的调配、控制和管理。例如，文件传输、电子邮件等应用，离开了计算机网络将无法实现。</li>
+<li>资源共享：资源共享可以是软件共享、数据共享，也可以是硬件共享。它使计算机网络中的资源互通有无、分工协作，从而极大地提高硬件资源、软件资源和数据资源的利用率。</li>
+<li>分布式处理：当计算机网络中的某个计算机系统负荷过重时，可以将其处理的某个复杂任务分配给网络中的其他计算机系统，从而利用空闲计算机资源以提高整个系统的利用率。</li>
+<li>提高可靠性：计算机网络中的各台计算机可以通过网络互为替代机。</li>
+<li>负载均衡：将工作任务均衡地分配给计算机网络中的各台计算机。</li>
+</ul>
+<h3 id="计算机网络的发展"><a href="#计算机网络的发展" class="headerlink" title="计算机网络的发展"></a><strong>计算机网络的发展</strong></h3><p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205191934763.png" alt="image-20220519193405543"></p>
+<p>网络把许多计算机连接在一起,而互联网则把许多网络连接在一起因特网是世界上最大的互联网。</p>
+<p>1985年起，美国国家科学基金会NSF围绕6个大型计算机中心建设计算机网络,即国家科学基金网NSFNET。</p>
+<p>ISP:因特网服务提供者/因特网服务提供商,是—个向广大用户综合提供互联网接入业务、信息业务、和增值业务的公司，如中国电信、中国联动、中国移动等。分为主干ISP、地区ISP和本地ISP。</p>
+<h3 id="计算机网络的组成"><a href="#计算机网络的组成" class="headerlink" title="计算机网络的组成"></a><strong>计算机网络的组成</strong></h3><ul>
+<li><p>从组成部分上，分为<strong>软件、硬件、协议</strong></p>
+<p>硬件主要由主机（也称端系统)、通信链路（如双绞线、光纤)、交换设备（如路由器、交换机等）和通信处理机（如网卡）等组成。软件主要包括各种实现资源共享的软件和方便用户使用的各种工具软件（如网络操作系统、邮件收发程序、FTP程序、聊天程序等)。<strong>软件部分多属于应用层。协议是计算机网络的核心</strong>，如同交通规则制约汽车驾驶一样，协议规定了网络传输数据时所遵循的规范。</p>
+</li>
+<li><p>从工作方式上，分为<strong>边缘部分（用户直接使用）和核心部分（为边缘部分服务）</strong><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205191942642.png" alt="image-20220519194256573"></p>
+</li>
+<li><p>从功能组成上，分为<strong>通信子网（数据通信）和资源子网（资源共享/数据处理）</strong></p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205191939612.png" alt="image-20220519193933555"></p>
+<h3 id="计算机网络分类"><a href="#计算机网络分类" class="headerlink" title="计算机网络分类"></a>计算机网络分类</h3><ul>
+<li><p>分布范围分</p>
+<ul>
+<li><p>广域网（WAN）：交换技术 长距离通信</p>
+</li>
+<li><p>城域网（MAN）</p>
+</li>
+<li><p>局域网（LAN）：广播技术 </p>
+</li>
+<li><p>个人区域网（RAN）</p>
+<p>==注意:若中央处理器之间的距离非常近(如仅1m的数量级或甚至更小)，则一般称为多处理器系统，而不称为计算机网络==。</p>
+</li>
+</ul>
+</li>
+<li><p>按使用者分</p>
+<ul>
+<li>公用网</li>
+<li>专用网</li>
+</ul>
+</li>
+<li><p>按交换技术分类</p>
+<ul>
+<li><p>电路交换</p>
+<p>在源结点和目的结点之间建立一条专用的通路用于传送数据，包括建立连接、传输数据和断开连接三个阶段。<strong>最典型的电路交换网是传统电话网络。</strong><br>该类网络的主要特点是整个报文的比特流连续地从源点直达终点，好像是在一条管道中传送。<strong>优点是数据直接传送、时延小。缺点是线路利用率低、不能充分利用线路容量、不便于进行差错控制。</strong></p>
+</li>
+<li><p>报文交换</p>
+<p>用户数据加上源地址、目的地址、校验码等辅助信息，然后封装成报文。整个报文传送到相邻结点，全部存储后，再转发给下一个结点，重复这一过程直到到达目的结点。每个报文可以单独选择到达目的结点的路径。<br>报文交换网络也称<strong>存储-转发</strong>网络，主要特点是整个报文先传送到相邻结点，全部存储后查找转发表，转发到下一个结点。<strong>优点是可以较为充分地利用线路容量，可以实现不同链路之间不同数据传输速率的转换，可以实现格式转换，可以实现一对多、多对一的访问，可以实现差错控制。缺点是增大了资源开销(如辅助信息导致处理时间和存储资源的开销)，增加了缓冲时延，需要额外的控制机制来保证多个报文的顺序不乱序，缓冲区难以管理（因为报文的大小不确定，接收方在接收到报文之前不能预知报文的大小)。</strong></p>
+</li>
+<li><p>分组交换</p>
+<p>也称包交换网络。其原理是，将数据分成较短的面定长度的数据块，在每个数据块中加上目的地址、源地址等辅助信息组成分组(包)，以<strong>存储-转发</strong>方式传输。其主要特点是单个分组（它只是整个报文的一部分）传送到相邻结点，存储后查找转发表，转发到下一个结点。<strong>除具备报文交换网络的优点外，分组交换网络还具有自身的优点:缓冲易于管理;包的平均时延更小，网络占用的平均缓冲区更少﹔更易于标准化;更适合应用。现在的主流网络基本上都可视为分组交换网络。</strong></p>
+</li>
+</ul>
+</li>
+<li><p>按拓扑结构分类</p>
+<p>网络拓扑结构是指由<strong>网中结点（路由器、主机等）与通信线路（网线)之间</strong>的几何关系（如总线形、环形）表示的网络结构，<strong>主要指通信子网的拓扑结构</strong>。</p>
+<p>按网络的拓扑结构，主要分为总线形、星形、环形和网状网络等，<strong>星形、总线形和环形网络多用于局域网,网状网络多用于广域网。</strong></p>
+<ul>
+<li>总线型  优点：建网容易、增减结点容易、节省线路。缺点：重负载时通信效率不高，任意一处对故障敏感</li>
+<li>星型  便于集中控制和管理，端用户之间的通信必经过中央设备 成本高，中央对故障敏感</li>
+<li>环型 eg：令牌环局域网</li>
+<li>网状 可靠性高 控制复杂 线路成本高</li>
+</ul>
+</li>
+<li><p>按传输技术分</p>
+<ul>
+<li><p>广播式网络：共享公共通信信道</p>
+</li>
+<li><p>点对点网络：<strong>使用分组存储转发和路由选择机制</strong></p>
+<p>广域网基本都属于点对点</p>
+</li>
+</ul>
+</li>
+<li><p>按传输介质分</p>
+<ul>
+<li>有线网络</li>
+<li>无线网络</li>
+</ul>
+</li>
+</ul>
+<h3 id="计算机网络性能指标"><a href="#计算机网络性能指标" class="headerlink" title="计算机网络性能指标"></a>计算机网络性能指标</h3><ul>
+<li><p>速率：数据率/数据传输率/比特率</p>
+<p>​            单位b/s，kb/s，Mb/s，Gb/s，Tb/s</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192000587.png" alt="image-20220519200024520"></p>
+</li>
+<li><p>带宽：表示网络的通信线路传送数据的能力，指单位时间内从网络中某一点到另一点所能通过的<strong>“最高数据率”</strong>，单位同速率</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192002101.png" alt="image-20220519200229039"></p>
+<ul>
+<li><p>吞吐量：单位时间欸通过某个网络（信道/接口）的数据量。单位同上。受网络带宽和网络额定速率所影响。</p>
+</li>
+<li><p>时延：指数据(报文/分组/比特流）从网络(或链路）的一端传送到另一端所需的时间。也叫延迟或迟延。单位是s。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192005278.png" alt="image-20220519200544187"></p>
+</li>
+</ul>
+<p>​        注意:做题时，排队时延和处理时延一般可忽略不计（除非题目另有说明)。<strong>另外，对于高速链路，提高的仅是数据发送速率而非比特在链路上的传播速率。提高数据的发送速率只是为了减少数据的发送时延。</strong></p>
+<ul>
+<li>时延带宽积：称为以比特为单位的链路长度</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192008164.png" alt="image-20220519200827094"></p>
+<ul>
+<li><p>往返时延：指从发送端发出一个短分组，到发送端收到来自接收端的确认(接收端收到数据后立即发送确认)，总共经历的时延。在互联网中，往返时延还包括各中间结点的处理时延、排队时延及转发数据时的发送时延。</p>
+<p>其中max为传播时延*2</p>
+</li>
+<li><p>信道利用率：指出某一信道有百分之多少的时间是有数据通过的，即<strong>信道利用率=有数据通过时间/(有+无)数据通过时间。</strong></p>
+</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192011506.png" alt="image-20220519201121428" style="zoom:200%;" />
+
+<h2 id="计算机网络体系结构与参考模型"><a href="#计算机网络体系结构与参考模型" class="headerlink" title="计算机网络体系结构与参考模型"></a>计算机网络体系结构与参考模型</h2><p><strong>分层基本原则</strong></p>
+<ul>
+<li>各层之间相互独立，每层只实现一种相对独立的功能。</li>
+<li>每层之间界面自然清晰，易于理解，相互交流尽可能少。</li>
+<li>结构上可分割开。每层都采用最合适的技术来实现。</li>
+<li>保持下层对上层的独立性，上层单向使用下层提供的服务。</li>
+<li>整个分层结构应该能促进标准化工作。</li>
+</ul>
+<p>实体:第n层中的活动元素称为n层实体。同一层的实体叫<strong>对等实体</strong>。</p>
+<p>协议:为进行网络中的对等实体数据交换而建立的规则、标准或约定称为网络协议。<strong>【水平】</strong></p>
+<p>​    语法:规定传输数据的格式</p>
+<p>​    语义:规定所要完成的功能</p>
+<p>​    同步:规定各种操作的顺序</p>
+<p>接口（访问服务点SAP) :上层使用下层服务的入口。</p>
+<p>服务:下层为相邻上层提供的功能调用。<strong>【垂直】</strong></p>
+<p><strong>注意：在一层完成的全部功能并非都称为服务，只有那些能够被高层实体“看得见”的功能才能称为服务。</strong></p>
+<p>我们把计算机网络的各层及其协议的集合称为网络的体系结构（从<strong>功能</strong>上描述）</p>
+<p>在各个层次中，每个报文都分为两部分SDU PCI，他们共同组成了PDU</p>
+<ul>
+<li><p>SDU服务数据单元:为完成用户所要求的功能而应传送的数据。</p>
+</li>
+<li><p>PCI协议控制信息:控制协议操作的信息。</p>
+</li>
+<li><p>PDU协议数据单元:对等层次之间传送的数据单位。</p>
+</li>
+</ul>
+<p>层次结构的具体含义：</p>
+<ul>
+<li>第n层的实体不仅要使用第n-1层的服务来实现自身定义的功能，还要向第n +1层提供本层的服务，该服务是第n层及其下面各层提供的服务总和。</li>
+<li>最低层只提供服务，是整个层次结构的基础;中间各层既是下一层的服务使用者，又是上一层的服务提供者;最高层面向用户提供服务。</li>
+<li>上一层只能通过相邻层间的接口使用下一层的服务，而不能调用其他层的服务:下一层所提供服务的实现细节对上一层透明。</li>
+<li>两台主机通信时，对等层在逻辑上有一条直接信道，表现为不经过下层就把信息传送到对方。</li>
+</ul>
+<p><strong>仅仅在相邻层间有接口，且所提供服务的具体实现细节对上一层完全屏蔽。</strong></p>
+<p><strong>体系结构是抽象的，而实现是指能运行的一些软件和硬件。</strong></p>
+<h3 id="OSI参考模型"><a href="#OSI参考模型" class="headerlink" title="OSI参考模型"></a>OSI参考模型</h3><p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205201108506.png" alt="image-20220520110838322"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205201110548.png" alt="image-20220520111021455"></p>
+<ul>
+<li><p>应用层：所有能和用户交互产生网络流量的程序 FTP SMTP HTTP</p>
+</li>
+<li><p>表示层：处理两个通信系统中交换信息的表示方式  JPEG ASCII</p>
+<ul>
+<li>格式变换</li>
+<li>加密解密</li>
+<li>压缩和恢复</li>
+</ul>
+</li>
+<li><p>会话层：向表示层实体/用户进程建立连接并在连接上有序地传输数据，也叫建立同步 ADSP ASP</p>
+<ul>
+<li>建立、管理、终止会话</li>
+<li>可以使用<strong>校验点</strong>在会话通信失效时从校验点/同步点继续恢复通信，实现数据同步。（适用于大文件）</li>
+</ul>
+</li>
+<li><p>传输层：负责主机中两个进程的通信，即<strong>端到端的通信</strong>。（因为一个进程由由一个端口来标识，所以称为端到端）传输单位是<strong>报文段或用户数据报</strong></p>
+<ul>
+<li><p>提供可靠/不可靠传输</p>
+</li>
+<li><p>差错控制</p>
+</li>
+<li><p>流量控制</p>
+</li>
+<li><p>复用分用：</p>
+<p>复用︰多个应用层进程可同时使用下面运输层的服务。<br>分用:   运输层把收到的信息分别交付给上面应用层中相应的进程。</p>
+</li>
+</ul>
+</li>
+<li><p>网络层：任务是把分组从源端传到目的端，为分组交换网上的不同主机提供和通信服务。传输单位是<strong>数据报</strong> IP\IPX\ICMP\IGMP\ARP\RARP\OSPF</p>
+<ul>
+<li>路由选择:选择最佳路径</li>
+<li>流量控制</li>
+<li>拥塞控制</li>
+<li>差错控制</li>
+</ul>
+</li>
+<li><p>数据链路层：任务是把网络层传下啦的数据报组装成帧。传输单位是<strong>帧</strong>。</p>
+<ul>
+<li>成帧（定义帧的开始和结束）</li>
+<li>差错控制（可能帧错/位错）</li>
+<li>流量控制</li>
+<li>传输控制（信道的访问/接入控制）</li>
+</ul>
+</li>
+<li><p>物理层：任务是在物理媒体上实现比特流的透明传输。传输单位是<strong>比特</strong></p>
+<ul>
+<li>定义接口特性</li>
+<li>定义传输模式 单工、半双工、双工</li>
+<li>定义传输速率</li>
+<li>比特同步</li>
+<li>比特编码</li>
+</ul>
+</li>
+</ul>
+<h3 id="TCP-IP参考模型"><a href="#TCP-IP参考模型" class="headerlink" title="TCP/IP参考模型"></a>TCP/IP参考模型</h3><p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205201955682.png" alt="image-20220520195510581"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205201956316.png" alt="image-20220520195600258"></p>
+<p>网际层是TCP/IP模型的关键部分</p>
+<p>传输层与OSI中的传输层功能类似，使用以下两种协议：</p>
+<ul>
+<li>TCP：面向连接 可靠</li>
+<li>UDP：无连接 不可靠 “尽最大努力交付”</li>
+</ul>
+<p>应用层包括所有的高级协议 eg：虚拟终端协议（Telent），文件传输协议（FTP）、域名解析（DNS）、电子邮件协议（SMTP）、超文本传输协议（HTTP）。</p>
+<p><strong>TCP/IP与OSI模型的比较</strong></p>
+<ul>
+<li><p><strong>相似之处</strong></p>
+<ul>
+<li>分层</li>
+<li>基于独立的协议栈</li>
+<li>可以实现异构网络互连</li>
+</ul>
+</li>
+<li><p><strong>不同点</strong></p>
+<ul>
+<li><p>OSI定义了三点：服务、协议、接口</p>
+</li>
+<li><p>OSI先出现没有特别偏向协议 TCP/IP不会出现协议不匹配模型的情况</p>
+</li>
+<li><p>TCP/IP设计之初就考虑了异构网互联 将IP作为重要层次</p>
+</li>
+<li><p><strong>OSI参考模型在网络层支持无连接和面向连接的通信，但在传输层仅有面向连接的通信。而TCP/IP模型认为可靠性是端到端的问题，因此它在网际层仅有一种无连接的通信模式，但传输层支持无连接和面向连接两种模式</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205202006093.png" alt="image-20220520200617028"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>5层参考模型</strong></p>
+<p>综合上述两种的优点</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205202007615.png" alt="image-20220520200717544"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205202007993.png" alt="image-20220520200732915"></p>
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>考研</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>张宇1000题错题</title>
+    <url>/2022/04/06/%E5%BC%A0%E5%AE%871000%E9%A2%98%E9%94%99%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="第一讲"><a href="#第一讲" class="headerlink" title="第一讲"></a>第一讲</h1> <div class="pdfobject-container" data-target="/pdf/张宇1000题第1讲错题.pdf" data-height="500px"></div>
+
+<h1 id="第二讲-amp-amp-第三讲"><a href="#第二讲-amp-amp-第三讲" class="headerlink" title="第二讲&amp;&amp;第三讲"></a>第二讲&amp;&amp;第三讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第2、3讲错题.pdf" data-height="500px"></div>
+
+<h1 id="第四讲"><a href="#第四讲" class="headerlink" title="第四讲"></a>第四讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第4讲错题.pdf" data-height="500px"></div>
+
+<h1 id="第五讲"><a href="#第五讲" class="headerlink" title="第五讲"></a>第五讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第5讲错题.pdf" data-height="500px"></div>
+
+<h1 id="第六讲"><a href="#第六讲" class="headerlink" title="第六讲"></a>第六讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第6讲错题.pdf" data-height="500px"></div>
+
+<h1 id="第八讲"><a href="#第八讲" class="headerlink" title="第八讲"></a>第八讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第8讲错题.pdf" data-height="500px"></div>
+
+<h1 id="第九讲"><a href="#第九讲" class="headerlink" title="第九讲"></a>第九讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第9讲错题.pdf" data-height="500px"></div>
+
+<h1 id="第十讲"><a href="#第十讲" class="headerlink" title="第十讲"></a>第十讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第10讲错题.pdf" data-height="500px"></div>
+
+<h1 id="第十一讲"><a href="#第十一讲" class="headerlink" title="第十一讲"></a>第十一讲</h1><div class="pdfobject-container" data-target="/pdf/张宇1000题第11讲错题.pdf" data-height="500px"></div>
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>考研</tag>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>三年a班有感</title>
+    <url>/2022/01/17/%E4%B8%89%E5%B9%B4a%E7%8F%AD%E6%9C%89%E6%84%9F/</url>
+    <content><![CDATA[<p>​        怎么说呢，我几乎不看日剧，看过为数不多印象很深的也只有十元的《非自然死亡》。看这部剧的契机主要就是当时期末刚考完+游戏一直输不想玩+无聊刷B站刷到 看这封面男主很帅就打开看看，看着看着就上头了。从结果上帝视角来说，我觉得这是一部<strong>揭示道理深刻</strong>，情节离谱却跌宕的好剧。</p>
+<p>​        简单说，主要讲的是，某高中三年a班即将毕业的29名学生（30-1），在临毕业的最后十天，被美术老师柊一颯“绑架”作为人质，目的找出班上自杀女生景山澪奈的真正原因。（<em>我的观感是看这个剧每集都像大结局。。。</em>）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171009964.png" alt="image-20220117100945621"></p>
+<p>​      ==下面就是一些小小的体会==</p>
+<p>​        我觉得这个日剧好的地方就在于从很多方面揭示了不止是日本乃至中国全世界人类出现的问题，而且用这种极端的方式，弘扬了一位教师应做的，很难不让人印象深刻。</p>
+<ul>
+<li><strong>欺软怕硬</strong> 剧中男主柊一颯作为一名老师，在班级上没有得到丝毫的尊重，班级上任意一名同学都随意耻笑、捣乱甚至人身攻击，而在使用炸弹威慑之后，没有一个人对老师的要求说漏，观感就像大老虎变成了小猫咪？（bushi），反差令人发笑</li>
+<li><strong>为了保全自己失去理智</strong> 很简单，柊一颯要求找出景山死亡真相，否则杀了一个人，与景山关系最好的小樱被要求代表回答，结果是小樱为了保全大家说是因为自己，显然回答错误，得知要杀一个人的同学们惊慌失措，一致让柊老师杀了小樱，真是气抖冷。。。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171025140.jpg" alt="src=http___b-ssl.duitang.com_uploads_item_201902_07_20190207213047_escmd.thumb.700_0.jpg&amp;refer=http___b-ssl.duitang"></p>
+<ul>
+<li><p><strong>利己</strong> 剧中景山之前的“朋友”宇佐美接近景山 成为朋友只是为了自己在MINDVOICE上获得更多的粉丝 毕竟景山是全国游泳大赛冠军 天才美少女 而在景山发现了宇佐美的真实意图后 故意疏远她 选择了真心与自己作为朋友的小樱 宇佐美为此不惜陷害景山（就是一系列低俗的恶作剧） 最终酿成大祸</p>
+<p><em>为了减少剧透，先就列举这几个</em></p>
+</li>
+</ul>
+<p>​       其实还有很多这些方面的<strong>劣根</strong>性问题存在，但这部剧主要揭示的问题毫无疑问是 <strong>校园暴力</strong>和 <strong>网络暴力</strong> 。景山作为全国游泳大赛冠军，美好的未来，因为身边同学某些奇奇怪怪的原因，被做假视频陷害，被全班孤立，最好的朋友甚至也渐行渐远，网络上的舆论由赞美变成了辱骂，就在这种每天精神折磨下，景山好像见到路人也会对她指指点点羞辱她，终于受不了了选择死亡。</p>
+<p>​        在这个网络愈发发达的社会，信息碎片化传播的时代，所见的每一则新闻都可能反转反转再反转，而身为吃瓜群众的我们选择的却是随大流，舆论方向在哪我们就说什么，失去了思考的能力，可以说是被牵着鼻子走，确实，这和无良媒体的报道脱不了干系，但在网络上发表言论前，最好的选择是思考。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171043781.png" alt="image-20220117104346561"></p>
+<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171040233.png" alt="image-20220117104052506" style="zoom:80%;" />
+
+
+
+<p><strong>共情</strong> 如果角色互换 你会怎么样？既然如此，为什么不能怀揣善意对别人呢？</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171042974.png" alt="image-20220117104235605"></p>
+<p><strong>所谓网络言论自由这层美丽的糖衣包裹着数不清的言语利刃，你的一句话，或许就是别人崩溃的导火索，言论自由不是不负责任没脑子言论，是网络社会的多样、包容，所以，说一句话前，务必三思。</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171049842.png" alt="image-20220117104934191"></p>
+<p>最后再次强推苏打主演的这部剧，剧好看是一方面，苏打是真帅啊……不会有人不喜欢帅哥吧）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171051880.png" alt="image-20220117105140793"></p>
+]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
+      <tags>
+        <tag>日剧</tag>
       </tags>
   </entry>
 </search>

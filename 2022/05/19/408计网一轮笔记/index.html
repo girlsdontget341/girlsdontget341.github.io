@@ -37,8 +37,15 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192005278.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192008164.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192011506.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205201108506.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205201110548.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205201955682.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205201956316.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205202006093.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205202007615.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205202007993.png">
 <meta property="article:published_time" content="2022-05-19T09:17:37.000Z">
-<meta property="article:modified_time" content="2022-05-19T12:17:45.090Z">
+<meta property="article:modified_time" content="2022-05-20T12:07:51.100Z">
 <meta property="article:author" content="Y">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="考研">
@@ -223,10 +230,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-05-19 17:17:37 / Modified: 20:17:45" itemprop="dateCreated datePublished" datetime="2022-05-19T17:17:37+08:00">2022-05-19</time>
+              <time title="Created: 2022-05-19 17:17:37" itemprop="dateCreated datePublished" datetime="2022-05-19T17:17:37+08:00">2022-05-19</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-05-20 20:07:51" itemprop="dateModified" datetime="2022-05-20T20:07:51+08:00">2022-05-20</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -250,14 +263,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.6k</span>
+              <span>4.3k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>2 mins.</span>
+              <span>4 mins.</span>
             </span>
             <div class="post-description">内容挺多的</div>
 
@@ -382,6 +395,135 @@
 </ul>
 <img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192011506.png" alt="image-20220519201121428" style="zoom:200%;" />
 
+<h2 id="计算机网络体系结构与参考模型"><a href="#计算机网络体系结构与参考模型" class="headerlink" title="计算机网络体系结构与参考模型"></a>计算机网络体系结构与参考模型</h2><p><strong>分层基本原则</strong></p>
+<ul>
+<li>各层之间相互独立，每层只实现一种相对独立的功能。</li>
+<li>每层之间界面自然清晰，易于理解，相互交流尽可能少。</li>
+<li>结构上可分割开。每层都采用最合适的技术来实现。</li>
+<li>保持下层对上层的独立性，上层单向使用下层提供的服务。</li>
+<li>整个分层结构应该能促进标准化工作。</li>
+</ul>
+<p>实体:第n层中的活动元素称为n层实体。同一层的实体叫<strong>对等实体</strong>。</p>
+<p>协议:为进行网络中的对等实体数据交换而建立的规则、标准或约定称为网络协议。<strong>【水平】</strong></p>
+<p>​    语法:规定传输数据的格式</p>
+<p>​    语义:规定所要完成的功能</p>
+<p>​    同步:规定各种操作的顺序</p>
+<p>接口（访问服务点SAP) :上层使用下层服务的入口。</p>
+<p>服务:下层为相邻上层提供的功能调用。<strong>【垂直】</strong></p>
+<p><strong>注意：在一层完成的全部功能并非都称为服务，只有那些能够被高层实体“看得见”的功能才能称为服务。</strong></p>
+<p>我们把计算机网络的各层及其协议的集合称为网络的体系结构（从<strong>功能</strong>上描述）</p>
+<p>在各个层次中，每个报文都分为两部分SDU PCI，他们共同组成了PDU</p>
+<ul>
+<li><p>SDU服务数据单元:为完成用户所要求的功能而应传送的数据。</p>
+</li>
+<li><p>PCI协议控制信息:控制协议操作的信息。</p>
+</li>
+<li><p>PDU协议数据单元:对等层次之间传送的数据单位。</p>
+</li>
+</ul>
+<p>层次结构的具体含义：</p>
+<ul>
+<li>第n层的实体不仅要使用第n-1层的服务来实现自身定义的功能，还要向第n +1层提供本层的服务，该服务是第n层及其下面各层提供的服务总和。</li>
+<li>最低层只提供服务，是整个层次结构的基础;中间各层既是下一层的服务使用者，又是上一层的服务提供者;最高层面向用户提供服务。</li>
+<li>上一层只能通过相邻层间的接口使用下一层的服务，而不能调用其他层的服务:下一层所提供服务的实现细节对上一层透明。</li>
+<li>两台主机通信时，对等层在逻辑上有一条直接信道，表现为不经过下层就把信息传送到对方。</li>
+</ul>
+<p><strong>仅仅在相邻层间有接口，且所提供服务的具体实现细节对上一层完全屏蔽。</strong></p>
+<p><strong>体系结构是抽象的，而实现是指能运行的一些软件和硬件。</strong></p>
+<h3 id="OSI参考模型"><a href="#OSI参考模型" class="headerlink" title="OSI参考模型"></a>OSI参考模型</h3><p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205201108506.png" alt="image-20220520110838322"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205201110548.png" alt="image-20220520111021455"></p>
+<ul>
+<li><p>应用层：所有能和用户交互产生网络流量的程序 FTP SMTP HTTP</p>
+</li>
+<li><p>表示层：处理两个通信系统中交换信息的表示方式  JPEG ASCII</p>
+<ul>
+<li>格式变换</li>
+<li>加密解密</li>
+<li>压缩和恢复</li>
+</ul>
+</li>
+<li><p>会话层：向表示层实体/用户进程建立连接并在连接上有序地传输数据，也叫建立同步 ADSP ASP</p>
+<ul>
+<li>建立、管理、终止会话</li>
+<li>可以使用<strong>校验点</strong>在会话通信失效时从校验点/同步点继续恢复通信，实现数据同步。（适用于大文件）</li>
+</ul>
+</li>
+<li><p>传输层：负责主机中两个进程的通信，即<strong>端到端的通信</strong>。（因为一个进程由由一个端口来标识，所以称为端到端）传输单位是<strong>报文段或用户数据报</strong></p>
+<ul>
+<li><p>提供可靠/不可靠传输</p>
+</li>
+<li><p>差错控制</p>
+</li>
+<li><p>流量控制</p>
+</li>
+<li><p>复用分用：</p>
+<p>复用︰多个应用层进程可同时使用下面运输层的服务。<br>分用:   运输层把收到的信息分别交付给上面应用层中相应的进程。</p>
+</li>
+</ul>
+</li>
+<li><p>网络层：任务是把分组从源端传到目的端，为分组交换网上的不同主机提供和通信服务。传输单位是<strong>数据报</strong> IP\IPX\ICMP\IGMP\ARP\RARP\OSPF</p>
+<ul>
+<li>路由选择:选择最佳路径</li>
+<li>流量控制</li>
+<li>拥塞控制</li>
+<li>差错控制</li>
+</ul>
+</li>
+<li><p>数据链路层：任务是把网络层传下啦的数据报组装成帧。传输单位是<strong>帧</strong>。</p>
+<ul>
+<li>成帧（定义帧的开始和结束）</li>
+<li>差错控制（可能帧错/位错）</li>
+<li>流量控制</li>
+<li>传输控制（信道的访问/接入控制）</li>
+</ul>
+</li>
+<li><p>物理层：任务是在物理媒体上实现比特流的透明传输。传输单位是<strong>比特</strong></p>
+<ul>
+<li>定义接口特性</li>
+<li>定义传输模式 单工、半双工、双工</li>
+<li>定义传输速率</li>
+<li>比特同步</li>
+<li>比特编码</li>
+</ul>
+</li>
+</ul>
+<h3 id="TCP-IP参考模型"><a href="#TCP-IP参考模型" class="headerlink" title="TCP/IP参考模型"></a>TCP/IP参考模型</h3><p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205201955682.png" alt="image-20220520195510581"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205201956316.png" alt="image-20220520195600258"></p>
+<p>网际层是TCP/IP模型的关键部分</p>
+<p>传输层与OSI中的传输层功能类似，使用以下两种协议：</p>
+<ul>
+<li>TCP：面向连接 可靠</li>
+<li>UDP：无连接 不可靠 “尽最大努力交付”</li>
+</ul>
+<p>应用层包括所有的高级协议 eg：虚拟终端协议（Telent），文件传输协议（FTP）、域名解析（DNS）、电子邮件协议（SMTP）、超文本传输协议（HTTP）。</p>
+<p><strong>TCP/IP与OSI模型的比较</strong></p>
+<ul>
+<li><p><strong>相似之处</strong></p>
+<ul>
+<li>分层</li>
+<li>基于独立的协议栈</li>
+<li>可以实现异构网络互连</li>
+</ul>
+</li>
+<li><p><strong>不同点</strong></p>
+<ul>
+<li><p>OSI定义了三点：服务、协议、接口</p>
+</li>
+<li><p>OSI先出现没有特别偏向协议 TCP/IP不会出现协议不匹配模型的情况</p>
+</li>
+<li><p>TCP/IP设计之初就考虑了异构网互联 将IP作为重要层次</p>
+</li>
+<li><p><strong>OSI参考模型在网络层支持无连接和面向连接的通信，但在传输层仅有面向连接的通信。而TCP/IP模型认为可靠性是端到端的问题，因此它在网际层仅有一种无连接的通信模式，但传输层支持无连接和面向连接两种模式</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205202006093.png" alt="image-20220520200617028"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>5层参考模型</strong></p>
+<p>综合上述两种的优点</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205202007615.png" alt="image-20220520200717544"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205202007993.png" alt="image-20220520200732915"></p>
+
     </div>
 
     
@@ -479,7 +621,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">1.计算机网络体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">计算机网络概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="nav-number">1.1.1.</span> <span class="nav-text">计算机网络的功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%8F%91%E5%B1%95"><span class="nav-number">1.1.2.</span> <span class="nav-text">计算机网络的发展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E7%BB%84%E6%88%90"><span class="nav-number">1.1.3.</span> <span class="nav-text">计算机网络的组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%88%86%E7%B1%BB"><span class="nav-number">1.1.4.</span> <span class="nav-text">计算机网络分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="nav-number">1.1.5.</span> <span class="nav-text">计算机网络性能指标</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">1.计算机网络体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0"><span class="nav-number">1.1.</span> <span class="nav-text">计算机网络概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="nav-number">1.1.1.</span> <span class="nav-text">计算机网络的功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%8F%91%E5%B1%95"><span class="nav-number">1.1.2.</span> <span class="nav-text">计算机网络的发展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E7%BB%84%E6%88%90"><span class="nav-number">1.1.3.</span> <span class="nav-text">计算机网络的组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%88%86%E7%B1%BB"><span class="nav-number">1.1.4.</span> <span class="nav-text">计算机网络分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="nav-number">1.1.5.</span> <span class="nav-text">计算机网络性能指标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E4%B8%8E%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.2.</span> <span class="nav-text">计算机网络体系结构与参考模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OSI%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.2.1.</span> <span class="nav-text">OSI参考模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-IP%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.2.2.</span> <span class="nav-text">TCP&#x2F;IP参考模型</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -559,12 +701,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">52k</span>
+    <span title="Symbols count total">54k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">47 mins.</span>
+    <span title="Reading time total">49 mins.</span>
 </div>
 
 
