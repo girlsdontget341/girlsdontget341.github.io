@@ -1,6 +1,297 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>408一轮计网复习笔记</title>
+    <url>/2022/05/19/408%E8%AE%A1%E7%BD%91%E4%B8%80%E8%BD%AE%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="1-计算机网络体系结构"><a href="#1-计算机网络体系结构" class="headerlink" title="1.计算机网络体系结构"></a>1.计算机网络体系结构</h1><h2 id="计算机网络概述"><a href="#计算机网络概述" class="headerlink" title="计算机网络概述"></a>计算机网络概述</h2><p>计算机网络︰是一个将分散的、具有独立功能的<strong>计算机系统</strong>，通过<strong>通信设备</strong>与<strong>线路</strong>连接起来，由功能完善的<strong>软件</strong>实现<strong>资源共享</strong>和<strong>信息传递</strong>的系统。</p>
+<p>计算机网络是互连的、自治的计算机集合。（互连：通过通信链路互联互通，自治：无主从关系）</p>
+<h3 id="计算机网络的功能"><a href="#计算机网络的功能" class="headerlink" title="计算机网络的功能"></a><strong>计算机网络的功能</strong></h3><ul>
+<li>==数据通信==：最基本和最重要的功能。用来实现联网计算机之间各种信息的传输，并将分散在不同地理位置的计算机联系起来，进行统一的调配、控制和管理。例如，文件传输、电子邮件等应用，离开了计算机网络将无法实现。</li>
+<li>资源共享：资源共享可以是软件共享、数据共享，也可以是硬件共享。它使计算机网络中的资源互通有无、分工协作，从而极大地提高硬件资源、软件资源和数据资源的利用率。</li>
+<li>分布式处理：当计算机网络中的某个计算机系统负荷过重时，可以将其处理的某个复杂任务分配给网络中的其他计算机系统，从而利用空闲计算机资源以提高整个系统的利用率。</li>
+<li>提高可靠性：计算机网络中的各台计算机可以通过网络互为替代机。</li>
+<li>负载均衡：将工作任务均衡地分配给计算机网络中的各台计算机。</li>
+</ul>
+<h3 id="计算机网络的发展"><a href="#计算机网络的发展" class="headerlink" title="计算机网络的发展"></a><strong>计算机网络的发展</strong></h3><p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205191934763.png" alt="image-20220519193405543"></p>
+<p>网络把许多计算机连接在一起,而互联网则把许多网络连接在一起因特网是世界上最大的互联网。</p>
+<p>1985年起，美国国家科学基金会NSF围绕6个大型计算机中心建设计算机网络,即国家科学基金网NSFNET。</p>
+<p>ISP:因特网服务提供者/因特网服务提供商,是—个向广大用户综合提供互联网接入业务、信息业务、和增值业务的公司，如中国电信、中国联动、中国移动等。分为主干ISP、地区ISP和本地ISP。</p>
+<h3 id="计算机网络的组成"><a href="#计算机网络的组成" class="headerlink" title="计算机网络的组成"></a><strong>计算机网络的组成</strong></h3><ul>
+<li><p>从组成部分上，分为<strong>软件、硬件、协议</strong></p>
+<p>硬件主要由主机（也称端系统)、通信链路（如双绞线、光纤)、交换设备（如路由器、交换机等）和通信处理机（如网卡）等组成。软件主要包括各种实现资源共享的软件和方便用户使用的各种工具软件（如网络操作系统、邮件收发程序、FTP程序、聊天程序等)。<strong>软件部分多属于应用层。协议是计算机网络的核心</strong>，如同交通规则制约汽车驾驶一样，协议规定了网络传输数据时所遵循的规范。</p>
+</li>
+<li><p>从工作方式上，分为<strong>边缘部分（用户直接使用）和核心部分（为边缘部分服务）</strong><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205191942642.png" alt="image-20220519194256573"></p>
+</li>
+<li><p>从功能组成上，分为<strong>通信子网（数据通信）和资源子网（资源共享/数据处理）</strong></p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205191939612.png" alt="image-20220519193933555"></p>
+<h3 id="计算机网络分类"><a href="#计算机网络分类" class="headerlink" title="计算机网络分类"></a>计算机网络分类</h3><ul>
+<li><p>分布范围分</p>
+<ul>
+<li><p>广域网（WAN）：交换技术 长距离通信</p>
+</li>
+<li><p>城域网（MAN）</p>
+</li>
+<li><p>局域网（LAN）：广播技术 </p>
+</li>
+<li><p>个人区域网（RAN）</p>
+<p>==注意:若中央处理器之间的距离非常近(如仅1m的数量级或甚至更小)，则一般称为多处理器系统，而不称为计算机网络==。</p>
+</li>
+</ul>
+</li>
+<li><p>按使用者分</p>
+<ul>
+<li>公用网</li>
+<li>专用网</li>
+</ul>
+</li>
+<li><p>按交换技术分类</p>
+<ul>
+<li><p>电路交换</p>
+<p>在源结点和目的结点之间建立一条专用的通路用于传送数据，包括建立连接、传输数据和断开连接三个阶段。<strong>最典型的电路交换网是传统电话网络。</strong><br>该类网络的主要特点是整个报文的比特流连续地从源点直达终点，好像是在一条管道中传送。<strong>优点是数据直接传送、时延小。缺点是线路利用率低、不能充分利用线路容量、不便于进行差错控制。</strong></p>
+</li>
+<li><p>报文交换</p>
+<p>用户数据加上源地址、目的地址、校验码等辅助信息，然后封装成报文。整个报文传送到相邻结点，全部存储后，再转发给下一个结点，重复这一过程直到到达目的结点。每个报文可以单独选择到达目的结点的路径。<br>报文交换网络也称<strong>存储-转发</strong>网络，主要特点是整个报文先传送到相邻结点，全部存储后查找转发表，转发到下一个结点。<strong>优点是可以较为充分地利用线路容量，可以实现不同链路之间不同数据传输速率的转换，可以实现格式转换，可以实现一对多、多对一的访问，可以实现差错控制。缺点是增大了资源开销(如辅助信息导致处理时间和存储资源的开销)，增加了缓冲时延，需要额外的控制机制来保证多个报文的顺序不乱序，缓冲区难以管理（因为报文的大小不确定，接收方在接收到报文之前不能预知报文的大小)。</strong></p>
+</li>
+<li><p>分组交换</p>
+<p>也称包交换网络。其原理是，将数据分成较短的面定长度的数据块，在每个数据块中加上目的地址、源地址等辅助信息组成分组(包)，以<strong>存储-转发</strong>方式传输。其主要特点是单个分组（它只是整个报文的一部分）传送到相邻结点，存储后查找转发表，转发到下一个结点。<strong>除具备报文交换网络的优点外，分组交换网络还具有自身的优点:缓冲易于管理;包的平均时延更小，网络占用的平均缓冲区更少﹔更易于标准化;更适合应用。现在的主流网络基本上都可视为分组交换网络。</strong></p>
+</li>
+</ul>
+</li>
+<li><p>按拓扑结构分类</p>
+<p>网络拓扑结构是指由<strong>网中结点（路由器、主机等）与通信线路（网线)之间</strong>的几何关系（如总线形、环形）表示的网络结构，<strong>主要指通信子网的拓扑结构</strong>。</p>
+<p>按网络的拓扑结构，主要分为总线形、星形、环形和网状网络等，<strong>星形、总线形和环形网络多用于局域网,网状网络多用于广域网。</strong></p>
+<ul>
+<li>总线型  优点：建网容易、增减结点容易、节省线路。缺点：重负载时通信效率不高，任意一处对故障敏感</li>
+<li>星型  便于集中控制和管理，端用户之间的通信必经过中央设备 成本高，中央对故障敏感</li>
+<li>环型 eg：令牌环局域网</li>
+<li>网状 可靠性高 控制复杂 线路成本高</li>
+</ul>
+</li>
+<li><p>按传输技术分</p>
+<ul>
+<li><p>广播式网络：共享公共通信信道</p>
+</li>
+<li><p>点对点网络：<strong>使用分组存储转发和路由选择机制</strong></p>
+<p>广域网基本都属于点对点</p>
+</li>
+</ul>
+</li>
+<li><p>按传输介质分</p>
+<ul>
+<li>有线网络</li>
+<li>无线网络</li>
+</ul>
+</li>
+</ul>
+<h3 id="计算机网络性能指标"><a href="#计算机网络性能指标" class="headerlink" title="计算机网络性能指标"></a>计算机网络性能指标</h3><ul>
+<li><p>速率：数据率/数据传输率/比特率</p>
+<p>​            单位b/s，kb/s，Mb/s，Gb/s，Tb/s</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192000587.png" alt="image-20220519200024520"></p>
+</li>
+<li><p>带宽：表示网络的通信线路传送数据的能力，指单位时间内从网络中某一点到另一点所能通过的<strong>“最高数据率”</strong>，单位同速率</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192002101.png" alt="image-20220519200229039"></p>
+<ul>
+<li><p>吞吐量：单位时间欸通过某个网络（信道/接口）的数据量。单位同上。受网络带宽和网络额定速率所影响。</p>
+</li>
+<li><p>时延：指数据(报文/分组/比特流）从网络(或链路）的一端传送到另一端所需的时间。也叫延迟或迟延。单位是s。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192005278.png" alt="image-20220519200544187"></p>
+</li>
+</ul>
+<p>​        注意:做题时，排队时延和处理时延一般可忽略不计（除非题目另有说明)。<strong>另外，对于高速链路，提高的仅是数据发送速率而非比特在链路上的传播速率。提高数据的发送速率只是为了减少数据的发送时延。</strong></p>
+<ul>
+<li>时延带宽积：称为以比特为单位的链路长度</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192008164.png" alt="image-20220519200827094"></p>
+<ul>
+<li><p>往返时延：指从发送端发出一个短分组，到发送端收到来自接收端的确认(接收端收到数据后立即发送确认)，总共经历的时延。在互联网中，往返时延还包括各中间结点的处理时延、排队时延及转发数据时的发送时延。</p>
+<p>其中max为传播时延*2</p>
+</li>
+<li><p>信道利用率：指出某一信道有百分之多少的时间是有数据通过的，即<strong>信道利用率=有数据通过时间/(有+无)数据通过时间。</strong></p>
+</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192011506.png" alt="image-20220519201121428" style="zoom:200%;" />
+
+<h2 id="计算机网络体系结构与参考模型"><a href="#计算机网络体系结构与参考模型" class="headerlink" title="计算机网络体系结构与参考模型"></a>计算机网络体系结构与参考模型</h2><p><strong>分层基本原则</strong></p>
+<ul>
+<li>各层之间相互独立，每层只实现一种相对独立的功能。</li>
+<li>每层之间界面自然清晰，易于理解，相互交流尽可能少。</li>
+<li>结构上可分割开。每层都采用最合适的技术来实现。</li>
+<li>保持下层对上层的独立性，上层单向使用下层提供的服务。</li>
+<li>整个分层结构应该能促进标准化工作。</li>
+</ul>
+<p>实体:第n层中的活动元素称为n层实体。同一层的实体叫<strong>对等实体</strong>。</p>
+<p>协议:为进行网络中的对等实体数据交换而建立的规则、标准或约定称为网络协议。<strong>【水平】</strong></p>
+<p>​    语法:规定传输数据的格式</p>
+<p>​    语义:规定所要完成的功能</p>
+<p>​    同步:规定各种操作的顺序</p>
+<p>接口（访问服务点SAP) :上层使用下层服务的入口。</p>
+<p>服务:下层为相邻上层提供的功能调用。<strong>【垂直】</strong></p>
+<p><strong>注意：在一层完成的全部功能并非都称为服务，只有那些能够被高层实体“看得见”的功能才能称为服务。</strong></p>
+<p>我们把计算机网络的各层及其协议的集合称为网络的体系结构（从<strong>功能</strong>上描述）</p>
+<p>在各个层次中，每个报文都分为两部分SDU PCI，他们共同组成了PDU</p>
+<ul>
+<li><p>SDU服务数据单元:为完成用户所要求的功能而应传送的数据。</p>
+</li>
+<li><p>PCI协议控制信息:控制协议操作的信息。</p>
+</li>
+<li><p>PDU协议数据单元:对等层次之间传送的数据单位。</p>
+</li>
+</ul>
+<p>层次结构的具体含义：</p>
+<ul>
+<li>第n层的实体不仅要使用第n-1层的服务来实现自身定义的功能，还要向第n +1层提供本层的服务，该服务是第n层及其下面各层提供的服务总和。</li>
+<li>最低层只提供服务，是整个层次结构的基础;中间各层既是下一层的服务使用者，又是上一层的服务提供者;最高层面向用户提供服务。</li>
+<li>上一层只能通过相邻层间的接口使用下一层的服务，而不能调用其他层的服务:下一层所提供服务的实现细节对上一层透明。</li>
+<li>两台主机通信时，对等层在逻辑上有一条直接信道，表现为不经过下层就把信息传送到对方。</li>
+</ul>
+<p><strong>仅仅在相邻层间有接口，且所提供服务的具体实现细节对上一层完全屏蔽。</strong></p>
+<p><strong>体系结构是抽象的，而实现是指能运行的一些软件和硬件。</strong></p>
+<h3 id="OSI参考模型"><a href="#OSI参考模型" class="headerlink" title="OSI参考模型"></a>OSI参考模型</h3><p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205201108506.png" alt="image-20220520110838322"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205201110548.png" alt="image-20220520111021455"></p>
+<ul>
+<li><p>应用层：所有能和用户交互产生网络流量的程序 FTP SMTP HTTP</p>
+</li>
+<li><p>表示层：处理两个通信系统中交换信息的表示方式  JPEG ASCII</p>
+<ul>
+<li>格式变换</li>
+<li>加密解密</li>
+<li>压缩和恢复</li>
+</ul>
+</li>
+<li><p>会话层：向表示层实体/用户进程建立连接并在连接上有序地传输数据，也叫建立同步 ADSP ASP</p>
+<ul>
+<li>建立、管理、终止会话</li>
+<li>可以使用<strong>校验点</strong>在会话通信失效时从校验点/同步点继续恢复通信，实现数据同步。（适用于大文件）</li>
+</ul>
+</li>
+<li><p>传输层：负责主机中两个进程的通信，即<strong>端到端的通信</strong>。（因为一个进程由由一个端口来标识，所以称为端到端）传输单位是<strong>报文段或用户数据报</strong></p>
+<ul>
+<li><p>提供可靠/不可靠传输</p>
+</li>
+<li><p>差错控制</p>
+</li>
+<li><p>流量控制</p>
+</li>
+<li><p>复用分用：</p>
+<p>复用︰多个应用层进程可同时使用下面运输层的服务。<br>分用:   运输层把收到的信息分别交付给上面应用层中相应的进程。</p>
+</li>
+</ul>
+</li>
+<li><p>网络层：任务是把分组从源端传到目的端，为分组交换网上的不同主机提供和通信服务。传输单位是<strong>数据报</strong> IP\IPX\ICMP\IGMP\ARP\RARP\OSPF</p>
+<ul>
+<li>路由选择:选择最佳路径</li>
+<li>流量控制</li>
+<li>拥塞控制</li>
+<li>差错控制</li>
+</ul>
+</li>
+<li><p>数据链路层：任务是把网络层传下啦的数据报组装成帧。传输单位是<strong>帧</strong>。</p>
+<ul>
+<li>成帧（定义帧的开始和结束）</li>
+<li>差错控制（可能帧错/位错）</li>
+<li>流量控制</li>
+<li>传输控制（信道的访问/接入控制）</li>
+</ul>
+</li>
+<li><p>物理层：任务是在物理媒体上实现比特流的透明传输。传输单位是<strong>比特</strong></p>
+<ul>
+<li>定义接口特性</li>
+<li>定义传输模式 单工、半双工、双工</li>
+<li>定义传输速率</li>
+<li>比特同步</li>
+<li>比特编码</li>
+</ul>
+</li>
+</ul>
+<h3 id="TCP-IP参考模型"><a href="#TCP-IP参考模型" class="headerlink" title="TCP/IP参考模型"></a>TCP/IP参考模型</h3><p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205201955682.png" alt="image-20220520195510581"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205201956316.png" alt="image-20220520195600258"></p>
+<p>网际层是TCP/IP模型的关键部分</p>
+<p>传输层与OSI中的传输层功能类似，使用以下两种协议：</p>
+<ul>
+<li>TCP：面向连接 可靠</li>
+<li>UDP：无连接 不可靠 “尽最大努力交付”</li>
+</ul>
+<p>应用层包括所有的高级协议 eg：虚拟终端协议（Telent），文件传输协议（FTP）、域名解析（DNS）、电子邮件协议（SMTP）、超文本传输协议（HTTP）。</p>
+<p><strong>TCP/IP与OSI模型的比较</strong></p>
+<ul>
+<li><p><strong>相似之处</strong></p>
+<ul>
+<li>分层</li>
+<li>基于独立的协议栈</li>
+<li>可以实现异构网络互连</li>
+</ul>
+</li>
+<li><p><strong>不同点</strong></p>
+<ul>
+<li><p>OSI定义了三点：服务、协议、接口</p>
+</li>
+<li><p>OSI先出现没有特别偏向协议 TCP/IP不会出现协议不匹配模型的情况</p>
+</li>
+<li><p>TCP/IP设计之初就考虑了异构网互联 将IP作为重要层次</p>
+</li>
+<li><p><strong>OSI参考模型在网络层支持无连接和面向连接的通信，但在传输层仅有面向连接的通信。而TCP/IP模型认为可靠性是端到端的问题，因此它在网际层仅有一种无连接的通信模式，但传输层支持无连接和面向连接两种模式</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205202006093.png" alt="image-20220520200617028"></p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>5层参考模型</strong></p>
+<p>综合上述两种的优点</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205202007615.png" alt="image-20220520200717544"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205202007993.png" alt="image-20220520200732915"></p>
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>考研</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>三年a班有感</title>
+    <url>/2022/01/17/%E4%B8%89%E5%B9%B4a%E7%8F%AD%E6%9C%89%E6%84%9F/</url>
+    <content><![CDATA[<p>​        怎么说呢，我几乎不看日剧，看过为数不多印象很深的也只有十元的《非自然死亡》。看这部剧的契机主要就是当时期末刚考完+游戏一直输不想玩+无聊刷B站刷到 看这封面男主很帅就打开看看，看着看着就上头了。从结果上帝视角来说，我觉得这是一部<strong>揭示道理深刻</strong>，情节离谱却跌宕的好剧。</p>
+<p>​        简单说，主要讲的是，某高中三年a班即将毕业的29名学生（30-1），在临毕业的最后十天，被美术老师柊一颯“绑架”作为人质，目的找出班上自杀女生景山澪奈的真正原因。（<em>我的观感是看这个剧每集都像大结局。。。</em>）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171009964.png" alt="image-20220117100945621"></p>
+<p>​      ==下面就是一些小小的体会==</p>
+<p>​        我觉得这个日剧好的地方就在于从很多方面揭示了不止是日本乃至中国全世界人类出现的问题，而且用这种极端的方式，弘扬了一位教师应做的，很难不让人印象深刻。</p>
+<ul>
+<li><strong>欺软怕硬</strong> 剧中男主柊一颯作为一名老师，在班级上没有得到丝毫的尊重，班级上任意一名同学都随意耻笑、捣乱甚至人身攻击，而在使用炸弹威慑之后，没有一个人对老师的要求说漏，观感就像大老虎变成了小猫咪？（bushi），反差令人发笑</li>
+<li><strong>为了保全自己失去理智</strong> 很简单，柊一颯要求找出景山死亡真相，否则杀了一个人，与景山关系最好的小樱被要求代表回答，结果是小樱为了保全大家说是因为自己，显然回答错误，得知要杀一个人的同学们惊慌失措，一致让柊老师杀了小樱，真是气抖冷。。。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171025140.jpg" alt="src=http___b-ssl.duitang.com_uploads_item_201902_07_20190207213047_escmd.thumb.700_0.jpg&amp;refer=http___b-ssl.duitang"></p>
+<ul>
+<li><p><strong>利己</strong> 剧中景山之前的“朋友”宇佐美接近景山 成为朋友只是为了自己在MINDVOICE上获得更多的粉丝 毕竟景山是全国游泳大赛冠军 天才美少女 而在景山发现了宇佐美的真实意图后 故意疏远她 选择了真心与自己作为朋友的小樱 宇佐美为此不惜陷害景山（就是一系列低俗的恶作剧） 最终酿成大祸</p>
+<p><em>为了减少剧透，先就列举这几个</em></p>
+</li>
+</ul>
+<p>​       其实还有很多这些方面的<strong>劣根</strong>性问题存在，但这部剧主要揭示的问题毫无疑问是 <strong>校园暴力</strong>和 <strong>网络暴力</strong> 。景山作为全国游泳大赛冠军，美好的未来，因为身边同学某些奇奇怪怪的原因，被做假视频陷害，被全班孤立，最好的朋友甚至也渐行渐远，网络上的舆论由赞美变成了辱骂，就在这种每天精神折磨下，景山好像见到路人也会对她指指点点羞辱她，终于受不了了选择死亡。</p>
+<p>​        在这个网络愈发发达的社会，信息碎片化传播的时代，所见的每一则新闻都可能反转反转再反转，而身为吃瓜群众的我们选择的却是随大流，舆论方向在哪我们就说什么，失去了思考的能力，可以说是被牵着鼻子走，确实，这和无良媒体的报道脱不了干系，但在网络上发表言论前，最好的选择是思考。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171043781.png" alt="image-20220117104346561"></p>
+<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171040233.png" alt="image-20220117104052506" style="zoom:80%;" />
+
+
+
+<p><strong>共情</strong> 如果角色互换 你会怎么样？既然如此，为什么不能怀揣善意对别人呢？</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171042974.png" alt="image-20220117104235605"></p>
+<p><strong>所谓网络言论自由这层美丽的糖衣包裹着数不清的言语利刃，你的一句话，或许就是别人崩溃的导火索，言论自由不是不负责任没脑子言论，是网络社会的多样、包容，所以，说一句话前，务必三思。</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171049842.png" alt="image-20220117104934191"></p>
+<p>最后再次强推苏打主演的这部剧，剧好看是一方面，苏打是真帅啊……不会有人不喜欢帅哥吧）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171051880.png" alt="image-20220117105140793"></p>
+]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
+      <tags>
+        <tag>日剧</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>408数据结构一轮笔记</title>
     <url>/2022/03/22/408%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%80%E8%BD%AE%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="1-绪论"><a href="#1-绪论" class="headerlink" title="1.绪论"></a>1.绪论</h1><h2 id="数据结构基本概念"><a href="#数据结构基本概念" class="headerlink" title="数据结构基本概念"></a>数据结构基本概念</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
@@ -49,7 +340,7 @@
 <li>确定性。算法中每条指令必须有确切的含义，对于<strong>相同的输入</strong>只能得出<strong>相同的输出</strong>。</li>
 <li>可行性。算法中描述的操作都可以通过<strong>已经实现的基本运算执行有限次</strong>来实现。 </li>
 <li>输入。一个算法有<strong>零个或多个输入</strong>，这些输入取自于某个特定的对象的集合。</li>
-<li> 输出。一个算法有<strong>一个或多个输出</strong>，这些输出是与输入有着某种特定关系的量</li>
+<li>输出。一个算法有<strong>一个或多个输出</strong>，这些输出是与输入有着某种特定关系的量</li>
 </ul>
 <p>“好”算法的特质</p>
 <ul>
@@ -69,7 +360,7 @@
 <p>结论：</p>
 <ul>
 <li>顺序执行的代码只会 影响常数项，可以忽略</li>
-<li>只需挑循环中的一个 基本操作分析它的执行次数 与 n 的关系即可</li>
+<li>只需挑循环中的一个 基本操作分析它的执行次数与n的关系即可</li>
 <li>如果有多层嵌套循环， 只需关注最深层循环循环了几次</li>
 </ul>
 <p>最坏时间复杂度：最坏情况下算法的时间复杂度 </p>
@@ -78,9 +369,9 @@
 <h4 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h4><p><strong>只需关注存储空间大小 与问题规模相关的变量</strong></p>
 <p>算法的空间复杂度S(n)定义为该算法所耗费的存储空间，它是问题规模n的函数。记为<br>$$<br>S(n)=O(g(n))<br>$$<br>一个程序在执行时除需要存储空间来存放本身所用的指令、常数、变量和输入数据外，还需要一些对数据进行操作的工作单元和存储一些为实现计算所需信息的辅助空间。若输入数据所占空间只取决于问题本身，和算法无关，则只需分析除输入和程序之外的额外空间。</p>
 <p><strong>算法原地工作是指算法所需的辅助空间为常量，即O(1)。</strong></p>
-<p><strong>一般函数递归带来的空间复杂度位递归调用的深度</strong></p>
+<p><strong>一般函数递归带来的空间复杂度为递归调用的深度</strong>  </p>
 <h1 id="2-线性表"><a href="#2-线性表" class="headerlink" title="2.线性表"></a>2.线性表</h1><p>线性表是具有<strong>相同数据类型</strong>的n （n≥0）个数据元素的<strong>有限序列</strong></p>
-<h2 id="顺序表"><a href="#顺序表" class="headerlink" title="顺序表"></a>顺序表</h2><p>顺序表-用顺序存储的方式实现线性表。把逻辑上相邻的元素存储在物理位置上也相邻的存储单元中，元素之间的关 系由存储单元的邻接关系来体现。<strong>逻辑顺序与物理顺序相同。</strong></p>
+<h2 id="顺序表"><a href="#顺序表" class="headerlink" title="顺序表"></a>顺序表</h2><p>顺序表-用顺序存储的方式实现线性表。把逻辑上相邻的元素存储在物理位置上也相邻的存储单元中，元素之间的关系由存储单元的邻接关系来体现。<strong>逻辑顺序与物理顺序相同。</strong></p>
 <p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202203231125225.png" alt="image-20220323112548146"></p>
 <h3 id="顺序表实现"><a href="#顺序表实现" class="headerlink" title="顺序表实现"></a>顺序表实现</h3><h4 id="静态分配"><a href="#静态分配" class="headerlink" title="静态分配"></a>静态分配</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MaxSize 100</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> data[MaxSize];<span class="comment">//静态数组存放数据元素</span></span><br><span class="line">    <span class="keyword">int</span> length;</span><br><span class="line">&#125;SqList;<span class="comment">//静态分配顺序表 内存满了无能为力</span></span><br></pre></td></tr></table></figure>
 
@@ -123,7 +414,7 @@
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//带头节点的单链表 </span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">InitList</span><span class="params">(LinkList &amp;l)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    l = <span class="keyword">new</span> LNode;</span><br><span class="line">    <span class="keyword">if</span> (l==<span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    l-&gt;next =<span class="literal">NULL</span>;</span><br><span class="line">    <span class="comment">//l-&gt;next = l//循环单链表</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>; </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Empty</span><span class="params">(LinkList l)</span><span class="comment">//判断链表是否为空</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span>(l-&gt;next==<span class="literal">NULL</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>带头结点的单链表 头节点不存放数据 只是为了操作方便</p>
-<h3 id="单链表的插入和删除"><a href="#单链表的插入和删除" class="headerlink" title="单链表的插入和删除"></a>单链表的插入和删除</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">InsertNextNode</span><span class="params">(LinkList p,<span class="keyword">int</span> e)</span><span class="comment">//后插 在p节点 后插入元素e O(1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(p==<span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    LNode *s = <span class="keyword">new</span> LNode;</span><br><span class="line">    <span class="keyword">if</span>(s==<span class="literal">NULL</span>)<span class="comment">//防止内存分配失败</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    s-&gt;data = e;<span class="comment">//顺序不能错</span></span><br><span class="line">    s-&gt;next = p-&gt;next;</span><br><span class="line">    p-&gt;next = s;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">InsertList</span><span class="params">(LinkList &amp;l, <span class="keyword">int</span> i, <span class="keyword">int</span> e)</span><span class="comment">//在第i个位置插入元素e O(n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="comment">//为不带头节点 多加的代码主义第一个节点的情况</span></span><br><span class="line">    <span class="comment">// if(i==1)</span></span><br><span class="line">    <span class="comment">// &#123;</span></span><br><span class="line">    <span class="comment">//     LNode *s =new LNode;</span></span><br><span class="line">    <span class="comment">//     s-&gt;data = e;</span></span><br><span class="line">    <span class="comment">//     s-&gt;next= l;</span></span><br><span class="line">    <span class="comment">//     l= s;</span></span><br><span class="line">    <span class="comment">//     return true;</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    LNode *p =<span class="built_in">GetElem</span>(l,i<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">InsertNextNode</span>(p,e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">InsertPriorNode</span><span class="params">(LNode *p,<span class="keyword">int</span> e)</span><span class="comment">//在p节点之前插入元素e O(1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(p==<span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    LNode *s = <span class="keyword">new</span> LNode;</span><br><span class="line">    <span class="keyword">if</span>(s==<span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    s-&gt;next = p-&gt;next;<span class="comment">//偷天换日</span></span><br><span class="line">    p-&gt;next = s;</span><br><span class="line">    s-&gt;data = p-&gt;data;</span><br><span class="line">    p-&gt;data = e;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;<span class="comment">//大概思路是后插s节点，把s节点变成p节点，前p节点变成元素e</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">ListDelete</span><span class="params">(LinkList &amp;l, <span class="keyword">int</span> i ,<span class="keyword">int</span> &amp;e)</span><span class="comment">//删除表中第i个位置的元素 O(n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    LNode *p = <span class="built_in">GetElem</span>(l,i<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">if</span>(p==<span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    LNode *q = p-&gt;next;</span><br><span class="line">    e = q-&gt;data;</span><br><span class="line">    p-&gt;next = q-&gt;next;</span><br><span class="line">    <span class="keyword">delete</span> q;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">DeleteNode</span><span class="params">(LNode *p)</span><span class="comment">//删除指定节点p O(1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(p==<span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    LNode *q = p-&gt;next;<span class="comment">//注：如果p是最后一个节点，第二行会出现问题 此时只能给出头指针从前往后寻找o（n）</span></span><br><span class="line">    p-&gt;data = q-&gt;data;</span><br><span class="line">    p-&gt;next = q-&gt;next;</span><br><span class="line">    <span class="keyword">delete</span> q;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="单链表的插入和删除"><a href="#单链表的插入和删除" class="headerlink" title="单链表的插入和删除"></a>单链表的插入和删除</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">InsertNextNode</span><span class="params">(LinkList p,<span class="keyword">int</span> e)</span><span class="comment">//后插 在p节点 后插入元素e O(1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(p==<span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    LNode *s = <span class="keyword">new</span> LNode;</span><br><span class="line">    <span class="keyword">if</span>(s==<span class="literal">NULL</span>)<span class="comment">//防止内存分配失败</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    s-&gt;data = e;<span class="comment">//顺序不能错</span></span><br><span class="line">    s-&gt;next = p-&gt;next;</span><br><span class="line">    p-&gt;next = s;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">InsertList</span><span class="params">(LinkList &amp;l, <span class="keyword">int</span> i, <span class="keyword">int</span> e)</span><span class="comment">//在第i个位置插入元素e O(n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>; </span><br><span class="line">    <span class="comment">//为不带头节点 多加的代码注意 第一个节点的情况</span></span><br><span class="line">    <span class="comment">// if(i==1)</span></span><br><span class="line">    <span class="comment">// &#123;</span></span><br><span class="line">    <span class="comment">//     LNode *s =new LNode;</span></span><br><span class="line">    <span class="comment">//     s-&gt;data = e;</span></span><br><span class="line">    <span class="comment">//     s-&gt;next= l;</span></span><br><span class="line">    <span class="comment">//     l= s;</span></span><br><span class="line">    <span class="comment">//     return true;</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    LNode *p =<span class="built_in">GetElem</span>(l,i<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">InsertNextNode</span>(p,e);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">InsertPriorNode</span><span class="params">(LNode *p,<span class="keyword">int</span> e)</span><span class="comment">//在p节点之前插入元素e O(1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(p==<span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    LNode *s = <span class="keyword">new</span> LNode;</span><br><span class="line">    <span class="keyword">if</span>(s==<span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    s-&gt;next = p-&gt;next;<span class="comment">//偷天换日</span></span><br><span class="line">    p-&gt;next = s;</span><br><span class="line">    s-&gt;data = p-&gt;data;</span><br><span class="line">    p-&gt;data = e;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;<span class="comment">//大概思路是后插s节点，把s节点变成p节点，前p节点变成元素e</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">ListDelete</span><span class="params">(LinkList &amp;l, <span class="keyword">int</span> i ,<span class="keyword">int</span> &amp;e)</span><span class="comment">//删除表中第i个位置的元素 O(n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    LNode *p = <span class="built_in">GetElem</span>(l,i<span class="number">-1</span>);</span><br><span class="line">    <span class="keyword">if</span>(p==<span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    LNode *q = p-&gt;next;</span><br><span class="line">    e = q-&gt;data;</span><br><span class="line">    p-&gt;next = q-&gt;next;</span><br><span class="line">    <span class="keyword">delete</span> q;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">DeleteNode</span><span class="params">(LNode *p)</span><span class="comment">//删除指定节点p O(1)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(p==<span class="literal">NULL</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    LNode *q = p-&gt;next;<span class="comment">//注：如果p是最后一个节点，第二行会出现问题 此时只能给出头指针从前往后寻找o（n）</span></span><br><span class="line">    p-&gt;data = q-&gt;data;</span><br><span class="line">    p-&gt;next = q-&gt;next;</span><br><span class="line">    <span class="keyword">delete</span> q;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="单链表的查找"><a href="#单链表的查找" class="headerlink" title="单链表的查找"></a>单链表的查找</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">LNode * <span class="title">GetElem</span><span class="params">(LinkList l,<span class="keyword">int</span> i)</span><span class="comment">//O(n) 按位查找</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(i&lt;<span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">    LNode *p;<span class="comment">//指针p指向当前扫描到的节点</span></span><br><span class="line">    <span class="keyword">int</span> j=<span class="number">0</span>;<span class="comment">//记录当前指向的是第几个节点（不带头结点时j=1）</span></span><br><span class="line">    p = l;</span><br><span class="line">    <span class="keyword">while</span>(p!=<span class="literal">NULL</span>&amp;&amp;j&lt;i)</span><br><span class="line">    &#123;</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">        j++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">LNode * <span class="title">LocateElem</span><span class="params">(LinkList l,<span class="keyword">int</span> e)</span><span class="comment">//按值查找 直至找到==e节点 O(n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LNode *p = l-&gt;next;</span><br><span class="line">    <span class="keyword">while</span>(p!=<span class="literal">NULL</span>&amp;&amp;p-&gt;data!=e)</span><br><span class="line">        p=p-&gt;next;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -408,7 +699,7 @@
 <ul>
 <li>只有最后两层可能有叶子结点</li>
 <li>最多只有一个度为1的结点</li>
-<li> 同满二叉树第(3)点</li>
+<li>同满二叉树第(3)点</li>
 <li>$i\leq\lfloor n / 2\rfloor$ 为分支结点, $i&gt;\lfloor n / 2\rfloor$ 为叶子结点</li>
 <li>如果某结点只有一个孩子，那么一定是<strong>左孩子</strong>。</li>
 </ul>
@@ -847,6 +1138,300 @@
 <p>若边 $&lt;v_{k}, v \rho&gt;$ 表示活动 $a_{i}$, 则有 $e(i)=v e(k)$</p>
 <p>(4) 求所有活动的最迟发生时间 I() </p>
 <p>若边 $&lt;v_{k}, v_{j}&gt;$ 表示活动 $a_{i}$, 则有 $l(i)=v l(j)-\operatorname{Weight}\left(v_{k}, v_{j}\right)$</p>
+<h1 id="7-查找"><a href="#7-查找" class="headerlink" title="7.查找"></a>7.查找</h1><p>查找——在数据集合中寻找满足某种条件的数据元素的过程称为查找</p>
+<p>查找表（查找结构)——用于查找的数据集合称为查找表，它由同一类型的数据元素（或记录)组成</p>
+<p>关键字——数据元素中唯一标识该元素的某个数据项的值，使用基于关键字的查找，查找结果应该是唯一的。</p>
+<p>查找长度——在查找运算中，需要对比关键字的次数称为查找长度</p>
+<p>平均查找长度(ASL,Average Search Length)——所有查找过程中进行关键字的比较次数的平均值</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205301002013.png" alt="image-20220530100157819"></p>
+<h2 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h2><p>顺序查找又叫“线性查找”，通用于<strong>线性表</strong>。</p>
+<p>算法思想为从头到脚挨个找。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> *data;</span><br><span class="line">    <span class="keyword">int</span> length;</span><br><span class="line">&#125;Sqlist;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Search_seq</span><span class="params">(Sqlist s, <span class="keyword">int</span> key)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;s.length&amp;&amp;s.data[i]!=key;i++)</span><br><span class="line">    <span class="keyword">return</span> i==s.length?<span class="number">-1</span>:i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Search_seq</span><span class="params">(Sqlist s, <span class="keyword">int</span> key)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//哨兵法 数组下标从1开始存 无需判断数组越界</span></span><br><span class="line">    s.data[<span class="number">0</span>] = key;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=s.length;s.data[i]!=key;i--)</span><br><span class="line">    <span class="keyword">return</span> i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>查找效率分析：</p>
+<ul>
+<li><p>$\mathbf{A S L}_{\text {成功 }}=\frac{1+2+3+\ldots+n}{n}=\frac{n+1}{2}$</p>
+</li>
+<li><p>$\mathrm{ASL}_{\text {失败 }}=\mathrm{n}+1$</p>
+</li>
+</ul>
+<p><strong>优化：</strong></p>
+<ul>
+<li><p>对有序表进行线性查找（递增/递减）</p>
+<ul>
+<li><p>$\mathrm{ASL}_{\text {失败 }}=\frac{1+2+3+\ldots+n+n}{n+1}=\frac{n}{2}+\frac{n}{n+1}$</p>
+</li>
+<li><p>$\mathbf{A S L}_{\text {成功 }}=\frac{1+2+3+\ldots+n}{n}=\frac{n+1}{2}$</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205301028312.png" alt="image-20220530102856176"></p>
+<ul>
+<li>如果每个结点被查找的概率不相等，<strong>要把被查概率大的元素放在前面</strong></li>
+</ul>
+<h2 id="折半查找"><a href="#折半查找" class="headerlink" title="折半查找"></a>折半查找</h2><p>又称“二分查找”，仅适用于<strong>有序</strong>的<strong>顺序表</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Binary_Search</span><span class="params">(Sqlist s,<span class="keyword">int</span> key)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> low=<span class="number">0</span>,high=s.length<span class="number">-1</span>,mid;</span><br><span class="line">    <span class="keyword">while</span>(low&lt;=high)</span><br><span class="line">    &#123;</span><br><span class="line">        mid = (low+high)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span>(s.data[mid]==key)</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        <span class="keyword">if</span>(s.data[mid]&lt;key)</span><br><span class="line">            low = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            high = mid - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>查找效率分析：</p>
+<ul>
+<li><p>利用折半查找判定树</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205301041390.png" alt="image-20220530104155275"></p>
+</li>
+<li><p>构造折半查找判定树</p>
+<ul>
+<li>如果当前low和high之间有奇数个元素，则mid分隔后，左右两部分元素个数相等</li>
+<li>如果当前low和high之间有偶数个元素，则mid分隔后，左半部分比右半部分少一个元素</li>
+</ul>
+</li>
+<li><p>由上可知，右子树结点数-左子树结点数=0或1</p>
+</li>
+<li><p>折半查找判定树一定是平衡二叉树，只有最下面一层是不满的，因此树高为$\left\lceil\log _{2}(n+1)\right\rceil$（树高不包括失败节点）</p>
+<p>失败结点为n+1个（成功结点的空链域数量）</p>
+</li>
+<li><p><strong>时间复杂度为O(logn)</strong></p>
+</li>
+</ul>
+<h2 id="分块查找"><a href="#分块查找" class="headerlink" title="分块查找"></a>分块查找</h2><p><strong>块内无序，块间有序</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205301058175.png" alt="image-20220530105858063"></p>
+<ul>
+<li>在索引表内确定待查记录所属的分块 （可顺序、可折半）<ul>
+<li>索引表若无目标关键字，则最终停在low&gt;high，则在low中查找</li>
+</ul>
+</li>
+<li>在块内顺序查找</li>
+</ul>
+<p>查找效率分析：</p>
+<ul>
+<li>顺序查找索引表</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205301111929.png" alt="image-20220530111137831"></p>
+<ul>
+<li>折半查找</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205301125237.png" alt="image-20220530112537130"></p>
+<h2 id="树形查找"><a href="#树形查找" class="headerlink" title="树形查找"></a>树形查找</h2><h3 id="二叉排序树"><a href="#二叉排序树" class="headerlink" title="二叉排序树"></a>二叉排序树</h3><p>左&lt;根&lt;右 </p>
+<p>进行中序遍历可以得到递增的有序序列</p>
+<p>左右子树又是一棵二叉排序树</p>
+<p><strong>二叉排序树的查找</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">BSTNode</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> key;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">BSTNode</span> *<span class="title">lchild</span>,*<span class="title">rchild</span>;</span></span><br><span class="line">&#125;BSTNode,*BSTtree;</span><br><span class="line"></span><br><span class="line"><span class="function">BSTNode *<span class="title">BST_Search</span><span class="params">(BSTtree t,<span class="keyword">int</span> key)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(t!= <span class="literal">nullptr</span> &amp;&amp; t-&gt;key!=key)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(t-&gt;key&lt;key)</span><br><span class="line">            t=t-&gt;lchild;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            t=t-&gt;rchild;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>最坏空间O(1)</li>
+</ul>
+<p>递归实现</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function">BSTNode *<span class="title">BST_Search2</span><span class="params">(BSTtree t,<span class="keyword">int</span> key)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(t== <span class="literal">nullptr</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">if</span>(t-&gt;key==key)</span><br><span class="line">        <span class="keyword">return</span> t;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(t-&gt;key&lt;key)</span><br><span class="line">        <span class="built_in">BST_Search2</span>(t-&gt;rchild,key);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(t-&gt;key&gt;key)</span><br><span class="line">        <span class="built_in">BST_Search2</span>(t-&gt;lchild,key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>最坏空间O(n)</li>
+</ul>
+<p><strong>二叉排序树的插入</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">BST_Insert</span><span class="params">(BSTtree &amp;t,<span class="keyword">int</span> key)</span><span class="comment">//递归实现</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(t== <span class="literal">nullptr</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        t = (BSTtree)<span class="built_in">malloc</span>(<span class="built_in"><span class="keyword">sizeof</span></span>(BSTNode));</span><br><span class="line">        t-&gt;key=key;</span><br><span class="line">        t-&gt;lchild=t-&gt;rchild= <span class="literal">nullptr</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(t-&gt;key==key)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(t-&gt;key&lt;key)</span><br><span class="line">        <span class="built_in">BST_Insert</span>(t-&gt;rchild,key);</span><br><span class="line">    <span class="keyword">if</span>(t-&gt;key&gt;key)</span><br><span class="line">        <span class="built_in">BST_Insert</span>(t-&gt;lchild,key);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>二叉排序树的构造</strong></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">create_BST</span><span class="params">(BSTtree &amp;t,<span class="keyword">int</span> str[],<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    t = <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">BST_Insert</span>(t,str[i]);</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>二叉排序树的删除</strong></p>
+<p>先搜索找到目标结点:</p>
+<p>①若被删除结点z是叶结点，则直接删除，不会破坏二叉排序树的性质。</p>
+<p>②若结点z只有一棵左子树或右子树，则让z的子树成为z父结点的子树，替代z的位置。</p>
+<p>③若结点z有左、右两棵子树，则令z的直接后继（或直接前驱）替代z，然后从二叉排序树中删去这个直接后继(或直接前驱)，这样就转换成了第一或第二种情况。</p>
+<p><strong>查找效率分析</strong></p>
+<ul>
+<li>最好情况：n个结点的二叉树最小高度为 $\lfloor\log _{2} n\rfloor+1$.平均查找长度为O(logn)</li>
+<li>最坏情况：每个结点只有一个分支，树高＝结点数n。平均查找长度O(n)</li>
+</ul>
+<h3 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h3><p>平衡二叉树（ Balanced Binary Tree)，简称平衡树（AVL树)——树上任一结点的左子树和右子树的高度之差不超过1。</p>
+<p>结点的平衡因子=左子树高-右子树高。（只能是-1，0，1）</p>
+<p><strong>二叉排序树插入后如何保持平衡</strong></p>
+<p>从插入点往回找到第一个不平衡结点，调整以该结点为根的子树</p>
+<p><strong>每次调整的对象都是“最小不平衡子树”</strong></p>
+<ul>
+<li><strong>LL 在左孩子的左子树插入导致不平衡</strong></li>
+</ul>
+<p>​        <img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205301439263.png" alt="image-20220530143937127"></p>
+<ul>
+<li><strong>RR 在右孩子的右子树插入导致不平衡</strong></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205301440426.png" alt="image-20220530144055320"></p>
+<ul>
+<li><strong>LR 在左孩子的右子树插入导致不平衡</strong></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205301445078.png" alt="image-20220530144502946"></p>
+<ul>
+<li><strong>RL 在右孩子的左子树插入导致不平衡</strong></li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205301445235.png" alt="image-20220530144551118"></p>
+<p><strong>查找效率分析</strong></p>
+<ul>
+<li>假设以n,表示深度为h的平衡树中含有的最少结点数。则有n0= 0,n1= 1,n2 =2，并且有n= nn-1+ np-2 + 1<br>可以证明含有n个结点的平衡二叉树的最大深度为O(logzn)，平衡二叉树的平均查找长度为O(logn)</li>
+</ul>
+<h3 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h3><p>平衡二叉树AVL:插入/删除很容易破坏“平衡”特性，需要频繁调整树的形态。如:插入操作导致不平衡，则需要先计算平衡因子，找到最小不平衡子树(时间开销大)，再进行LL/RR/LR/RL调整</p>
+<p>红黑树RBT:插入/删除很多时候不会破坏“红黑”特性，无需频繁调整树的形态。即便需要调整，一般都可以在常数级时间内完成</p>
+<p>平衡二叉树:适用于以查为主、很少插入/删除的场景</p>
+<p>红黑树:适用于频繁插入、删除的场景，实用性更强</p>
+<p><strong>定义</strong></p>
+<ul>
+<li>红黑树是一颗二叉排序树</li>
+<li>每个结点或是红色，或是黑色的</li>
+<li>根节点是黑色的</li>
+<li>叶结点(外部结点、NULL结点、失败结点）均是黑色的</li>
+<li><strong>不存在两个相邻的红结点</strong>（即红结点的父节点和孩子结点均是黑色)</li>
+<li>对每个结点，从该节点到任一叶结点的简单路径上，所含黑结点的数目相同</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205301509116.png" alt="image-20220530150914006"></p>
+<p>结点的黑高：从某结点出发（不含该结点）到达任一空叶结点的路径上黑结点总数</p>
+<p><strong>若根节点黑高为h，内部结点数（关键字）最多有$2^{2h}-1$个</strong></p>
+<p><strong>性质：</strong></p>
+<ul>
+<li>从根节点到叶结点的最长路径不大于最短路径的2倍</li>
+<li>有n个内部节点的红黑树高度h≤ 2log(n＋1)</li>
+</ul>
+<p>红黑树查找时间复杂度O(logn)同AVL</p>
+<h4 id="红黑树的插入操作"><a href="#红黑树的插入操作" class="headerlink" title="==红黑树的插入操作=="></a>==红黑树的插入操作==</h4><ul>
+<li><strong>先查找，确定插入位置，插入新节点</strong></li>
+<li><strong>新结点是根——染为黑色</strong></li>
+<li><strong>新结点非根——染为红色</strong><ul>
+<li>若插入后满足红黑树定义 插入结束</li>
+<li>若不满足，则需调整，<strong>调整要看新插入节点叔叔结点的颜色</strong><ul>
+<li>叔结点为黑色：<strong>旋转+染色</strong><ul>
+<li>LL 右单旋 父换爷+染色</li>
+<li>RR 左单旋 父换爷+染色</li>
+<li>LR 左右双旋 儿换爷+染色</li>
+<li>RL 右左双旋 儿换爷+染色</li>
+</ul>
+</li>
+<li>叔结点为红色： <strong>染色+变新</strong><ul>
+<li>叔父爷染色 爷作为新结点</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="B树"><a href="#B树" class="headerlink" title="B树"></a>B树</h3><p>B树，又称多路平衡查找树，B树中所有结点的孩子个数的最大值称为B树的阶，通常用m表示。</p>
+<p>一棵m阶B树或为空树,或为满足如下特性的m叉树:</p>
+<ul>
+<li><p>树中每个结点至多有m棵子树，即至多含有m-1个关键字。</p>
+</li>
+<li><p>若根结点不是终端结点，则至少有两棵子树。</p>
+</li>
+<li><p>除根结点外的所有非叶结点至少有「m/2]棵子树，即至少含有「m/2]-1个关键字。(向上取整)</p>
+</li>
+<li><p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205311046894.png" alt="image-20220531104553708"></p>
+</li>
+<li><p>所有的叶结点都出现在同一层次上，并且不带信息（可以视为外部结点或类似于折半查找判定树的查找失败结点，实际上这些结点不存在，指向这些结点的指针为空)。</p>
+</li>
+</ul>
+<p>eg：<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205311049140.png" alt="image-20220531104914037"></p>
+<p>m阶B树的核心特性:</p>
+<ul>
+<li>根节点的子树数∈[2,m]，关键字数∈[1, m-1]。</li>
+<li>其他结点的子树数∈[[m/2], m];关键字数=[[m/2]-1, m-1]</li>
+<li>对任一结点，其所有子树高度都相同</li>
+<li>键字的值:子树0&lt;关键字1&lt;子树1&lt;关键字2&lt;子树2&lt;….(类比二叉查找树左&lt;中&lt;右)</li>
+</ul>
+<p><strong>B树的高度</strong></p>
+<p>（不包括叶子结点）</p>
+<p>含有n个关键字的m阶B树，<strong>最小、最大高度分别是</strong>？</p>
+<ul>
+<li><p>最小高度一一让每个结点尽可能的满, 有m-1个关键字, $m$ 个分叉, 则有 $\mathrm{n} \leqslant(m-1)\left(1+m+m^{2}+m^{3}+\ldots+m^{h-1}\right)=m^{h}-1, \quad$ 因此 $h \geq \log _{m}(n+1)$</p>
+</li>
+<li><p>最大高度一一让各层的分叉尽可能的少, 即根节点只有2个分叉, 其他结点只有 $[\mathrm{m} / 2\rceil$ 个分叉 各层结点至少有：第一层 1、第二层 2、第三层 $2\lceil\mathrm{<del>m} / 2\rceil \ldots$ 第 $\mathrm{h}$ 层 $2(\lceil\mathrm{</del>m} / 2\rceil)^{h-2}$ 第 $\mathrm{h}+1$ 层共有叶子结点（失败结点） $2(\lceil\mathrm{~m} / 2\rceil)^{h-1}$ 个<br>==$\mathrm{n}$ 个关键字的B树必有n $+1$ 个叶子结点==, 则 $n+1 \geq 2(\lceil m / 2\rceil)^{h-1}$, 即 $h \leq \log _{\lceil m / 2\rceil} \frac{n+1}{2}+1$ </p>
+</li>
+</ul>
+<p><strong>B树的插入</strong></p>
+<p>核心要求:<br>①对m阶B树——除根节点外，结点关键字个数[m/2]-1≤n≤m-1</p>
+<p>②子树O&lt;关键字1&lt;子树1&lt;关键字2&lt;子树2&lt;….</p>
+<p>新元素一定是插入到最底层“终端节点”，用“查找”来确定插入位置</p>
+<p><strong>在插入key后，若导致原结点关键字数超过上限，则从中间位置([m/2])将其中的关键字分为两部分，左部分包含的关键字放在原结点中，右部分包含的关键字放到新结点中，中间位置（[m/2])的结点插入原结点的父结点。若此时导致其父结点的关键字个数也超过了上限，则继续进行这种分裂操作，直至这个过程传到根结点为止，进而导致B树高度增1。</strong></p>
+<p><a href="https://www.cs.usfca.edu/~galles/visualization/BTree.html">可视化</a></p>
+<p><strong>B树的删除</strong></p>
+<ul>
+<li>删除非终端结点关键字<ul>
+<li>用其直接前驱或直接后继替代其位置，转化为对“终端结点”的处理<ul>
+<li>直接前驱：关键字左边指针子树中最右下关键字</li>
+<li>直接后继，关键字右边指针子树中最最下关键字</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>删除终端节点关键字<ul>
+<li>输出后结点个数未低于下限，不需要任何处理</li>
+<li>低于下限<ul>
+<li>右兄弟够借，则用当前结点后继、后继的后继依次填补空缺</li>
+<li>左兄弟够借，则用当前结点前驱、前驱的前驱依次填补空缺</li>
+<li>都不够借，则需要与父结点的关键字、左（右）兄弟的关键字进行合并。合并后导致父结点关键字-1，可能需要再次合并。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h3><p>一棵m阶的B+树需满足下列条件：</p>
+<ul>
+<li><p>每个分支结点最多有m棵子树（孩子结点）</p>
+</li>
+<li><p>非叶根结点至少有两棵子树，其他分支结点至少有【m/2】（向上取整）棵</p>
+</li>
+<li><p><strong>结点的子树个数与关键字个数相等</strong></p>
+</li>
+<li><p>所有叶节点包含全部关键字以及指向对应记录的指针，叶节点中将关键字按大小顺序排列，并且相邻叶节点按大小顺序相互连接起来（可以顺序查找）</p>
+</li>
+<li><p>所有分支结点只包含他们子树关键字的最大值以及指向子节点的指针</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205311440965.png" alt="image-20220531144036820"></p>
+<p>B+树无论查找成功或失败，最终一定会走到最下面一层节点</p>
+<p>在B+树中，非叶结点不含有该关键字对应记录的存储地址。可以使一个磁盘块可以包含更多个关键字，使得B+树的阶更大，树高更矮，<strong>读磁盘次数更少，查找更快</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205311444734.png" alt="image-20220531144442608"></p>
+</li>
+</ul>
+<h2 id="散列（hash查找）"><a href="#散列（hash查找）" class="headerlink" title="散列（hash查找）"></a>散列（hash查找）</h2><p>散列表（Hash Table），又称哈希表。是一种数据结构，特点是：<strong>数据元素的关键字与其存储地址直接相关。</strong></p>
+<p>若不同的关键字通过函数映射到同一个值，则称为<strong>同义词</strong></p>
+<p>通过散列函数确定的位置已经存放了其他元素，则称为<strong>冲突</strong></p>
+<p><strong>处理冲突的方法</strong></p>
+<ul>
+<li><p>拉链法：把所有同义词存在同一个链表里。</p>
+<p>小优化：保持关键字有序 可以提高查找效率。</p>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205311449378.png" alt="image-20220531144921268"></p>
+<p>​        查找长度——查找过程中，需要对比关键字的次数称为查找长度。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205311452980.png" alt="image-20220531145227864"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205311453872.png" alt="image-20220531145347751"></p>
+<ul>
+<li><p>开放定址法</p>
+<ul>
+<li><p>线性探测法：发生冲突时，每次往后探测相邻的下一个单元</p>
+<p>很容易造成同义词、非同义词的聚集、堆积现象，严重影响查找效率。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205311536677.png" alt="image-20220531153625549"></p>
+</li>
+<li><p>平方探测法</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205311534644.png" alt="image-20220531153439538"></p>
+</li>
+</ul>
+</li>
+<li><p>再散列法</p>
+<p>再散列法（再哈希法)∶除了原始的散列函数H(key)之外，多准备几个散列函数,当散列函数冲突时，用下一个散列函数计算一个新地址，直到不冲突为止:<br>H= RH(Key) i=1,2,3……</p>
+</li>
+</ul>
+<p><strong>注意∶采用“开放定址法”时，删除结点不能简单地将被删结点的空间置为空，否则将截断它之后填入。散列表的同义词结点的查找路径，可以做一个“删除标记”，进行逻辑删除。</strong></p>
+<p><strong>常见的散列函数是否为空</strong></p>
+<ul>
+<li><p>除留余数法</p>
+<p>散列表长m，则需取一个<strong>不大于m但最接近或等于m的质数</strong>p作为除数，以尽量减少冲突</p>
+</li>
+<li><p>直接定址法——H(key)= key或H(key) = a*key + b</p>
+<p>其中，a和b是常数。这种方法计算最简单，且不会产生冲突。它适合关<strong>键字的分布基本连续的情况</strong>，若关键字分布不连续，空位较多，则会造成存储空间的浪费。<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205311459201.png" alt="image-20220531145903102"></p>
+</li>
+<li><p>数字分析法——选取数码分布较为均匀的若干位作为散列地址<br>设关键字是r进制数(如十进制数)，而<strong>r个数码在各位上出现的频率不一定相同，可能在某些位上分布均匀一些</strong>，每种数码出现的机会均等;而在某些位上分布不均匀，只有某几种数码经常出现，此时可选取数码分布较为均匀的若干位作为散列地址。这种方法适合于已知的关键字集合，若更换了关键字，则需要重新构造新的散列函数。</p>
+<p>eg：用手机号码后四位作为散列地址</p>
+</li>
+<li><p>平方取中法――取关键字的平方值的中间几位作为散列地址。<br>具体取多少位要视实际情况而定。这种方法得到的散列地址与关键字的每位都有关系，因此使得散列地址分布比较均匀，适用于关键字的每位取值都不够均匀或均小于散列地址所需的位数。</p>
+</li>
+</ul>
+<p>散列查找是典型的以空间换时间，散列函数合理，散列表越长，冲突概率越低。</p>
 ]]></content>
       <categories>
         <category>考研</category>
@@ -1091,258 +1676,6 @@
       </tags>
   </entry>
   <entry>
-    <title>408一轮计网复习笔记</title>
-    <url>/2022/05/19/408%E8%AE%A1%E7%BD%91%E4%B8%80%E8%BD%AE%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h1 id="1-计算机网络体系结构"><a href="#1-计算机网络体系结构" class="headerlink" title="1.计算机网络体系结构"></a>1.计算机网络体系结构</h1><h2 id="计算机网络概述"><a href="#计算机网络概述" class="headerlink" title="计算机网络概述"></a>计算机网络概述</h2><p>计算机网络︰是一个将分散的、具有独立功能的<strong>计算机系统</strong>，通过<strong>通信设备</strong>与<strong>线路</strong>连接起来，由功能完善的<strong>软件</strong>实现<strong>资源共享</strong>和<strong>信息传递</strong>的系统。</p>
-<p>计算机网络是互连的、自治的计算机集合。（互连：通过通信链路互联互通，自治：无主从关系）</p>
-<h3 id="计算机网络的功能"><a href="#计算机网络的功能" class="headerlink" title="计算机网络的功能"></a><strong>计算机网络的功能</strong></h3><ul>
-<li>==数据通信==：最基本和最重要的功能。用来实现联网计算机之间各种信息的传输，并将分散在不同地理位置的计算机联系起来，进行统一的调配、控制和管理。例如，文件传输、电子邮件等应用，离开了计算机网络将无法实现。</li>
-<li>资源共享：资源共享可以是软件共享、数据共享，也可以是硬件共享。它使计算机网络中的资源互通有无、分工协作，从而极大地提高硬件资源、软件资源和数据资源的利用率。</li>
-<li>分布式处理：当计算机网络中的某个计算机系统负荷过重时，可以将其处理的某个复杂任务分配给网络中的其他计算机系统，从而利用空闲计算机资源以提高整个系统的利用率。</li>
-<li>提高可靠性：计算机网络中的各台计算机可以通过网络互为替代机。</li>
-<li>负载均衡：将工作任务均衡地分配给计算机网络中的各台计算机。</li>
-</ul>
-<h3 id="计算机网络的发展"><a href="#计算机网络的发展" class="headerlink" title="计算机网络的发展"></a><strong>计算机网络的发展</strong></h3><p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205191934763.png" alt="image-20220519193405543"></p>
-<p>网络把许多计算机连接在一起,而互联网则把许多网络连接在一起因特网是世界上最大的互联网。</p>
-<p>1985年起，美国国家科学基金会NSF围绕6个大型计算机中心建设计算机网络,即国家科学基金网NSFNET。</p>
-<p>ISP:因特网服务提供者/因特网服务提供商,是—个向广大用户综合提供互联网接入业务、信息业务、和增值业务的公司，如中国电信、中国联动、中国移动等。分为主干ISP、地区ISP和本地ISP。</p>
-<h3 id="计算机网络的组成"><a href="#计算机网络的组成" class="headerlink" title="计算机网络的组成"></a><strong>计算机网络的组成</strong></h3><ul>
-<li><p>从组成部分上，分为<strong>软件、硬件、协议</strong></p>
-<p>硬件主要由主机（也称端系统)、通信链路（如双绞线、光纤)、交换设备（如路由器、交换机等）和通信处理机（如网卡）等组成。软件主要包括各种实现资源共享的软件和方便用户使用的各种工具软件（如网络操作系统、邮件收发程序、FTP程序、聊天程序等)。<strong>软件部分多属于应用层。协议是计算机网络的核心</strong>，如同交通规则制约汽车驾驶一样，协议规定了网络传输数据时所遵循的规范。</p>
-</li>
-<li><p>从工作方式上，分为<strong>边缘部分（用户直接使用）和核心部分（为边缘部分服务）</strong><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205191942642.png" alt="image-20220519194256573"></p>
-</li>
-<li><p>从功能组成上，分为<strong>通信子网（数据通信）和资源子网（资源共享/数据处理）</strong></p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205191939612.png" alt="image-20220519193933555"></p>
-<h3 id="计算机网络分类"><a href="#计算机网络分类" class="headerlink" title="计算机网络分类"></a>计算机网络分类</h3><ul>
-<li><p>分布范围分</p>
-<ul>
-<li><p>广域网（WAN）：交换技术 长距离通信</p>
-</li>
-<li><p>城域网（MAN）</p>
-</li>
-<li><p>局域网（LAN）：广播技术 </p>
-</li>
-<li><p>个人区域网（RAN）</p>
-<p>==注意:若中央处理器之间的距离非常近(如仅1m的数量级或甚至更小)，则一般称为多处理器系统，而不称为计算机网络==。</p>
-</li>
-</ul>
-</li>
-<li><p>按使用者分</p>
-<ul>
-<li>公用网</li>
-<li>专用网</li>
-</ul>
-</li>
-<li><p>按交换技术分类</p>
-<ul>
-<li><p>电路交换</p>
-<p>在源结点和目的结点之间建立一条专用的通路用于传送数据，包括建立连接、传输数据和断开连接三个阶段。<strong>最典型的电路交换网是传统电话网络。</strong><br>该类网络的主要特点是整个报文的比特流连续地从源点直达终点，好像是在一条管道中传送。<strong>优点是数据直接传送、时延小。缺点是线路利用率低、不能充分利用线路容量、不便于进行差错控制。</strong></p>
-</li>
-<li><p>报文交换</p>
-<p>用户数据加上源地址、目的地址、校验码等辅助信息，然后封装成报文。整个报文传送到相邻结点，全部存储后，再转发给下一个结点，重复这一过程直到到达目的结点。每个报文可以单独选择到达目的结点的路径。<br>报文交换网络也称<strong>存储-转发</strong>网络，主要特点是整个报文先传送到相邻结点，全部存储后查找转发表，转发到下一个结点。<strong>优点是可以较为充分地利用线路容量，可以实现不同链路之间不同数据传输速率的转换，可以实现格式转换，可以实现一对多、多对一的访问，可以实现差错控制。缺点是增大了资源开销(如辅助信息导致处理时间和存储资源的开销)，增加了缓冲时延，需要额外的控制机制来保证多个报文的顺序不乱序，缓冲区难以管理（因为报文的大小不确定，接收方在接收到报文之前不能预知报文的大小)。</strong></p>
-</li>
-<li><p>分组交换</p>
-<p>也称包交换网络。其原理是，将数据分成较短的面定长度的数据块，在每个数据块中加上目的地址、源地址等辅助信息组成分组(包)，以<strong>存储-转发</strong>方式传输。其主要特点是单个分组（它只是整个报文的一部分）传送到相邻结点，存储后查找转发表，转发到下一个结点。<strong>除具备报文交换网络的优点外，分组交换网络还具有自身的优点:缓冲易于管理;包的平均时延更小，网络占用的平均缓冲区更少﹔更易于标准化;更适合应用。现在的主流网络基本上都可视为分组交换网络。</strong></p>
-</li>
-</ul>
-</li>
-<li><p>按拓扑结构分类</p>
-<p>网络拓扑结构是指由<strong>网中结点（路由器、主机等）与通信线路（网线)之间</strong>的几何关系（如总线形、环形）表示的网络结构，<strong>主要指通信子网的拓扑结构</strong>。</p>
-<p>按网络的拓扑结构，主要分为总线形、星形、环形和网状网络等，<strong>星形、总线形和环形网络多用于局域网,网状网络多用于广域网。</strong></p>
-<ul>
-<li>总线型  优点：建网容易、增减结点容易、节省线路。缺点：重负载时通信效率不高，任意一处对故障敏感</li>
-<li>星型  便于集中控制和管理，端用户之间的通信必经过中央设备 成本高，中央对故障敏感</li>
-<li>环型 eg：令牌环局域网</li>
-<li>网状 可靠性高 控制复杂 线路成本高</li>
-</ul>
-</li>
-<li><p>按传输技术分</p>
-<ul>
-<li><p>广播式网络：共享公共通信信道</p>
-</li>
-<li><p>点对点网络：<strong>使用分组存储转发和路由选择机制</strong></p>
-<p>广域网基本都属于点对点</p>
-</li>
-</ul>
-</li>
-<li><p>按传输介质分</p>
-<ul>
-<li>有线网络</li>
-<li>无线网络</li>
-</ul>
-</li>
-</ul>
-<h3 id="计算机网络性能指标"><a href="#计算机网络性能指标" class="headerlink" title="计算机网络性能指标"></a>计算机网络性能指标</h3><ul>
-<li><p>速率：数据率/数据传输率/比特率</p>
-<p>​            单位b/s，kb/s，Mb/s，Gb/s，Tb/s</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192000587.png" alt="image-20220519200024520"></p>
-</li>
-<li><p>带宽：表示网络的通信线路传送数据的能力，指单位时间内从网络中某一点到另一点所能通过的<strong>“最高数据率”</strong>，单位同速率</p>
-</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192002101.png" alt="image-20220519200229039"></p>
-<ul>
-<li><p>吞吐量：单位时间欸通过某个网络（信道/接口）的数据量。单位同上。受网络带宽和网络额定速率所影响。</p>
-</li>
-<li><p>时延：指数据(报文/分组/比特流）从网络(或链路）的一端传送到另一端所需的时间。也叫延迟或迟延。单位是s。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192005278.png" alt="image-20220519200544187"></p>
-</li>
-</ul>
-<p>​        注意:做题时，排队时延和处理时延一般可忽略不计（除非题目另有说明)。<strong>另外，对于高速链路，提高的仅是数据发送速率而非比特在链路上的传播速率。提高数据的发送速率只是为了减少数据的发送时延。</strong></p>
-<ul>
-<li>时延带宽积：称为以比特为单位的链路长度</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192008164.png" alt="image-20220519200827094"></p>
-<ul>
-<li><p>往返时延：指从发送端发出一个短分组，到发送端收到来自接收端的确认(接收端收到数据后立即发送确认)，总共经历的时延。在互联网中，往返时延还包括各中间结点的处理时延、排队时延及转发数据时的发送时延。</p>
-<p>其中max为传播时延*2</p>
-</li>
-<li><p>信道利用率：指出某一信道有百分之多少的时间是有数据通过的，即<strong>信道利用率=有数据通过时间/(有+无)数据通过时间。</strong></p>
-</li>
-</ul>
-<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205192011506.png" alt="image-20220519201121428" style="zoom:200%;" />
-
-<h2 id="计算机网络体系结构与参考模型"><a href="#计算机网络体系结构与参考模型" class="headerlink" title="计算机网络体系结构与参考模型"></a>计算机网络体系结构与参考模型</h2><p><strong>分层基本原则</strong></p>
-<ul>
-<li>各层之间相互独立，每层只实现一种相对独立的功能。</li>
-<li>每层之间界面自然清晰，易于理解，相互交流尽可能少。</li>
-<li>结构上可分割开。每层都采用最合适的技术来实现。</li>
-<li>保持下层对上层的独立性，上层单向使用下层提供的服务。</li>
-<li>整个分层结构应该能促进标准化工作。</li>
-</ul>
-<p>实体:第n层中的活动元素称为n层实体。同一层的实体叫<strong>对等实体</strong>。</p>
-<p>协议:为进行网络中的对等实体数据交换而建立的规则、标准或约定称为网络协议。<strong>【水平】</strong></p>
-<p>​    语法:规定传输数据的格式</p>
-<p>​    语义:规定所要完成的功能</p>
-<p>​    同步:规定各种操作的顺序</p>
-<p>接口（访问服务点SAP) :上层使用下层服务的入口。</p>
-<p>服务:下层为相邻上层提供的功能调用。<strong>【垂直】</strong></p>
-<p><strong>注意：在一层完成的全部功能并非都称为服务，只有那些能够被高层实体“看得见”的功能才能称为服务。</strong></p>
-<p>我们把计算机网络的各层及其协议的集合称为网络的体系结构（从<strong>功能</strong>上描述）</p>
-<p>在各个层次中，每个报文都分为两部分SDU PCI，他们共同组成了PDU</p>
-<ul>
-<li><p>SDU服务数据单元:为完成用户所要求的功能而应传送的数据。</p>
-</li>
-<li><p>PCI协议控制信息:控制协议操作的信息。</p>
-</li>
-<li><p>PDU协议数据单元:对等层次之间传送的数据单位。</p>
-</li>
-</ul>
-<p>层次结构的具体含义：</p>
-<ul>
-<li>第n层的实体不仅要使用第n-1层的服务来实现自身定义的功能，还要向第n +1层提供本层的服务，该服务是第n层及其下面各层提供的服务总和。</li>
-<li>最低层只提供服务，是整个层次结构的基础;中间各层既是下一层的服务使用者，又是上一层的服务提供者;最高层面向用户提供服务。</li>
-<li>上一层只能通过相邻层间的接口使用下一层的服务，而不能调用其他层的服务:下一层所提供服务的实现细节对上一层透明。</li>
-<li>两台主机通信时，对等层在逻辑上有一条直接信道，表现为不经过下层就把信息传送到对方。</li>
-</ul>
-<p><strong>仅仅在相邻层间有接口，且所提供服务的具体实现细节对上一层完全屏蔽。</strong></p>
-<p><strong>体系结构是抽象的，而实现是指能运行的一些软件和硬件。</strong></p>
-<h3 id="OSI参考模型"><a href="#OSI参考模型" class="headerlink" title="OSI参考模型"></a>OSI参考模型</h3><p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205201108506.png" alt="image-20220520110838322"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205201110548.png" alt="image-20220520111021455"></p>
-<ul>
-<li><p>应用层：所有能和用户交互产生网络流量的程序 FTP SMTP HTTP</p>
-</li>
-<li><p>表示层：处理两个通信系统中交换信息的表示方式  JPEG ASCII</p>
-<ul>
-<li>格式变换</li>
-<li>加密解密</li>
-<li>压缩和恢复</li>
-</ul>
-</li>
-<li><p>会话层：向表示层实体/用户进程建立连接并在连接上有序地传输数据，也叫建立同步 ADSP ASP</p>
-<ul>
-<li>建立、管理、终止会话</li>
-<li>可以使用<strong>校验点</strong>在会话通信失效时从校验点/同步点继续恢复通信，实现数据同步。（适用于大文件）</li>
-</ul>
-</li>
-<li><p>传输层：负责主机中两个进程的通信，即<strong>端到端的通信</strong>。（因为一个进程由由一个端口来标识，所以称为端到端）传输单位是<strong>报文段或用户数据报</strong></p>
-<ul>
-<li><p>提供可靠/不可靠传输</p>
-</li>
-<li><p>差错控制</p>
-</li>
-<li><p>流量控制</p>
-</li>
-<li><p>复用分用：</p>
-<p>复用︰多个应用层进程可同时使用下面运输层的服务。<br>分用:   运输层把收到的信息分别交付给上面应用层中相应的进程。</p>
-</li>
-</ul>
-</li>
-<li><p>网络层：任务是把分组从源端传到目的端，为分组交换网上的不同主机提供和通信服务。传输单位是<strong>数据报</strong> IP\IPX\ICMP\IGMP\ARP\RARP\OSPF</p>
-<ul>
-<li>路由选择:选择最佳路径</li>
-<li>流量控制</li>
-<li>拥塞控制</li>
-<li>差错控制</li>
-</ul>
-</li>
-<li><p>数据链路层：任务是把网络层传下啦的数据报组装成帧。传输单位是<strong>帧</strong>。</p>
-<ul>
-<li>成帧（定义帧的开始和结束）</li>
-<li>差错控制（可能帧错/位错）</li>
-<li>流量控制</li>
-<li>传输控制（信道的访问/接入控制）</li>
-</ul>
-</li>
-<li><p>物理层：任务是在物理媒体上实现比特流的透明传输。传输单位是<strong>比特</strong></p>
-<ul>
-<li>定义接口特性</li>
-<li>定义传输模式 单工、半双工、双工</li>
-<li>定义传输速率</li>
-<li>比特同步</li>
-<li>比特编码</li>
-</ul>
-</li>
-</ul>
-<h3 id="TCP-IP参考模型"><a href="#TCP-IP参考模型" class="headerlink" title="TCP/IP参考模型"></a>TCP/IP参考模型</h3><p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205201955682.png" alt="image-20220520195510581"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205201956316.png" alt="image-20220520195600258"></p>
-<p>网际层是TCP/IP模型的关键部分</p>
-<p>传输层与OSI中的传输层功能类似，使用以下两种协议：</p>
-<ul>
-<li>TCP：面向连接 可靠</li>
-<li>UDP：无连接 不可靠 “尽最大努力交付”</li>
-</ul>
-<p>应用层包括所有的高级协议 eg：虚拟终端协议（Telent），文件传输协议（FTP）、域名解析（DNS）、电子邮件协议（SMTP）、超文本传输协议（HTTP）。</p>
-<p><strong>TCP/IP与OSI模型的比较</strong></p>
-<ul>
-<li><p><strong>相似之处</strong></p>
-<ul>
-<li>分层</li>
-<li>基于独立的协议栈</li>
-<li>可以实现异构网络互连</li>
-</ul>
-</li>
-<li><p><strong>不同点</strong></p>
-<ul>
-<li><p>OSI定义了三点：服务、协议、接口</p>
-</li>
-<li><p>OSI先出现没有特别偏向协议 TCP/IP不会出现协议不匹配模型的情况</p>
-</li>
-<li><p>TCP/IP设计之初就考虑了异构网互联 将IP作为重要层次</p>
-</li>
-<li><p><strong>OSI参考模型在网络层支持无连接和面向连接的通信，但在传输层仅有面向连接的通信。而TCP/IP模型认为可靠性是端到端的问题，因此它在网际层仅有一种无连接的通信模式，但传输层支持无连接和面向连接两种模式</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205202006093.png" alt="image-20220520200617028"></p>
-</li>
-</ul>
-</li>
-</ul>
-<p><strong>5层参考模型</strong></p>
-<p>综合上述两种的优点</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205202007615.png" alt="image-20220520200717544"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202205202007993.png" alt="image-20220520200732915"></p>
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
-        <tag>考研</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>张宇1000题错题</title>
     <url>/2022/04/06/%E5%BC%A0%E5%AE%871000%E9%A2%98%E9%94%99%E9%A2%98/</url>
     <content><![CDATA[<h1 id="第一讲"><a href="#第一讲" class="headerlink" title="第一讲"></a>第一讲</h1> <div class="pdfobject-container" data-target="/pdf/张宇1000题第1讲错题.pdf" data-height="500px"></div>
@@ -1369,45 +1702,6 @@
       <tags>
         <tag>考研</tag>
         <tag>数学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>三年a班有感</title>
-    <url>/2022/01/17/%E4%B8%89%E5%B9%B4a%E7%8F%AD%E6%9C%89%E6%84%9F/</url>
-    <content><![CDATA[<p>​        怎么说呢，我几乎不看日剧，看过为数不多印象很深的也只有十元的《非自然死亡》。看这部剧的契机主要就是当时期末刚考完+游戏一直输不想玩+无聊刷B站刷到 看这封面男主很帅就打开看看，看着看着就上头了。从结果上帝视角来说，我觉得这是一部<strong>揭示道理深刻</strong>，情节离谱却跌宕的好剧。</p>
-<p>​        简单说，主要讲的是，某高中三年a班即将毕业的29名学生（30-1），在临毕业的最后十天，被美术老师柊一颯“绑架”作为人质，目的找出班上自杀女生景山澪奈的真正原因。（<em>我的观感是看这个剧每集都像大结局。。。</em>）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171009964.png" alt="image-20220117100945621"></p>
-<p>​      ==下面就是一些小小的体会==</p>
-<p>​        我觉得这个日剧好的地方就在于从很多方面揭示了不止是日本乃至中国全世界人类出现的问题，而且用这种极端的方式，弘扬了一位教师应做的，很难不让人印象深刻。</p>
-<ul>
-<li><strong>欺软怕硬</strong> 剧中男主柊一颯作为一名老师，在班级上没有得到丝毫的尊重，班级上任意一名同学都随意耻笑、捣乱甚至人身攻击，而在使用炸弹威慑之后，没有一个人对老师的要求说漏，观感就像大老虎变成了小猫咪？（bushi），反差令人发笑</li>
-<li><strong>为了保全自己失去理智</strong> 很简单，柊一颯要求找出景山死亡真相，否则杀了一个人，与景山关系最好的小樱被要求代表回答，结果是小樱为了保全大家说是因为自己，显然回答错误，得知要杀一个人的同学们惊慌失措，一致让柊老师杀了小樱，真是气抖冷。。。</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171025140.jpg" alt="src=http___b-ssl.duitang.com_uploads_item_201902_07_20190207213047_escmd.thumb.700_0.jpg&amp;refer=http___b-ssl.duitang"></p>
-<ul>
-<li><p><strong>利己</strong> 剧中景山之前的“朋友”宇佐美接近景山 成为朋友只是为了自己在MINDVOICE上获得更多的粉丝 毕竟景山是全国游泳大赛冠军 天才美少女 而在景山发现了宇佐美的真实意图后 故意疏远她 选择了真心与自己作为朋友的小樱 宇佐美为此不惜陷害景山（就是一系列低俗的恶作剧） 最终酿成大祸</p>
-<p><em>为了减少剧透，先就列举这几个</em></p>
-</li>
-</ul>
-<p>​       其实还有很多这些方面的<strong>劣根</strong>性问题存在，但这部剧主要揭示的问题毫无疑问是 <strong>校园暴力</strong>和 <strong>网络暴力</strong> 。景山作为全国游泳大赛冠军，美好的未来，因为身边同学某些奇奇怪怪的原因，被做假视频陷害，被全班孤立，最好的朋友甚至也渐行渐远，网络上的舆论由赞美变成了辱骂，就在这种每天精神折磨下，景山好像见到路人也会对她指指点点羞辱她，终于受不了了选择死亡。</p>
-<p>​        在这个网络愈发发达的社会，信息碎片化传播的时代，所见的每一则新闻都可能反转反转再反转，而身为吃瓜群众的我们选择的却是随大流，舆论方向在哪我们就说什么，失去了思考的能力，可以说是被牵着鼻子走，确实，这和无良媒体的报道脱不了干系，但在网络上发表言论前，最好的选择是思考。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171043781.png" alt="image-20220117104346561"></p>
-<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171040233.png" alt="image-20220117104052506" style="zoom:80%;" />
-
-
-
-<p><strong>共情</strong> 如果角色互换 你会怎么样？既然如此，为什么不能怀揣善意对别人呢？</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171042974.png" alt="image-20220117104235605"></p>
-<p><strong>所谓网络言论自由这层美丽的糖衣包裹着数不清的言语利刃，你的一句话，或许就是别人崩溃的导火索，言论自由不是不负责任没脑子言论，是网络社会的多样、包容，所以，说一句话前，务必三思。</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171049842.png" alt="image-20220117104934191"></p>
-<p>最后再次强推苏打主演的这部剧，剧好看是一方面，苏打是真帅啊……不会有人不喜欢帅哥吧）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171051880.png" alt="image-20220117105140793"></p>
-]]></content>
-      <categories>
-        <category>Life</category>
-      </categories>
-      <tags>
-        <tag>日剧</tag>
       </tags>
   </entry>
 </search>
