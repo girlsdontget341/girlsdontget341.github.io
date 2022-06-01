@@ -115,13 +115,6 @@
   </url>
   
   <url>
-    <loc>http://girlsdontget341.xyz/tags/%E6%95%B0%E5%AD%A6/</loc>
-    <lastmod>2022-06-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://girlsdontget341.xyz/tags/PyTorch%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2022-06-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -130,6 +123,13 @@
   
   <url>
     <loc>http://girlsdontget341.xyz/tags/Python/</loc>
+    <lastmod>2022-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://girlsdontget341.xyz/tags/%E6%95%B0%E5%AD%A6/</loc>
     <lastmod>2022-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
