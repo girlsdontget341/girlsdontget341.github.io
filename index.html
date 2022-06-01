@@ -187,6 +187,147 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/01/dataStructure/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Y">
+      <meta itemprop="description" content="人间清醒绝缘体罢了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YのRegistro">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/06/01/dataStructure/" class="post-title-link" itemprop="url">dataStructure</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-06-01 09:31:53 / Modified: 10:21:48" itemprop="dateCreated datePublished" datetime="2022-06-01T09:31:53+08:00">2022-06-01</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="数据结构三要素">数据结构三要素</h3>
+<h4 id="逻辑结构">1.逻辑结构</h4>
+<p>​ <strong>与数据的存储无关，独立于计算机。</strong></p>
+<figure>
+<img src="/2022/06/01/dataStructure/202203231041042.png" alt="image-20220323104111878">
+<figcaption aria-hidden="true">image-20220323104111878</figcaption>
+</figure>
+<h4 id="存储结构物理结构">2.存储结构（物理结构）</h4>
+<ul>
+<li><p>顺序存储</p>
+<p>把逻辑上相邻的元素存储在物理位置
+上也相邻的存储单元中，元素之间的关系由存储
+单元的邻接关系来体现。<strong>优点：实现随机存取；缺点：只能使用相邻的一整块存储单元，可能会产生外部碎片。</strong></p></li>
+<li><p>链式存储</p>
+<p>逻辑上相邻的元素在物理位置上<strong>可以
+不相邻</strong>，借助指示元素存储地址的指针来表示元
+素之间的逻辑关系。<strong>优点：不会出现碎片现象，充分利用所有存储单元；缺点：每个元素因存储指针占用额外的存储单元，且只能实现顺序存取。</strong></p></li>
+<li><p>索引存储</p>
+<p>在存储元素信息的同时，还建立附加
+的索引表。索引表中的每项称为索引项，索引项
+的一般形式是（关键字，地址）。<strong>优点：检索速度快；缺点：附加的索引表占用额外空间。</strong></p></li>
+<li><p>散列存储</p>
+<p>根据元素的关键字直接计算出该元素
+的存储地址，又称哈希（Hash）存储。<strong>优点：检索、增加、删除节点速度都很快；缺点：若散列函数不好，可能出现元素存储单元的冲突，解决冲突会增加时间开销。</strong></p></li>
+</ul>
+<h4 id="数据运算">3.数据运算</h4>
+<p>​
+针对于某种逻辑结构，结合实际需求，定义基本运算。<strong>运算的定义针对逻辑结构，运算的实现针对存储结构。</strong></p>
+<h2 id="算法和算法评价">算法和算法评价</h2>
+<h3 id="算法的基本概念">算法的基本概念</h3>
+<p><strong>算法（Algorithm）是对特定问题求解步骤的一种描述</strong>，它是指令的有限序列，其中的每条指令
+表示一个或多个操作</p>
+<p><strong><em>程序=数据结构+算法</em></strong></p>
+<h4 id="算法的5个重要特性">算法的5个重要特性</h4>
+<ul>
+<li>有穷性。一个算法必须总在执行有穷步之后结束，且每一步都可在有穷时间内完成。
+<strong>注：算法必须是有穷的，而程序可以是无穷的</strong></li>
+<li>确定性。算法中每条指令必须有确切的含义，对于<strong>相同的输入</strong>只能得出<strong>相同的输出</strong>。</li>
+<li>可行性。算法中描述的操作都可以通过<strong>已经实现的基本运算执行有限次</strong>来实现。</li>
+<li>输入。一个算法有<strong>零个或多个输入</strong>，这些输入取自于某个特定的对象的集合。</li>
+<li>输出。一个算法有<strong>一个或多个输出</strong>，这些输出是与输入有着某种特定关系的量</li>
+</ul>
+<p>“好”算法的特质</p>
+<ul>
+<li>正确性。算法应能够正确地解决求解问题。</li>
+<li>可读性。算法应具有良好的可读性，以帮助人们理解。</li>
+<li>健壮性。输入非法数据时，算法能适当地做出反应或进行处理，而不会产生莫名其妙的输出结果。</li>
+<li>高效率与低存储量需求。</li>
+</ul>
+<h3 id="算法效率的度量">算法效率的度量</h3>
+<h4 id="时间复杂度">时间复杂度</h4>
+<p>​
+一个语句的频度是指该语句在算法中被重复执行的次数。算法中所有语句的频度之和记为T(n)，它是该算法问题规模n的函数，时间复杂度主要分析T(n)的数量级。算法中基本运算（最深层循环内的语句）的频度与T(n)同数量级，因此通常采用算法中基本运算的频度f(n)来分析算法的时间复杂度。因此，算法的时间复杂度记为</p>
+<p><span class="math display">\[
+T(n)=O(f(n))
+\]</span></p>
+<p>取f(n)中<strong>随n增长最快的项</strong>，将其系数置为1作为时间复杂度的度量。</p>
+<p><span class="math display">\[
+O(1)&lt;O\left(\log _{2} n\right)&lt;O(n)&lt;O\left(n log_{2}
+n\right)&lt;O\left(n^{2}\right)&lt;O\left(n^{3}\right)&lt;O\left(2^{n}\right)&lt;O(n
+!)&lt;O\left(n^{n}\right)
+\]</span></p>
+<ol type="1">
+<li><p>加法规则</p></li>
+<li><p><span class="math display">\[
+T(n)=T_{1}(n)+T_{2}(n)=O(f(n))+O(g(n))=O(\max (f(n), g(n)))
+\]</span></p></li>
+</ol>
+<p><span class="math inline">\(a^2\)</span></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/19/408%E8%AE%A1%E7%BD%91%E4%B8%80%E8%BD%AE%E7%AC%94%E8%AE%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -408,7 +549,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-31 16:32:26" itemprop="dateModified" datetime="2022-05-31T16:32:26+08:00">2022-05-31</time>
+                <time title="Modified: 2022-05-31 17:06:12" itemprop="dateModified" datetime="2022-05-31T17:06:12+08:00">2022-05-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -720,7 +861,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -784,12 +925,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">62k</span>
+    <span title="Symbols count total">64k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">57 mins.</span>
+    <span title="Reading time total">58 mins.</span>
 </div>
 
 
@@ -891,58 +1032,10 @@ document.querySelectorAll('.pdfobject-container').forEach(element => {
 
   
       
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css">
+  <script src="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css">
 
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
 
   
 
