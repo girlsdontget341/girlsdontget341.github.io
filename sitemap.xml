@@ -133,14 +133,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/PyTorch%E5%9F%BA%E7%A1%80/</loc>
-    <lastmod>2022-06-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/Python/</loc>
+    <loc>http://example.com/tags/%E6%95%B0%E5%AD%A6/</loc>
     <lastmod>2022-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -154,7 +147,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/%E6%95%B0%E5%AD%A6/</loc>
+    <loc>http://example.com/tags/PyTorch%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2022-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/Python/</loc>
     <lastmod>2022-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -170,14 +170,14 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/PyTorch/</loc>
+    <loc>http://example.com/categories/Life/</loc>
     <lastmod>2022-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://example.com/categories/Life/</loc>
+    <loc>http://example.com/categories/PyTorch/</loc>
     <lastmod>2022-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

@@ -316,6 +316,142 @@
       </tags>
   </entry>
   <entry>
+    <title>张宇1000题错题</title>
+    <url>/2022/04/06/%E5%BC%A0%E5%AE%871000%E9%A2%98%E9%94%99%E9%A2%98/</url>
+    <content><![CDATA[<h1 id="第一讲"><a class="markdownIt-Anchor" href="#第一讲"></a> 第一讲</h1>
+ <div class="pdfobject-container" data-target="/pdf/张宇1000题第1讲错题.pdf" data-height="500px"></div>
+<h1 id="第二讲第三讲"><a class="markdownIt-Anchor" href="#第二讲第三讲"></a> 第二讲&amp;&amp;第三讲</h1>
+<div class="pdfobject-container" data-target="/pdf/张宇1000题第2、3讲错题.pdf" data-height="500px"></div>
+<h1 id="第四讲"><a class="markdownIt-Anchor" href="#第四讲"></a> 第四讲</h1>
+<div class="pdfobject-container" data-target="/pdf/张宇1000题第4讲错题.pdf" data-height="500px"></div>
+<h1 id="第五讲"><a class="markdownIt-Anchor" href="#第五讲"></a> 第五讲</h1>
+<div class="pdfobject-container" data-target="/pdf/张宇1000题第5讲错题.pdf" data-height="500px"></div>
+<h1 id="第六讲"><a class="markdownIt-Anchor" href="#第六讲"></a> 第六讲</h1>
+<div class="pdfobject-container" data-target="/pdf/张宇1000题第6讲错题.pdf" data-height="500px"></div>
+<h1 id="第八讲"><a class="markdownIt-Anchor" href="#第八讲"></a> 第八讲</h1>
+<div class="pdfobject-container" data-target="/pdf/张宇1000题第8讲错题.pdf" data-height="500px"></div>
+<h1 id="第九讲"><a class="markdownIt-Anchor" href="#第九讲"></a> 第九讲</h1>
+<div class="pdfobject-container" data-target="/pdf/张宇1000题第9讲错题.pdf" data-height="500px"></div>
+<h1 id="第十讲"><a class="markdownIt-Anchor" href="#第十讲"></a> 第十讲</h1>
+<div class="pdfobject-container" data-target="/pdf/张宇1000题第10讲错题.pdf" data-height="500px"></div>
+<h1 id="第十一讲"><a class="markdownIt-Anchor" href="#第十一讲"></a> 第十一讲</h1>
+<div class="pdfobject-container" data-target="/pdf/张宇1000题第11讲错题.pdf" data-height="500px"></div>
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>考研</tag>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>666</title>
+    <url>/2022/03/22/dataStructure/</url>
+    <content><![CDATA[<h3 id="数据结构三要素"><a class="markdownIt-Anchor" href="#数据结构三要素"></a> 数据结构三要素</h3>
+<h4 id="1逻辑结构"><a class="markdownIt-Anchor" href="#1逻辑结构"></a> 1.逻辑结构</h4>
+<p>​	<strong>与数据的存储无关，独立于计算机。</strong></p>
+<p><img src="/2022/03/22/dataStructure/202203231041042.png" alt="image-20220323104111878"></p>
+<h4 id="2存储结构物理结构"><a class="markdownIt-Anchor" href="#2存储结构物理结构"></a> 2.存储结构（物理结构）</h4>
+<ul>
+<li>
+<p>顺序存储</p>
+<p>把逻辑上相邻的元素存储在物理位置 上也相邻的存储单元中，元素之间的关系由存储 单元的邻接关系来体现。<strong>优点：实现随机存取；缺点：只能使用相邻的一整块存储单元，可能会产生外部碎片。</strong></p>
+</li>
+<li>
+<p>链式存储</p>
+<p>逻辑上相邻的元素在物理位置上<strong>可以 不相邻</strong>，借助指示元素存储地址的指针来表示元 素之间的逻辑关系。<strong>优点：不会出现碎片现象，充分利用所有存储单元；缺点：每个元素因存储指针占用额外的存储单元，且只能实现顺序存取。</strong></p>
+</li>
+<li>
+<p>索引存储</p>
+<p>在存储元素信息的同时，还建立附加 的索引表。索引表中的每项称为索引项，索引项 的一般形式是（关键字，地址）。<strong>优点：检索速度快；缺点：附加的索引表占用额外空间。</strong></p>
+</li>
+<li>
+<p>散列存储</p>
+<p>根据元素的关键字直接计算出该元素 的存储地址，又称哈希（Hash）存储。<strong>优点：检索、增加、删除节点速度都很快；缺点：若散列函数不好，可能出现元素存储单元的冲突，解决冲突会增加时间开销。</strong></p>
+</li>
+</ul>
+<h4 id="3数据运算"><a class="markdownIt-Anchor" href="#3数据运算"></a> 3.数据运算</h4>
+<p>​	针对于某种逻辑结构，结合实际需求，定义基本运算。<strong>运算的定义针对逻辑结构，运算的实现针对存储结构。</strong></p>
+<h2 id="算法和算法评价"><a class="markdownIt-Anchor" href="#算法和算法评价"></a> 算法和算法评价</h2>
+<h3 id="算法的基本概念"><a class="markdownIt-Anchor" href="#算法的基本概念"></a> 算法的基本概念</h3>
+<p><strong>算法（Algorithm）是对特定问题求解步骤的一种描述</strong>，它是指令的有限序列，其中的每条指令 表示一个或多个操作</p>
+<p><em><strong>程序=数据结构+算法</strong></em></p>
+<h4 id="算法的5个重要特性"><a class="markdownIt-Anchor" href="#算法的5个重要特性"></a> 算法的5个重要特性</h4>
+<ul>
+<li>有穷性。一个算法必须总在执行有穷步之后结束，且每一步都可在有穷时间内完成。  <strong>注：算法必须是有穷的，而程序可以是无穷的</strong></li>
+<li>确定性。算法中每条指令必须有确切的含义，对于<strong>相同的输入</strong>只能得出<strong>相同的输出</strong>。</li>
+<li>可行性。算法中描述的操作都可以通过<strong>已经实现的基本运算执行有限次</strong>来实现。</li>
+<li>输入。一个算法有<strong>零个或多个输入</strong>，这些输入取自于某个特定的对象的集合。</li>
+<li>输出。一个算法有<strong>一个或多个输出</strong>，这些输出是与输入有着某种特定关系的量</li>
+</ul>
+<p>“好”算法的特质</p>
+<ul>
+<li>正确性。算法应能够正确地解决求解问题。</li>
+<li>可读性。算法应具有良好的可读性，以帮助人们理解。</li>
+<li>健壮性。输入非法数据时，算法能适当地做出反应或进行处理，而不会产生莫名其妙的输出结果。</li>
+<li>高效率与低存储量需求。</li>
+</ul>
+<h3 id="算法效率的度量"><a class="markdownIt-Anchor" href="#算法效率的度量"></a> 算法效率的度量</h3>
+<h4 id="时间复杂度"><a class="markdownIt-Anchor" href="#时间复杂度"></a> 时间复杂度</h4>
+<p>​		一个语句的频度是指该语句在算法中被重复执行的次数。算法中所有语句的频度之和记为T(n)，它是该算法问题规模n的函数，时间复杂度主要分析T(n)的数量级。算法中基本运算（最深层循环内的语句）的频度与T(n)同数量级，因此通常采用算法中基本运算的频度f(n)来分析算法的时间复杂度。因此，算法的时间复杂度记为</p>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mi>O</mi><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T(n)=O(f(n))
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></span></p>
+<p>取f(n)中<strong>随n增长最快的项</strong>，将其系数置为1作为时间复杂度的度量。</p>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo><mo>&lt;</mo><mi>O</mi><mrow><mo fence="true">(</mo><msub><mo><mi>log</mi><mo>⁡</mo></mo><mn>2</mn></msub><mi>n</mi><mo fence="true">)</mo></mrow><mo>&lt;</mo><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>&lt;</mo><mi>O</mi><mrow><mo fence="true">(</mo><mi>n</mi><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi><mo fence="true">)</mo></mrow><mo>&lt;</mo><mi>O</mi><mrow><mo fence="true">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo fence="true">)</mo></mrow><mo>&lt;</mo><mi>O</mi><mrow><mo fence="true">(</mo><msup><mi>n</mi><mn>3</mn></msup><mo fence="true">)</mo></mrow><mo>&lt;</mo><mi>O</mi><mrow><mo fence="true">(</mo><msup><mn>2</mn><mi>n</mi></msup><mo fence="true">)</mo></mrow><mo>&lt;</mo><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">!</mo><mo stretchy="false">)</mo><mo>&lt;</mo><mi>O</mi><mrow><mo fence="true">(</mo><msup><mi>n</mi><mi>n</mi></msup><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(1)&lt;O\left(\log _{2} n\right)&lt;O(n)&lt;O\left(n log_{2} n\right)&lt;O\left(n^{2}\right)&lt;O\left(n^{3}\right)&lt;O\left(2^{n}\right)&lt;O(n !)&lt;O\left(n^{n}\right)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">n</span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.2141179999999998em;vertical-align:-0.35001em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">)</span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.2141179999999998em;vertical-align:-0.35001em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">)</span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7143919999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">!</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7143919999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span></span></p>
+<p>加法规则</p>
+<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>T</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>+</mo><msub><mi>T</mi><mn>2</mn></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mi>O</mi><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>+</mo><mi>O</mi><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>=</mo><mi>O</mi><mo stretchy="false">(</mo><mi>max</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><mi>g</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T(n)=T_{1}(n)+T_{2}(n)=O(f(n))+O(g(n))=O(\max (f(n), g(n)))
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">max</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></span></p>
+<p>inlineMath: <code>$\sigma$</code></p>
+<p>displayMath:   $$ \sigma $$</p>
+]]></content>
+      <categories>
+        <category>考研</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+        <tag>考研</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>三年a班有感</title>
+    <url>/2022/01/17/%E4%B8%89%E5%B9%B4a%E7%8F%AD%E6%9C%89%E6%84%9F/</url>
+    <content><![CDATA[<p>​        怎么说呢，我几乎不看日剧，看过为数不多印象很深的也只有十元的《非自然死亡》。看这部剧的契机主要就是当时期末刚考完+游戏一直输不想玩+无聊刷B站刷到 看这封面男主很帅就打开看看，看着看着就上头了。从结果上帝视角来说，我觉得这是一部<strong>揭示道理深刻</strong>，情节离谱却跌宕的好剧。</p>
+<p>​        简单说，主要讲的是，某高中三年a班即将毕业的29名学生（30-1），在临毕业的最后十天，被美术老师柊一颯“绑架”作为人质，目的找出班上自杀女生景山澪奈的真正原因。（<em>我的观感是看这个剧每集都像大结局。。。</em>）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171009964.png" alt="image-20220117100945621"></p>
+<p>​      <mark>下面就是一些小小的体会</mark></p>
+<p>​		我觉得这个日剧好的地方就在于从很多方面揭示了不止是日本乃至中国全世界人类出现的问题，而且用这种极端的方式，弘扬了一位教师应做的，很难不让人印象深刻。</p>
+<ul>
+<li><strong>欺软怕硬</strong> 剧中男主柊一颯作为一名老师，在班级上没有得到丝毫的尊重，班级上任意一名同学都随意耻笑、捣乱甚至人身攻击，而在使用炸弹威慑之后，没有一个人对老师的要求说漏，观感就像大老虎变成了小猫咪？（bushi），反差令人发笑</li>
+<li><strong>为了保全自己失去理智</strong> 很简单，柊一颯要求找出景山死亡真相，否则杀了一个人，与景山关系最好的小樱被要求代表回答，结果是小樱为了保全大家说是因为自己，显然回答错误，得知要杀一个人的同学们惊慌失措，一致让柊老师杀了小樱，真是气抖冷。。。</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171025140.jpg" alt="src=http___b-ssl.duitang.com_uploads_item_201902_07_20190207213047_escmd.thumb.700_0.jpg&amp;refer=http___b-ssl.duitang"></p>
+<ul>
+<li>
+<p><strong>利己</strong> 剧中景山之前的“朋友”宇佐美接近景山 成为朋友只是为了自己在MINDVOICE上获得更多的粉丝 毕竟景山是全国游泳大赛冠军 天才美少女 而在景山发现了宇佐美的真实意图后 故意疏远她 选择了真心与自己作为朋友的小樱 宇佐美为此不惜陷害景山（就是一系列低俗的恶作剧） 最终酿成大祸</p>
+<p><em>为了减少剧透，先就列举这几个</em></p>
+</li>
+</ul>
+<p>​       其实还有很多这些方面的<strong>劣根</strong>性问题存在，但这部剧主要揭示的问题毫无疑问是 <strong>校园暴力</strong>和 <strong>网络暴力</strong> 。景山作为全国游泳大赛冠军，美好的未来，因为身边同学某些奇奇怪怪的原因，被做假视频陷害，被全班孤立，最好的朋友甚至也渐行渐远，网络上的舆论由赞美变成了辱骂，就在这种每天精神折磨下，景山好像见到路人也会对她指指点点羞辱她，终于受不了了选择死亡。</p>
+<p>​		在这个网络愈发发达的社会，信息碎片化传播的时代，所见的每一则新闻都可能反转反转再反转，而身为吃瓜群众的我们选择的却是随大流，舆论方向在哪我们就说什么，失去了思考的能力，可以说是被牵着鼻子走，确实，这和无良媒体的报道脱不了干系，但在网络上发表言论前，最好的选择是思考。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171043781.png" alt="image-20220117104346561"></p>
+<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171040233.png" alt="image-20220117104052506" style="zoom:80%;">
+<p><strong>共情</strong> 如果角色互换 你会怎么样？既然如此，为什么不能怀揣善意对别人呢？</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171042974.png" alt="image-20220117104235605"></p>
+<p><strong>所谓网络言论自由这层美丽的糖衣包裹着数不清的言语利刃，你的一句话，或许就是别人崩溃的导火索，言论自由不是不负责任没脑子言论，是网络社会的多样、包容，所以，说一句话前，务必三思。</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171049842.png" alt="image-20220117104934191"></p>
+<p>最后再次强推苏打主演的这部剧，剧好看是一方面，苏打是真帅啊…不会有人不喜欢帅哥吧）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171051880.png" alt="image-20220117105140793"></p>
+]]></content>
+      <categories>
+        <category>Life</category>
+      </categories>
+      <tags>
+        <tag>日剧</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PyTorch自学笔记</title>
     <url>/2022/01/14/PyTorch%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="pytorch"><a class="markdownIt-Anchor" href="#pytorch"></a> PyTorch</h1>
@@ -538,75 +674,6 @@
       <tags>
         <tag>PyTorch基础</tag>
         <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>666</title>
-    <url>/2022/03/22/dataStructure/</url>
-    <content><![CDATA[<h3 id="数据结构三要素"><a class="markdownIt-Anchor" href="#数据结构三要素"></a> 数据结构三要素</h3>
-<h4 id="1逻辑结构"><a class="markdownIt-Anchor" href="#1逻辑结构"></a> 1.逻辑结构</h4>
-<p>​	<strong>与数据的存储无关，独立于计算机。</strong></p>
-<p><img src="/2022/03/22/dataStructure/202203231041042.png" alt="image-20220323104111878"></p>
-<h4 id="2存储结构物理结构"><a class="markdownIt-Anchor" href="#2存储结构物理结构"></a> 2.存储结构（物理结构）</h4>
-<ul>
-<li>
-<p>顺序存储</p>
-<p>把逻辑上相邻的元素存储在物理位置 上也相邻的存储单元中，元素之间的关系由存储 单元的邻接关系来体现。<strong>优点：实现随机存取；缺点：只能使用相邻的一整块存储单元，可能会产生外部碎片。</strong></p>
-</li>
-<li>
-<p>链式存储</p>
-<p>逻辑上相邻的元素在物理位置上<strong>可以 不相邻</strong>，借助指示元素存储地址的指针来表示元 素之间的逻辑关系。<strong>优点：不会出现碎片现象，充分利用所有存储单元；缺点：每个元素因存储指针占用额外的存储单元，且只能实现顺序存取。</strong></p>
-</li>
-<li>
-<p>索引存储</p>
-<p>在存储元素信息的同时，还建立附加 的索引表。索引表中的每项称为索引项，索引项 的一般形式是（关键字，地址）。<strong>优点：检索速度快；缺点：附加的索引表占用额外空间。</strong></p>
-</li>
-<li>
-<p>散列存储</p>
-<p>根据元素的关键字直接计算出该元素 的存储地址，又称哈希（Hash）存储。<strong>优点：检索、增加、删除节点速度都很快；缺点：若散列函数不好，可能出现元素存储单元的冲突，解决冲突会增加时间开销。</strong></p>
-</li>
-</ul>
-<h4 id="3数据运算"><a class="markdownIt-Anchor" href="#3数据运算"></a> 3.数据运算</h4>
-<p>​	针对于某种逻辑结构，结合实际需求，定义基本运算。<strong>运算的定义针对逻辑结构，运算的实现针对存储结构。</strong></p>
-<h2 id="算法和算法评价"><a class="markdownIt-Anchor" href="#算法和算法评价"></a> 算法和算法评价</h2>
-<h3 id="算法的基本概念"><a class="markdownIt-Anchor" href="#算法的基本概念"></a> 算法的基本概念</h3>
-<p><strong>算法（Algorithm）是对特定问题求解步骤的一种描述</strong>，它是指令的有限序列，其中的每条指令 表示一个或多个操作</p>
-<p><em><strong>程序=数据结构+算法</strong></em></p>
-<h4 id="算法的5个重要特性"><a class="markdownIt-Anchor" href="#算法的5个重要特性"></a> 算法的5个重要特性</h4>
-<ul>
-<li>有穷性。一个算法必须总在执行有穷步之后结束，且每一步都可在有穷时间内完成。  <strong>注：算法必须是有穷的，而程序可以是无穷的</strong></li>
-<li>确定性。算法中每条指令必须有确切的含义，对于<strong>相同的输入</strong>只能得出<strong>相同的输出</strong>。</li>
-<li>可行性。算法中描述的操作都可以通过<strong>已经实现的基本运算执行有限次</strong>来实现。</li>
-<li>输入。一个算法有<strong>零个或多个输入</strong>，这些输入取自于某个特定的对象的集合。</li>
-<li>输出。一个算法有<strong>一个或多个输出</strong>，这些输出是与输入有着某种特定关系的量</li>
-</ul>
-<p>“好”算法的特质</p>
-<ul>
-<li>正确性。算法应能够正确地解决求解问题。</li>
-<li>可读性。算法应具有良好的可读性，以帮助人们理解。</li>
-<li>健壮性。输入非法数据时，算法能适当地做出反应或进行处理，而不会产生莫名其妙的输出结果。</li>
-<li>高效率与低存储量需求。</li>
-</ul>
-<h3 id="算法效率的度量"><a class="markdownIt-Anchor" href="#算法效率的度量"></a> 算法效率的度量</h3>
-<h4 id="时间复杂度"><a class="markdownIt-Anchor" href="#时间复杂度"></a> 时间复杂度</h4>
-<p>​		一个语句的频度是指该语句在算法中被重复执行的次数。算法中所有语句的频度之和记为T(n)，它是该算法问题规模n的函数，时间复杂度主要分析T(n)的数量级。算法中基本运算（最深层循环内的语句）的频度与T(n)同数量级，因此通常采用算法中基本运算的频度f(n)来分析算法的时间复杂度。因此，算法的时间复杂度记为</p>
-<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mi>O</mi><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T(n)=O(f(n))
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></span></p>
-<p>取f(n)中<strong>随n增长最快的项</strong>，将其系数置为1作为时间复杂度的度量。</p>
-<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo><mo>&lt;</mo><mi>O</mi><mrow><mo fence="true">(</mo><msub><mo><mi>log</mi><mo>⁡</mo></mo><mn>2</mn></msub><mi>n</mi><mo fence="true">)</mo></mrow><mo>&lt;</mo><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>&lt;</mo><mi>O</mi><mrow><mo fence="true">(</mo><mi>n</mi><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><mi>n</mi><mo fence="true">)</mo></mrow><mo>&lt;</mo><mi>O</mi><mrow><mo fence="true">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo fence="true">)</mo></mrow><mo>&lt;</mo><mi>O</mi><mrow><mo fence="true">(</mo><msup><mi>n</mi><mn>3</mn></msup><mo fence="true">)</mo></mrow><mo>&lt;</mo><mi>O</mi><mrow><mo fence="true">(</mo><msup><mn>2</mn><mi>n</mi></msup><mo fence="true">)</mo></mrow><mo>&lt;</mo><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">!</mo><mo stretchy="false">)</mo><mo>&lt;</mo><mi>O</mi><mrow><mo fence="true">(</mo><msup><mi>n</mi><mi>n</mi></msup><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">O(1)&lt;O\left(\log _{2} n\right)&lt;O(n)&lt;O\left(n log_{2} n\right)&lt;O\left(n^{2}\right)&lt;O\left(n^{3}\right)&lt;O\left(2^{n}\right)&lt;O(n !)&lt;O\left(n^{n}\right)
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mop"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.20696799999999996em;"><span style="top:-2.4558600000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.24414em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">n</span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.2141179999999998em;vertical-align:-0.35001em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">)</span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.2141179999999998em;vertical-align:-0.35001em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size1">(</span></span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size1">)</span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7143919999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">!</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7143919999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span></span></p>
-<p>加法规则</p>
-<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>T</mi><mn>1</mn></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>+</mo><msub><mi>T</mi><mn>2</mn></msub><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mi>O</mi><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>+</mo><mi>O</mi><mo stretchy="false">(</mo><mi>g</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo>=</mo><mi>O</mi><mo stretchy="false">(</mo><mi>max</mi><mo>⁡</mo><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo separator="true">,</mo><mi>g</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T(n)=T_{1}(n)+T_{2}(n)=O(f(n))+O(g(n))=O(\max (f(n), g(n)))
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mop">max</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></span></p>
-<p>inlineMath: <code>$\sigma$</code></p>
-<p>displayMath:   $$ \sigma $$</p>
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
-        <tag>考研</tag>
       </tags>
   </entry>
   <entry>
@@ -1925,73 +1992,6 @@ H= RH(Key) i=1,2,3…</p>
       <tags>
         <tag>数据结构</tag>
         <tag>考研</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>三年a班有感</title>
-    <url>/2022/01/17/%E4%B8%89%E5%B9%B4a%E7%8F%AD%E6%9C%89%E6%84%9F/</url>
-    <content><![CDATA[<p>​        怎么说呢，我几乎不看日剧，看过为数不多印象很深的也只有十元的《非自然死亡》。看这部剧的契机主要就是当时期末刚考完+游戏一直输不想玩+无聊刷B站刷到 看这封面男主很帅就打开看看，看着看着就上头了。从结果上帝视角来说，我觉得这是一部<strong>揭示道理深刻</strong>，情节离谱却跌宕的好剧。</p>
-<p>​        简单说，主要讲的是，某高中三年a班即将毕业的29名学生（30-1），在临毕业的最后十天，被美术老师柊一颯“绑架”作为人质，目的找出班上自杀女生景山澪奈的真正原因。（<em>我的观感是看这个剧每集都像大结局。。。</em>）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171009964.png" alt="image-20220117100945621"></p>
-<p>​      <mark>下面就是一些小小的体会</mark></p>
-<p>​		我觉得这个日剧好的地方就在于从很多方面揭示了不止是日本乃至中国全世界人类出现的问题，而且用这种极端的方式，弘扬了一位教师应做的，很难不让人印象深刻。</p>
-<ul>
-<li><strong>欺软怕硬</strong> 剧中男主柊一颯作为一名老师，在班级上没有得到丝毫的尊重，班级上任意一名同学都随意耻笑、捣乱甚至人身攻击，而在使用炸弹威慑之后，没有一个人对老师的要求说漏，观感就像大老虎变成了小猫咪？（bushi），反差令人发笑</li>
-<li><strong>为了保全自己失去理智</strong> 很简单，柊一颯要求找出景山死亡真相，否则杀了一个人，与景山关系最好的小樱被要求代表回答，结果是小樱为了保全大家说是因为自己，显然回答错误，得知要杀一个人的同学们惊慌失措，一致让柊老师杀了小樱，真是气抖冷。。。</li>
-</ul>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171025140.jpg" alt="src=http___b-ssl.duitang.com_uploads_item_201902_07_20190207213047_escmd.thumb.700_0.jpg&amp;refer=http___b-ssl.duitang"></p>
-<ul>
-<li>
-<p><strong>利己</strong> 剧中景山之前的“朋友”宇佐美接近景山 成为朋友只是为了自己在MINDVOICE上获得更多的粉丝 毕竟景山是全国游泳大赛冠军 天才美少女 而在景山发现了宇佐美的真实意图后 故意疏远她 选择了真心与自己作为朋友的小樱 宇佐美为此不惜陷害景山（就是一系列低俗的恶作剧） 最终酿成大祸</p>
-<p><em>为了减少剧透，先就列举这几个</em></p>
-</li>
-</ul>
-<p>​       其实还有很多这些方面的<strong>劣根</strong>性问题存在，但这部剧主要揭示的问题毫无疑问是 <strong>校园暴力</strong>和 <strong>网络暴力</strong> 。景山作为全国游泳大赛冠军，美好的未来，因为身边同学某些奇奇怪怪的原因，被做假视频陷害，被全班孤立，最好的朋友甚至也渐行渐远，网络上的舆论由赞美变成了辱骂，就在这种每天精神折磨下，景山好像见到路人也会对她指指点点羞辱她，终于受不了了选择死亡。</p>
-<p>​		在这个网络愈发发达的社会，信息碎片化传播的时代，所见的每一则新闻都可能反转反转再反转，而身为吃瓜群众的我们选择的却是随大流，舆论方向在哪我们就说什么，失去了思考的能力，可以说是被牵着鼻子走，确实，这和无良媒体的报道脱不了干系，但在网络上发表言论前，最好的选择是思考。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171043781.png" alt="image-20220117104346561"></p>
-<img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171040233.png" alt="image-20220117104052506" style="zoom:80%;">
-<p><strong>共情</strong> 如果角色互换 你会怎么样？既然如此，为什么不能怀揣善意对别人呢？</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171042974.png" alt="image-20220117104235605"></p>
-<p><strong>所谓网络言论自由这层美丽的糖衣包裹着数不清的言语利刃，你的一句话，或许就是别人崩溃的导火索，言论自由不是不负责任没脑子言论，是网络社会的多样、包容，所以，说一句话前，务必三思。</strong></p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171049842.png" alt="image-20220117104934191"></p>
-<p>最后再次强推苏打主演的这部剧，剧好看是一方面，苏打是真帅啊…不会有人不喜欢帅哥吧）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/girlsdontget341/image@master/img/202201171051880.png" alt="image-20220117105140793"></p>
-]]></content>
-      <categories>
-        <category>Life</category>
-      </categories>
-      <tags>
-        <tag>日剧</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>张宇1000题错题</title>
-    <url>/2022/04/06/%E5%BC%A0%E5%AE%871000%E9%A2%98%E9%94%99%E9%A2%98/</url>
-    <content><![CDATA[<h1 id="第一讲"><a class="markdownIt-Anchor" href="#第一讲"></a> 第一讲</h1>
- <div class="pdfobject-container" data-target="/pdf/张宇1000题第1讲错题.pdf" data-height="500px"></div>
-<h1 id="第二讲第三讲"><a class="markdownIt-Anchor" href="#第二讲第三讲"></a> 第二讲&amp;&amp;第三讲</h1>
-<div class="pdfobject-container" data-target="/pdf/张宇1000题第2、3讲错题.pdf" data-height="500px"></div>
-<h1 id="第四讲"><a class="markdownIt-Anchor" href="#第四讲"></a> 第四讲</h1>
-<div class="pdfobject-container" data-target="/pdf/张宇1000题第4讲错题.pdf" data-height="500px"></div>
-<h1 id="第五讲"><a class="markdownIt-Anchor" href="#第五讲"></a> 第五讲</h1>
-<div class="pdfobject-container" data-target="/pdf/张宇1000题第5讲错题.pdf" data-height="500px"></div>
-<h1 id="第六讲"><a class="markdownIt-Anchor" href="#第六讲"></a> 第六讲</h1>
-<div class="pdfobject-container" data-target="/pdf/张宇1000题第6讲错题.pdf" data-height="500px"></div>
-<h1 id="第八讲"><a class="markdownIt-Anchor" href="#第八讲"></a> 第八讲</h1>
-<div class="pdfobject-container" data-target="/pdf/张宇1000题第8讲错题.pdf" data-height="500px"></div>
-<h1 id="第九讲"><a class="markdownIt-Anchor" href="#第九讲"></a> 第九讲</h1>
-<div class="pdfobject-container" data-target="/pdf/张宇1000题第9讲错题.pdf" data-height="500px"></div>
-<h1 id="第十讲"><a class="markdownIt-Anchor" href="#第十讲"></a> 第十讲</h1>
-<div class="pdfobject-container" data-target="/pdf/张宇1000题第10讲错题.pdf" data-height="500px"></div>
-<h1 id="第十一讲"><a class="markdownIt-Anchor" href="#第十一讲"></a> 第十一讲</h1>
-<div class="pdfobject-container" data-target="/pdf/张宇1000题第11讲错题.pdf" data-height="500px"></div>
-]]></content>
-      <categories>
-        <category>考研</category>
-      </categories>
-      <tags>
-        <tag>考研</tag>
-        <tag>数学</tag>
       </tags>
   </entry>
 </search>
