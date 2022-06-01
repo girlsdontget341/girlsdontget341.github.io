@@ -2,24 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://girlsdontget341.xyz/2022/06/01/1/</loc>
-    
-    <lastmod>2022-06-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://girlsdontget341.xyz/2022/03/22/dataStructure/</loc>
-    
-    <lastmod>2022-06-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://girlsdontget341.xyz/2022/03/22/408%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%80%E8%BD%AE%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2022-05-31</lastmod>
@@ -119,7 +101,7 @@
 
   
   <url>
-    <loc>http://girlsdontget341.xyz/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <loc>http://girlsdontget341.xyz/tags/%E6%95%B0%E5%AD%A6/</loc>
     <lastmod>2022-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -127,6 +109,20 @@
   
   <url>
     <loc>http://girlsdontget341.xyz/tags/%E8%80%83%E7%A0%94/</loc>
+    <lastmod>2022-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://girlsdontget341.xyz/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</loc>
+    <lastmod>2022-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://girlsdontget341.xyz/tags/%E6%97%A5%E5%89%A7/</loc>
     <lastmod>2022-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -146,20 +142,6 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>http://girlsdontget341.xyz/tags/%E6%97%A5%E5%89%A7/</loc>
-    <lastmod>2022-06-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://girlsdontget341.xyz/tags/%E6%95%B0%E5%AD%A6/</loc>
-    <lastmod>2022-06-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
   
   <url>
@@ -170,14 +152,14 @@
   </url>
   
   <url>
-    <loc>http://girlsdontget341.xyz/categories/PyTorch/</loc>
+    <loc>http://girlsdontget341.xyz/categories/Life/</loc>
     <lastmod>2022-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://girlsdontget341.xyz/categories/Life/</loc>
+    <loc>http://girlsdontget341.xyz/categories/PyTorch/</loc>
     <lastmod>2022-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
